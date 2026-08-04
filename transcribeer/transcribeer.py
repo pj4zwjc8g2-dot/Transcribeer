@@ -289,12 +289,50 @@ def fetch_captions(video_id, taal, vertaal):
     return text, transcript.language_code, translated
 
 
+# ---------- gedeeld: de timedtext-endpoint (route 2 en 3 halen daar allebei op) ----------
+
+# De endpoint knijpt snel af maar laat net zo snel weer los. Twee retries met
+# oplopende backoff kosten in het slechtste geval een halve minuut; dat is een stuk
+# goedkoper dan de cooldown van 15 minuten die er anders achteraan komt.
+TIMEDTEXT_BACKOFF = [(8, 12), (25, 35)]
+
+
+def _timedtext_url(base_url, **extra):
+    """fmt en tlang staan niet in 'sparams', dus die mogen we herschrijven
+    zonder de signature in de URL ongeldig te maken."""
+    import urllib.parse
+    parts = urllib.parse.urlparse(base_url)
+    query = urllib.parse.parse_qs(parts.query)
+    for key, value in extra.items():
+        query[key] = [value]
+    return urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(query, doseq=True)))
+
+
+def _haal_timedtext(url, route):
+    """Haalt een caption-spoor op. Geeft de ruwe tekst of None bij een HTTP-fout
+    die geen blokkade is. Gooit IpBlockedError als ook de laatste poging 429 geeft."""
+    import urllib.error, urllib.request
+    for poging in range(len(TIMEDTEXT_BACKOFF) + 1):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8", errors="ignore")
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                return None
+            if poging == len(TIMEDTEXT_BACKOFF):
+                raise IpBlockedError("429 op de timedtext-URL (" + route + "-route)") from e
+            lo, hi = TIMEDTEXT_BACKOFF[poging]
+            time.sleep(random.uniform(lo, hi))
+    return None
+
+
 # ---------- ondertitels ophalen: route 2 (yt-dlp caption-URL's) ----------
 
-def fetch_captions_ytdlp(video_id, taal):
+def fetch_captions_ytdlp(video_id, taal, vertaal=False):
     """Route 2: yt-dlp's caption-URL's (andere client-handtekening).
     Werkt vaak nog als de transcript-api al geblokkeerd is.
-    Geeft (tekst, taalcode, False) of (None, reden, False).
+    Geeft (tekst, taalcode, vertaald_bool) of (None, reden, False).
     Gooit IpBlockedError bij een 429."""
     import urllib.error, urllib.request
     from yt_dlp import YoutubeDL
@@ -321,16 +359,23 @@ def fetch_captions_ytdlp(video_id, taal):
         chosen_lang, formats = next(iter(tracks.items()))
     if not formats:
         return None, "geen ondertiteling beschikbaar (yt-dlp)", False
+    lang_clean = chosen_lang.replace("-orig", "") if chosen_lang else taal
+    # Dit zijn dezelfde timedtext-URL's als bij de InnerTube-route, dus fmt en tlang
+    # mogen we herschrijven zonder de signature te breken. fmt hard op json3 zetten
+    # scheelt bovendien een JSONDecodeError als yt-dlp alleen een xml/vtt-spoor geeft.
     fmt = next((f for f in formats if f.get("ext") == "json3"), formats[0])
-    req = urllib.request.Request(fmt["url"], headers={"User-Agent": "Mozilla/5.0"})
+    params = {"fmt": "json3"}
+    translated = False
+    if vertaal and lang_clean.split("-")[0] != taal.split("-")[0]:
+        params["tlang"] = taal
+        translated = True
+    raw = _haal_timedtext(_timedtext_url(fmt["url"], **params), "yt-dlp")
+    if not raw:
+        return None, "yt-dlp: caption-spoor niet op te halen", False
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            raw = resp.read().decode("utf-8", errors="ignore")
-    except urllib.error.HTTPError as e:
-        if e.code == 429:
-            raise IpBlockedError("429 op caption-URL (yt-dlp-route)") from e
-        return None, "yt-dlp caption HTTP " + str(e.code), False
-    data = json.loads(raw)
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return None, "yt-dlp: onverwacht caption-formaat", False
     parts = []
     for event in data.get("events", []):
         text = "".join(seg.get("utf8", "") for seg in event.get("segs", [])).strip()
@@ -339,8 +384,7 @@ def fetch_captions_ytdlp(video_id, taal):
     text = " ".join(parts).strip()
     if not text:
         return None, "caption-bestand was leeg (yt-dlp)", False
-    lang_clean = chosen_lang.replace("-orig", "") if chosen_lang else taal
-    return text, lang_clean, False
+    return text, (taal if translated else lang_clean), translated
 
 
 # ---------- ondertitels ophalen: route 3 (InnerTube, rechtstreeks) ----------
@@ -349,7 +393,6 @@ def fetch_captions_ytdlp(video_id, taal):
 # de WEB-client geeft daar tegenwoordig UNPLAYABLE op. Op volgorde van betrouwbaarheid.
 INNERTUBE_URL = "https://youtubei.googleapis.com/youtubei/v1/player"
 INNERTUBE_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"
-TIMEDTEXT_BACKOFF = [(8, 12), (25, 35)]
 INNERTUBE_CLIENTS = [
     ({"clientName": "ANDROID", "clientVersion": "20.10.38", "androidSdkVersion": 30},
      "com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip"),
@@ -420,23 +463,10 @@ def _kies_innertube_track(tracks, taal):
     return tracks[0]
 
 
-def _timedtext_url(base_url, **extra):
-    """fmt en tlang staan niet in 'sparams', dus die mogen we herschrijven
-    zonder de signature in de URL ongeldig te maken."""
-    import urllib.parse
-    parts = urllib.parse.urlparse(base_url)
-    query = urllib.parse.parse_qs(parts.query)
-    for key, value in extra.items():
-        query[key] = [value]
-    return urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(query, doseq=True)))
-
-
 def fetch_captions_innertube(video_id, taal, vertaal):
     """Route 3: rechtstreeks de InnerTube-player bevragen.
     Zelfde contract als fetch_captions: (tekst, taalcode, vertaald_bool)
     of (None, reden, False). Gooit IpBlockedError bij een rate-limit-block."""
-    import urllib.error, urllib.request
-
     # Elke client krijgt een kans: waar de een een bot-check vangt, komt de ander
     # er vaak nog gewoon langs. Pas als geen enkele client binnenkomt tellen we de
     # bot-check als blokkade - dan mag de cooldown zijn werk doen.
@@ -476,28 +506,9 @@ def fetch_captions_innertube(video_id, taal, vertaal):
         params["tlang"] = taal
         translated = True
 
-    # De timedtext-endpoint knijpt snel af, maar laat net zo snel weer los. Drie
-    # pogingen met oplopende backoff (~10s, ~30s) kost in het slechtste geval een
-    # halve minuut; dat is een stuk goedkoper dan de cooldown van 15 minuten die
-    # er anders achteraan komt. Pas als ook de laatste poging 429 geeft is het raak.
-    url = _timedtext_url(track["baseUrl"], **params)
-    raw = None
-    for poging in range(len(TIMEDTEXT_BACKOFF) + 1):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                raw = resp.read().decode("utf-8", errors="ignore")
-            break
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                if poging < len(TIMEDTEXT_BACKOFF):
-                    lo, hi = TIMEDTEXT_BACKOFF[poging]
-                    time.sleep(random.uniform(lo, hi))
-                    continue
-                raise IpBlockedError("429 op de timedtext-URL (innertube-route)") from e
-            return None, "innertube caption HTTP " + str(e.code), False
+    raw = _haal_timedtext(_timedtext_url(track["baseUrl"], **params), "innertube")
     if not raw:
-        return None, "innertube: leeg caption-antwoord", False
+        return None, "innertube: caption-spoor niet op te halen", False
 
     try:
         payload = json.loads(raw)
@@ -559,7 +570,7 @@ def lokale_routes(taal, vertaal):
     dus een blokkade op de een betekent lang niet altijd een blokkade op de ander."""
     return [
         ("transcript-api", lambda vid: fetch_captions(vid, taal, vertaal)),
-        ("yt-dlp", lambda vid: fetch_captions_ytdlp(vid, taal)),
+        ("yt-dlp", lambda vid: fetch_captions_ytdlp(vid, taal, vertaal)),
         ("innertube", lambda vid: fetch_captions_innertube(vid, taal, vertaal)),
     ]
 
