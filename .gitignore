@@ -1,0 +1,20 @@
+# Geheimen — nooit committen
+.env
+*.env
+!*.env.example
+
+# Persoonlijke instellingen (pad verschilt per machine)
+config.json
+
+# Opgehaalde transcripties en voortgang
+transcripties/
+.transcript_state.json
+
+# Python / uv
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
