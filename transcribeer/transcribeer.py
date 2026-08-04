@@ -580,12 +580,15 @@ def haal_lokaal(video_id, routes, head):
 
     Geeft (tekst, taalcode, vertaald, routenaam, pogingen). Vond geen enkele route
     ondertitels, dan is tekst None en staat de laatste reden op de plek van de taalcode.
-    Zijn ALLE routes geblokkeerd, dan volgt een AllesGeblokkeerdError."""
+    Zijn ALLE routes geblokkeerd, dan volgt een AllesGeblokkeerdError.
+
+    'pogingen' telt alleen de routes die YouTube echt te woord heeft gestaan. Een
+    geblokkeerde route kost geen quota, dus die mag de rustpauze niet vervroegen -
+    anders gaat het script juist langzamer draaien naarmate het vaker geblokkeerd wordt."""
     reden = "geen ondertitels"
     geblokkeerd = 0
     pogingen = 0
     for naam, fetch in routes:
-        pogingen += 1
         try:
             text, lang, translated = fetch(video_id)
         except IpBlockedError:
@@ -593,8 +596,10 @@ def haal_lokaal(video_id, routes, head):
             print(head + " - " + naam + "-route geblokkeerd")
             continue
         except Exception as e:
+            pogingen += 1
             reden = naam + ": " + type(e).__name__
             continue
+        pogingen += 1
         if text is not None:
             return text, lang, translated, naam, pogingen
         reden = lang
