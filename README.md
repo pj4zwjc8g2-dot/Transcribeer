@@ -89,10 +89,15 @@ uv run ~/.claude/skills/transcribeer/transcribeer.py "<URL>" --max 10
 ## Blokkades bij grote kanalen
 
 YouTube blokkeert je IP tijdelijk bij te veel ondertitel-verzoeken achter elkaar — in de
-praktijk vanaf zo'n 30 video's in één keer. Het script vangt dat in lagen op: random pauzes,
-een tweede ophaalroute via `yt-dlp`, en een afkoelperiode met nieuwe poging. Een
-`.transcript_state.json` in de doelmap onthoudt wat al gedaan is, dus opnieuw draaien hervat
-altijd waar het bleef.
+praktijk vanaf zo'n 30 video's in één keer, en tegenwoordig meestal in de vorm van een
+bot-check ("Log in om te bevestigen dat je geen bot bent"). Het script vangt dat in lagen op:
+random pauzes, drie ophaalroutes achter elkaar (`youtube-transcript-api` → `yt-dlp` →
+rechtstreeks de InnerTube-API met de mobiele clients), en een afkoelperiode met nieuwe poging.
+Achter elke video staat via welke route 'ie binnenkwam. Een `.transcript_state.json` in de
+doelmap onthoudt wat al gedaan is, dus opnieuw draaien hervat altijd waar het bleef.
+
+Vanaf een datacenter- of VPN-IP komt de bot-check veel sneller dan vanaf een gewone
+thuisverbinding; daar loont het om meteen met `--apify` te beginnen.
 
 Wil je grote kanalen in één keer doorlopen, dan is er een optionele afvanger via
 [Apify](https://apify.com) (~$0,01 per video). Zet je token in een `.env` naast de skill:
