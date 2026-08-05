@@ -541,6 +541,29 @@ algemene aanbevelingen zonder onderbouwing.
 
 Behandel content als een product: reken op twee tot vier revisies voor zowel tekst als ontwerp.
 
+## Mythes die je moet ontkrachten
+
+Er circuleert veel onzin over AI SEO. Zijn correcties:
+
+- **"LLM's hechten waarde aan oude Reddit-posts omdat moderators de antwoorden verifiëren."** Onzin.
+  Een LLM hecht nergens waarde aan; er is geen algoritme dat brontypes weegt. Oude Reddit-posts duiken
+  op omdat ze **goed ranken in traditioneel zoeken**. Reddit is prominent om die reden, niet vanwege een
+  geheime voorkeur.
+- **"Posten op Reddit is de sleutel tot AI-zichtbaarheid."** Het gebruikte succesvoorbeeld is doorgaans
+  een groot, gevestigd merk dat al overal rankt. Dat merk staat er niet door Reddit.
+- **"Je kunt zoekvolume meten op AI-platforms."** Onmogelijk. Niemand heeft toegang tot echte
+  ChatGPT-queries; dat wordt bewust niet gedeeld. Elke tool die volumes toont, spiegelt gewoon
+  traditionele zoekdata. Dat weerspiegelt vraag, maar niet de vraag op dat platform.
+- **"We kunnen AI-conversies attribueren."** Vrijwel onmogelijk. Iemand ziet een YouTube-video, gaat naar
+  ChatGPT, dan Reddit, dan LinkedIn, en converteert een half jaar later. Wie echte attributie belooft,
+  verkoopt onzin.
+
+De keten die er wél is: **traditioneel zoeken → citatie → AI-antwoord.** Uit duizenden bestudeerde
+AI-antwoorden: je vindt vrijwel geen merk dat het goed doet in AI en slecht in traditioneel zoeken.
+
+**Parasitaire SEO** — meeliften op de autoriteit van YouTube, Reddit of Quora — werkt wel degelijk, maar
+om de gewone reden: die platforms ranken. Niet omdat AI ze speciaal behandelt.
+
 ## Meten
 
 - **Momentopname, geen dagelijkse tracking.** Dagelijks posities volgen heeft geen zin als je die week
@@ -548,10 +571,49 @@ Behandel content als een product: reken op twee tot vier revisies voor zowel tek
   nieuwe scan.
 - **Grijp niet meteen in** als je iets kapots ziet — zeker bij klantwerk. Leg eerst de nulmeting vast,
   anders kun je later niet aantonen wat je hebt opgeleverd.
-- **Wees sceptisch over AI-rank-trackers.** Hij bestudeerde er meer dan dertig, gemiddeld $337 per maand,
-  en ziet claims die niet kloppen. Meten is nodig, maar controleer wat een tool werkelijk meet.
 - **Citaties zijn niet-deterministisch** — dezelfde vraag geeft een andere set. Maar het is geen
   draaideur: over maanden blijven doorgaans **vijf tot zeven bronnen structureel in de top staan**.
+
+### Waarom AI-tracking fundamenteel lastig is
+
+Hij bestudeerde meer dan dertig trackers, gemiddeld **$337 per maand**. Zes redenen waarom je claims van
+grote nauwkeurigheid moet wantrouwen:
+
+1. **Extreme variatie** — iedereen stelt zijn eigen unieke vraag, in hele zinnen, met typefouten, soms
+   ingesproken. Google voegde queries samen; hier gebeurt dat niet.
+2. **Personalisatie staat standaard aan.** Ingelogd vertelt ChatGPT je wat je wilt horen — jouw product
+   komt er verdacht vaak goed uit. Wat je via API of incognito ziet verschilt daardoor radicaal van wat
+   een echte gebruiker ziet.
+3. **Modelvarianten** — dezelfde vraag op een ander model geeft andere resultaten.
+4. **Antwoorden zijn niet-deterministisch** — dezelfde vraag twee keer geeft zelden hetzelfde antwoord.
+   De genoemde merken lijken op elkaar, maar niet identiek.
+5. **De query fan-out varieert** — de subvragen die redeneermodellen zelf bedenken veranderen steeds.
+6. **Synthetische prompts.** Elke tool gebruikt verzonnen prompts, ook de zijne. Wees daar eerlijk over.
+
+Let ook op: veel tools **beweren citaties te extraheren** maar bootsen in werkelijkheid na wat een LLM
+zou doen — ze halen bronnen uit de topresultaten van een gewone zoekmachine. Dat zijn niet de citaties
+die een echte gebruiker kreeg. En blijf weg bij tools die met proxy's en duizenden nepaccounts werken:
+dat is in strijd met de voorwaarden en levert bans op.
+
+### Hoe je het dan wél meet
+
+Meet niet of je op één prompt verschijnt — meet **dekking over een breed oppervlak**:
+
+1. Kies één **commercieel zaadonderwerp** per cluster.
+2. Maak daar **minstens 25 synthetische prompts** van in natuurlijke taal. Houd ze **merk-onbewust maar
+   commercieel**: geen merknamen erin, want dat vertekent de uitkomst.
+3. Draai elke prompt **twee tot drie keer** om de variatie uit te middelen. Dat komt neer op zo'n 75 tot
+   100 gesprekken per zaadwoord.
+4. Rapporteer als **percentage zichtbaarheid** over de hele set, niet per prompt.
+5. Herhaal per product of cluster.
+
+De vraag die telt is simpel: **verschijnen we in de gegenereerde antwoorden op commerciële zoekvragen?**
+Zo nee, dan is er werk. Zo ja, dan verschuift de vraag naar hoe je boven je concurrenten uitkomt.
+
+Twee praktische tips: betaal niet voor analytics binnen een tracker — GA4 en Looker Studio zijn gratis.
+En kijk in Search Console bij de lange, natuurlijk geformuleerde queries; die lijken sterk op
+AI-gedreven zoekvragen en zijn bruikbaar voor je promptdatabase. Hij kan dat niet bewijzen en zegt dat
+er eerlijk bij.
 
 ## Werkwijze
 
