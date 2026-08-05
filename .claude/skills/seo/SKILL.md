@@ -282,6 +282,68 @@ volledig onder de vouw. Bij "best laptops" duwen vier advertenties plus een AI-o
 Zijn verwachting: de blauwe links verdwijnen niet, maar worden vooral een bibliotheek die de
 AI-platforms voedt. Reden te meer om er te staan — je wilt een van de bronnen zijn.
 
+## Lijstjes: de techniek om als eerste te beheersen
+
+Van alle mechanismen die bepalen of AI je merk noemt, is er één op dit moment dominant: **lijstjes**.
+"Beste [product] van 2026"-pagina's worden opvallend vaak geciteerd, en sta je er niet in, dan maak je
+geen kans op de omzet uit die zoekopdracht.
+
+Er zijn drie zetten, en je doet ze allemaal:
+
+1. **Maak je eigen lijstje** op je blog.
+2. **Kom in bestaande lijstjes** die al geciteerd worden.
+3. **Lukt dat niet, benader de site** voor een geactualiseerde lijst of een gastbijdrage.
+
+### Twee pagina's, niet één
+
+Een architectuurpunt dat veel mensen missen: gebruik de **enkelvoudsvorm voor je commerciële pagina**
+("beste bookmarkmanager") en maak daarnaast een **apart lijstje in het meervoud** ("beste
+bookmarkmanagers"). Op je verkooppagina wil je geen concurrenten noemen; in het lijstje juist wel, want
+daar stuur je het verhaal.
+
+Bij die commerciële pagina: houd het aantal woorden eerder iets **onder** het doel — een verkooppagina
+hoort niet tekstzwaar te zijn — maar dek wel alle onderwerpen. En let op wat die onderwerpen zijn: het
+zijn vaak de **unieke verkooppunten van je concurrenten**. Kun je ze niet behandelen, dan zit er een gat
+in je product, niet alleen in je tekst.
+
+### Het lijstje bouwen
+
+1. Laat een AI **diepgaand onderzoek** doen naar het onderwerp; dat kost centen.
+2. **Plak dat onderzoek niet rauw op je site.** Het leest als een proefschrift, niet als webcontent.
+3. Voer het onderzoek terug aan een AI met de opdracht er een leesbaar stuk van te maken.
+4. Check de **relevantiescore** tegen de concurrenten, voer de ontbrekende onderwerpen terug en laat het
+   herzien. Dat tilt een goed stuk in seconden naar een relevant stuk.
+
+Goed nieuws: **eigen lijstjes tellen mee.** Softwarebedrijven die hun eigen categorie beschrijven duiken
+gewoon op als citatie. AI discrimineert (voorlopig) niet tegen partijdige bronnen.
+
+### Kansen vinden en prioriteren
+
+Zet een AI-agent aan het werk: *"vind honderd lijstjes over [onderwerp] waarin ons merk **niet**
+voorkomt"*. Dat draait een half uur en levert echte, verifieerbare lijsten op. Exporteer die.
+
+Prioriteer daarna met een batch-analyse in Ahrefs of Semrush, en kijk naar de **domeinsterkte**. De
+redenering: er zijn aanwijzingen dat ChatGPT bij het trainen werkt met een **whitelist van ongeveer een
+miljoen sterkste domeinen**, waarbij een citatie van zo'n domein een kleine bonus krijgt. Praktisch
+gevolg:
+
+> Eén vermelding op een sterk domein heeft meer effect dan vijf tot tien op zwakke.
+
+Kijk daarnaast of de doelsite **zelf al AI-citaties heeft**. Zo ja, dan beïnvloedt hij aantoonbaar
+antwoorden en is een vermelding daar veel waard.
+
+En het punt dat de rekensom verandert: **gesponsord werkt net zo goed als organisch.** AI-platforms
+maken (voorlopig) geen onderscheid. Kun je een plek in een lijstje kopen, dan koop je hetzelfde effect.
+
+### De denkomslag
+
+> Ik zou niet eens meer aan linkbuilding in de traditionele zin denken. Ik vraag me af: hoe zorgen we
+> dat ons merk hier genoemd wordt?
+
+De oude tunnelvisie was zoveel mogelijk autoriteit naar je eigen domein trekken. Dat telt nog steeds,
+maar het is niet meer waar het zwaartepunt ligt. Het gaat nu om gericht die bronnen opzoeken waarvan je
+wéét dat ze de gegenereerde antwoorden sturen.
+
 ## Categoriefocus
 
 **Eén categorie, 90 tot 180 dagen, volledig afdekken.** Dit is zijn hardste regel en zijn
@@ -573,6 +635,19 @@ om de gewone reden: die platforms ranken. Niet omdat AI ze speciaal behandelt.
   anders kun je later niet aantonen wat je hebt opgeleverd.
 - **Citaties zijn niet-deterministisch** — dezelfde vraag geeft een andere set. Maar het is geen
   draaideur: over maanden blijven doorgaans **vijf tot zeven bronnen structureel in de top staan**.
+- **Volg URL's, niet losse zoekwoorden.** Kijk naar de groei van een pagina in het geheel; sturen op één
+  zoekwoord is ouderwets denken.
+- **Scheid AI-verkeer van gewoon organisch verkeer** in je analytics, anders zie je niet waar je wint.
+
+### Val niet in de val van een stijgende gemiddelde positie
+
+Google heeft de mogelijkheid weggehaald om de top 100 resultaten op te vragen. Het gevolg in Search
+Console: **vertoningen kelderen en je gemiddelde positie "stijgt"** — terwijl je kliks gelijk blijven.
+Dat is een meetartefact, geen prestatie. Een flink deel van die verdwenen vertoningen kwam sowieso van
+bots en scrapers, niet van mensen.
+
+Dat betekent overigens niet dat zoekwoorden voorbij positie 50 er niet toe doen. Ze zijn nog steeds je
+beste aanwijzing voor waar je onderwerpondersteuning mist — je volgt ze alleen niet als KPI.
 
 ### Waarom AI-tracking fundamenteel lastig is
 
