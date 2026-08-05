@@ -137,6 +137,70 @@ Verzamel **recensies op de platforms die er in jouw niche toe doen.**
 - **Hoe vind je de jouwe?** Draai een commerciële query ("beste letselschadeadvocaten in [stad]"),
   klik door naar de citaties en kijk welke platforms daar worden gebruikt. Dat zijn je doelen.
 
+## De audit
+
+Zijn volledige auditproces. Opzet: een Google Sheet met een tabblad per onderdeel, en een
+**Screaming Frog**-crawl als basis (die beveelt hij expliciet aan zonder commissie). Koppel in
+Screaming Frog de API's van **GA4, Search Console en PageSpeed Insights** — dan heb je gedrag,
+vertoningen en snelheid naast elke URL staan. Zet bij de configuratie *near duplicates* aan.
+
+### Technisch
+
+- **Crawldiepte** — markeer alles dat meer dan **drie kliks** diep zit.
+- **Unieke interne links** — markeer pagina's met minder dan een handvol inkomende interne links.
+  Weinig interne links is meestal een symptoom: óf je hebt het linkwerk nooit gedaan, óf er is te
+  weinig omliggende content om vanaf te linken.
+- **Laadsnelheid** — markeer een performancescore onder de 80; daarboven treedt de wet van de
+  afnemende meeropbrengst in. Verbeter je één pagina, dan tilt dat meestal de hele site.
+- **404's** — niet elke 404 is fout. Bewust verwijderde pagina's zijn prima. **De kwaadaardige
+  404's zijn die mét positieve KPI's**: verkeer, vertoningen, kliks, betrokkenheid. Sorteer daarop
+  en redirect die.
+
+### Inhoudelijk
+
+- **Dunne content** — onder de 500 woorden markeren, maar dat is een signaal om te onderzoeken,
+  geen opdracht om te schrappen. Dun is trouwens niet alleen woordental: een lange pagina die niets
+  toevoegt is ook dun.
+- **Dubbele content** — kijk naar bijna-duplicaten. Onder de 30% overlap is geen zorg.
+- **Irrelevante content** — filter de titels die je kernonderwerp **niet** bevatten. Pagina's buiten
+  je expertisegebied verwateren je autoriteit. Wees meedogenloos, maar kijk eerst of ze KPI's hebben
+  die je wilt behouden.
+- **Zwakke clusters** — een cluster is een groep pagina's rond één onderwerp. Presteert een onderwerp
+  slecht, kijk dan naar de ondersteuning eromheen in plaats van naar de pagina zelf. Twintig pagina's
+  is redelijk; zijn sterkste pijler krijgt uiteindelijk 75 tot 100 ondersteunende stukken.
+- **Wegwerkcriterium** — geen verkeer, geen vertoningen, geen backlinks: die pagina hoort er niet te
+  zijn. Weg ermee, tenzij hij nieuw is. Een compacte site verspilt geen crawlbudget.
+
+### Kansen
+
+- **Laaghangend fruit (positie 2-15)** — filter in Search Console op cluster, sorteer op positie.
+  **Check eerst in incognito**: sta je er al eerste, dan is heroptimaliseren zonde. Doe daarna drie
+  dingen tegelijk: heroptimaliseren op relevantie, interne links toevoegen, laadsnelheid verbeteren.
+  Die drie samen leveren bijna gegarandeerd verbetering. Helpt dat niet, dan pas backlinks.
+- **Clustermogelijkheden (positie 50+)** — hier zit een subtiel maar belangrijk punt: **een
+  gloednieuwe pagina die op 50-100 staat is normaal, negeer die.** Het gaat om gevestigde pagina's
+  die niet presteren. Die vertoningen zijn **bewijs van vraag**: staat er een query met vertoningen
+  waar je geen eigen pagina voor hebt, dan is dat het bewijs dat die pagina er moet komen.
+- **Contentveroudering** — content die ooit goed geoptimaliseerd was verliest terrein doordat er
+  nieuwe concurrenten bijkomen en de onderwerpenset verschuift. Herzie binnen een jaar. Een
+  herwerking levert typisch twee tot vier posities op.
+- **Concurrentframeworks** — kijk in Ahrefs of Semrush welke pagina's van je concurrent de meeste
+  links trekken. Meestal zie je een patroon (vaak statistiekpagina's). Dat framework herhaal je.
+  Je kunt een framework ook **uit een andere branche overplanten** waar jouw concurrenten het nog
+  nooit gezien hebben.
+
+### Zoekwoordkannibalisatie: het misverstand
+
+Hier wordt volgens hem enorm overdreven. Kannibalisatie is **niet** twee pagina's met hetzelfde
+zaadwoord — het is twee pagina's met hetzelfde zaadwoord **én dezelfde intentie**.
+
+Een commerciële productpagina ("beste tool voor X", enkelvoud, een verkooppagina) en een kopersgids
+("beste tools voor X", meervoud, onderzoekend) concurreren niet. **Ze tillen elkaar juist op.**
+Dat is precies wat je wilt bouwen.
+
+Problematisch wordt het pas bij twee pagina's met dezelfde intentie én dezelfde modifier — twee keer
+"SEO-training in Baltimore". Vuistregel: **een nieuwe pagina mag, zolang hij een ander doel heeft.**
+
 ## Zoekwoordenonderzoek
 
 ### Het sjabloon
@@ -286,6 +350,27 @@ Google, en het is het op één na meest geciteerde sociale kanaal in AI-zoekopdr
 
 **Bouw een funnel**: publiceer eerst je **conversievideo**, en laat alle latere video's daarnaar
 verwijzen.
+
+### Onderwerpdominantie in de praktijk
+
+Begin bij een zoekwoord waar je **al goed op scoort** — daar is bewezen dat je mee kunt. Dan:
+
+1. Verbeter eerst de pagina die er staat, als die niet bovenaan staat.
+2. Kijk of je datzelfde onderwerp op **YouTube** hebt behandeld. Zo niet, dan ligt daar een open kans.
+3. Kijk wat er **verder op pagina één staat**. Dat zijn geen obstakels maar kansen:
+   - **Reddit-threads** — vaak gearchiveerd en dus onbruikbaar, maar noteer welke subreddit steeds
+     terugkomt en zet een melding voor toekomstige threads over dat onderwerp.
+   - **Lijstjes op branchesites** — kijk of jouw product of dienst erin staat. Zo niet, dan is dat
+     je pitch.
+
+Zo pak je zoveel mogelijk posities op één zoekresultatenpagina.
+
+### Wat weet AI eigenlijk van je merk?
+
+Een gratis nulmeting: vraag een AI-platform wat het over je merk weet **zonder webzoekopdracht** —
+dan kijk je puur naar de trainingsdata in plaats van naar wat het ter plekke opzoekt. Bij een minder
+bekend merk moet je wat context meegeven. Het antwoord is geen exacte wetenschap en kan hallucinatie
+bevatten, maar het laat wel zien of het model überhaupt iets van je weet.
 
 ## Dagelijkse praktijk
 
