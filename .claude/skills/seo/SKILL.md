@@ -1,382 +1,403 @@
 ---
 name: seo
-description: SEO-strategie en AI-zichtbaarheid volgens de werkwijze van Nathan Gotch (Gotch SEO, Rankability, auteur van AI SEO for Dummies). Gebruik deze skill bij vragen over SEO, zoekmachineoptimalisatie, ranken in Google, zichtbaarheid in ChatGPT/Perplexity/AI Overviews, AI SEO, AEO of GEO, contentstrategie, topical authority, on-page optimalisatie, interne links, backlinks en autoriteit, lokale SEO, e-commerce SEO, of wanneer iemand zegt "waarom rankt deze pagina niet", "we worden niet genoemd door AI", "hoe krijg ik meer organisch verkeer", of "/seo" typt.
+description: SEO-strategie en AI-zichtbaarheid volgens de werkwijze van Nathan Gotch (Gotch SEO, Rankability, auteur van AI SEO for Dummies). Gebruik deze skill bij vragen over SEO, zoekmachineoptimalisatie, ranken in Google, zichtbaarheid in ChatGPT/Perplexity/AI Overviews, AI SEO, AEO of GEO, zoekwoordenonderzoek, contentstrategie, topical authority, on-page optimalisatie, technische SEO, interne links, backlinks en autoriteit, reviews, lokale SEO, e-commerce SEO, SEO-audits, of wanneer iemand zegt "waarom rankt deze pagina niet", "we worden niet genoemd door AI", "hoe krijg ik meer organisch verkeer", of "/seo" typt.
 ---
 
 # SEO en AI-zichtbaarheid
 
-Deze skill past de werkwijze toe van Nathan Gotch — vijftien jaar SEO, duizenden campagnes,
-oprichter van Gotch SEO en Rankability, auteur van *AI SEO for Dummies*. Gedistilleerd uit
-twintig van zijn recente video's (2026).
+De werkwijze van Nathan Gotch — vijftien jaar SEO, honderden campagnes, oprichter van Gotch SEO
+en Rankability, auteur van *AI SEO for Dummies*. Gedistilleerd uit 56 van zijn recente video's (2026).
 
-De skill is zelfdragend: alles staat hier. Er is geen externe kennismap nodig.
+Zelfdragend: alles staat hier, er is geen externe kennismap nodig.
 
 ## De kernstelling
 
-Er zijn nu twee scoreborden, en ze bewegen onafhankelijk van elkaar.
+Er zijn nu twee scoreborden, en ze bewegen onafhankelijk.
 
 - **Apple** komt niet voor in de traditionele resultaten voor "best laptops" en domineert
   tegelijk vrijwel elk AI-antwoord op die vraag.
-- Een merk in gezonde beef jerky staat op **plek 3 in Google** en wordt door **geen enkel**
-  AI-platform aanbevolen. Bij analyse: 4 vermeldingen in 82 citaties, waarvan 3 op de eigen site.
+- Een merk in gezonde beef jerky staat **plek 3 in Google** en wordt door **geen enkel**
+  AI-platform aanbevolen — 4 vermeldingen in 82 citaties, waarvan 3 op de eigen site.
 
-Het verschil in één zin: **SEO optimaliseert een pagina, AEO optimaliseert een entiteit.**
-SEO is de basislaag; AEO is daarop gebouwd. Goede SEO maakt AEO makkelijker, maar vervangt het niet.
+In één zin: **SEO optimaliseert een pagina, AEO optimaliseert een entiteit.** SEO is de basislaag,
+AEO staat daarbovenop. Goede SEO maakt AEO makkelijker maar vervangt het niet.
 
 ## De belangrijkste rankingfactor voor AI
 
-Dit is het scherpste inzicht in deze hele kennisbasis, en het is contra-intuïtief.
-
-HubSpot domineert de AI-antwoorden voor "beste CRM's". Maar hun eigen domein komt **niet eens
-voor in de citaties**. Wat wél zo is: **HubSpot wordt genoemd in 89% van de bronnen die AI
-citeert.**
+HubSpot domineert de AI-antwoorden voor "beste CRM's", maar hun eigen domein komt **niet eens voor
+in de citaties**. Wat wél zo is: **HubSpot wordt genoemd in 89% van de bronnen die AI citeert.**
 
 > Als je merk consistent verschijnt in de belangrijkste zoekresultaten, is de kans groot dat je
 > ook in de AI-antwoorden verschijnt. Echt geen magie.
 
-En de vervolgvondst die de klassieke SEO-reflex onderuithaalt: **72% van die merkvermeldingen
-bevat geen link.** Een link mag `nofollow` zijn, gesponsord, of een advertentielabel dragen —
-AI maakt daar geen onderscheid in. Het gaat om de vermelding, niet om de link.
+En de vondst die de klassieke SEO-reflex onderuithaalt: **72% van die merkvermeldingen bevat geen
+link.** Nofollow, gesponsord, advertentielabel — AI maakt geen onderscheid. Het gaat om de
+vermelding.
 
-Daaruit volgt de formule: **haal de vermeldingen op voor je commerciële zoekwoorden, en dat is
-je prospectlijst.**
+Daaruit volgt de formule: **haal de vermeldingen op voor je commerciële zoekwoorden, en dat is je
+prospectlijst.**
+
+**Geciteerd worden is niet hetzelfde als aanbevolen worden.** Staat jouw URL in de bronnen, dan is
+die informatie alleen gebruikt; de AI beslist zelf welk merk in het antwoord komt. Zelfvermelding
+telt bovendien steeds minder mee — AI herkent steeds beter dat een merk dat zichzelf aanbeveelt
+bevooroordeeld is.
 
 ### Verdiende versus eigen media, geschaald op concurrentie
 
-Hoeveel je van elk nodig hebt, hangt af van hoe competitief de niche is:
-
-| Concurrentie | Waar het zwaartepunt ligt |
+| Concurrentie | Zwaartepunt |
 |---|---|
-| **Hoog** (CRM, SaaS, verzekeringen) | Vrijwel alles op verdiende media. Je eigen site is maar één bron van de tien tot honderd die de AI raadpleegt. |
+| **Hoog** (CRM, SaaS, juridisch) | Vrijwel alles op verdiende media. Je site is één bron van de tien tot honderd die de AI raadpleegt. |
 | **Midden** | Eigen kanalen krijgen meer invloed. |
-| **Laag / lokaal** | Ongeveer gelijk. Bij lokale commerciële zoekopdrachten zijn de lokale bedrijven zélf vaak de geciteerde bronnen. |
+| **Laag / lokaal** | Ongeveer gelijk. Bij lokale commerciële queries zijn de lokale bedrijven zélf vaak de geciteerde bronnen. |
 
-Zijn stelregel: **80% van je tijd hoort buiten je eigen website te zitten**, en voor het
-beïnvloeden van AI eerder 90%. En: begin met het externe werk op **dag één**, niet in maand drie.
+Zijn stelregel: **80% van je tijd buiten je eigen website**, en voor AI eerder 90%. Begin met het
+externe werk op **dag één**, niet in maand drie.
 
-## Stap 1: nulmeting, en pas dán ingrijpen
+## De zeven rankingfactoren
 
-Meet per oppervlak apart voordat je iets verandert:
+Zijn expliciete rangorde voor traditioneel zoeken én AI-overzichten.
 
-- **Traditioneel**: Google, Bing, DuckDuckGo, Brave
-- **AI-antwoorden**: wordt het merk aanbevolen in ChatGPT, Perplexity, Gemini, AI Overviews, AI-modus?
-- **AI-citaties**: wordt het merk gebruikt als bron?
-- **Video**: YouTube, het videopakket in Google
-- **Sociaal**: TikTok, Facebook, LinkedIn, X — afhankelijk van de niche
+### 1. Indexering
 
-Zijn uitdrukkelijke waarschuwing: **grijp niet meteen in als je iets kapots ziet.** Leg eerst
-de nulmeting vast, juist bij klantwerk, anders kun je later niet aantonen wat je hebt opgeleverd.
+Zonder index geen ranking, en traditionele zoekresultaten zijn de belangrijkste voedingsbron voor
+AI-platforms.
 
-Maak er een **momentopname** van, geen dagelijkse tracking. Dagelijks posities volgen heeft geen
-zin als je die week niet aan die categorie werkt. Wat hij doet: een benchmarkrapport, een
-**logboek van wat je publiceert en wanneer**, en periodiek een nieuwe scan.
+- **Controleer met een `site:`-zoekopdracht** of de site überhaupt geïndexeerd is.
+- **robots.txt**: laat crawlers toe. Let ook op `CCBot` (Common Crawl, voedt onder meer OpenAI en
+  Anthropic) en `PerplexityBot`. Sitemap actueel, geen `noindex` op pagina's die moeten ranken.
+- **Maximaal drie kliks diep.** Zet belangrijke commerciële pagina's in de navigatie en link van
+  daaruit door. Meet met Screaming Frog: kolommen *crawl depth* en *unique inlinks*.
+- **HTML, geen JavaScript.** Vibe-codingplatforms als Lovable en Replit leveren standaard
+  JavaScript, en AI-platforms verwerken dat slecht tot niet. ChatGPT slaat je site dan over ten
+  gunste van een site die makkelijker te lezen is. WordPress en de meeste CMS'en zijn standaard goed.
+- **Laadtijd onder 3 seconden.** Crawlers hebben geen geduld; boven die grens kunnen LLM's je
+  overslaan.
 
-### De diagnose-checklist
+### 2. Zoekintentie matchen
 
-1. **Ranken we in traditioneel zoeken?** Zo nee: dicht dat gat eerst. Wie de traditionele
-   resultaten domineert, vergroot zijn kans op AI-zichtbaarheid aanzienlijk.
-2. **Worden we aanbevolen in AI-antwoorden?** Zo nee: kijk naar de citaties — staan we in die
-   bronnen genoemd? Zo niet, dan is dát het werk.
-3. **Wie wint er wel, en waar halen ze hun zichtbaarheid vandaan?** Dit is rekenwerk: meer
-   recensies, meer merkvermeldingen, meer merkzoekopdrachten. Die verschillen zijn je werklijst.
+Verplaats je in de zoeker. Bij een kopterm als "SEO" is de intentie niet te raden — dat maakt het
+een slecht doelwit. Meer context maakt het scherper: "beste SEO-tools voor bureaus" heeft een
+duidelijke intentie en laat zich vertalen naar één relevante pagina.
 
-## Stap 2: de citatie-analyse
+Bij twijfel: google de term en kijk welk format er domineert. Zijn het lijstjes, maak dan een lijstje.
 
-Dit is de centrale techniek en het werk waar hij tegenwoordig het grootste deel van zijn tijd
-in steekt.
+### 3. Contentrelevantie
 
-1. **Kies commerciële onderwerpen, geen informatieve.** Bij informatieve queries noemt AI
-   nauwelijks merken. Je zaadonderwerp heeft onderzoekende intentie: *"beste [oplossing] voor
-   [ideaal klantprofiel]"*.
-   - SaaS: "beste AEO-tools voor bureaus"
-   - Lokaal: "beste commerciële HVAC-bedrijven in [stad]"
-   - E-commerce: "beste lunchboxen voor volwassenen"
-2. **Draai het zaadwoord plus minstens vier tot vijf ondersteunende zoekwoorden uit de cluster
-   op álle platforms**: ChatGPT, Perplexity, Gemini, Google AI-modus, AI Overviews, Grok, Claude.
-   Elk platform geeft andere citaties; die spreiding is precies wat je wilt.
-3. **Extraheer de citaties** naar een spreadsheet. Dit kan gratis en handmatig — open de bronnen,
-   kopieer ze. Voor traditionele resultaten werkt een scraper-extensie.
-4. **Markeer per bron of jouw merk genoemd wordt.**
-5. **Prioriteer op frequentie.** Een URL die op vrijwel élk AI-platform terugkomt is je absolute
-   prioriteit — dat is overweldigend bewijs dat die bron zwaar meeweegt.
+Informatiewinst telt — Google en LLM's belonen pagina's die iets toevoegen. Maar **te uniek zijn
+werkt averechts.** Begin met relevantie, denk daarna pas aan differentiatie.
 
-Citaties zijn niet-deterministisch: dezelfde vraag geeft een andere set. Maar het is geen
-draaideur — over maanden blijven doorgaans **vijf tot zeven bronnen structureel in de top staan**.
+- Dek zoveel mogelijk dezelfde onderwerpen af als de concurrenten die ranken.
+- **Aantal woorden = de mediaan van de concurrenten**, als richtpunt voor de schrijver. Het is geen
+  rankingfactor.
+- Zet het hoofdzoekwoord in: **URL, titel, meta-omschrijving, H1, de eerste zin**, een variant in de
+  **eerste H2**, en nog één keer in de **conclusie**.
+- Richt op dekking, niet op zoekwoorden strooien.
 
-Wat er uit de lijst rolt, categoriseer je op type en pak je in deze volgorde aan:
+### 4. Topical authority
 
-1. **Bedrijvengidsen en directories** — laaghangend fruit, gewoon doen
-2. **Communities** — Reddit duikt vrijwel altijd op en is toegankelijk
-3. **Blogs en influencers** — benaderen voor vermelding
-4. **Verdiende media** — persberichten worden aantoonbaar opgepikt
+Geen losse acties. Elke stuk content hoort in een cluster.
 
-En de outreach hoeft niet subtiel te zijn:
+Pijlerpagina → ondersteunende pagina's. Een beproefd patroon voor commerciële clusters:
+*"[concurrent] alternatieven"* → *"[concurrent A] versus [concurrent B]"* → *"[concurrent] versus ons"*.
+Herhaal dat voor je **vijf tot tien belangrijkste concurrenten**.
 
-> Betaalde samenwerking. Accepteert u gesponsorde berichten? Ik ben geïnteresseerd in adverteren.
+Meer ondersteuning geeft ook meer interne links, en dat betekent: **krijgt één pagina in de cluster
+een backlink, dan profiteert de hele cluster.**
 
-Een advertentie werkt net zo goed als een organische vermelding. Er is geen bewijs dat AI daarin
-discrimineert.
+### 5. Backlinkkwaliteit
 
-## Stap 3: kies één categorie
+Eén link van een vertrouwde partij is meer waard dan honderd middelmatige. Drie tests:
 
-**Eén categorie, 90 tot 180 dagen, volledig afdekken.** Dit is zijn hardste regel en zijn
-belangrijkste verklaring voor waarom bedrijven verliezen: ze gaan overal een centimeter de
-diepte in.
+1. **Autoriteit** — heeft die site zelf een goed backlinkprofiel? Een link van Forbes is het waard,
+   ook als hij nofollow is.
+2. **Is het een AI-bron?** Heeft die site zelf AI-citaties? Zo ja, dan wordt hij gebruikt bij
+   retrieval — en een vermelding daar vergroot je kans om in AI-antwoorden te komen. Dit is de test
+   die de meeste mensen missen.
+3. **Relevantie** — lokaal kan dat een softbalcompetitie in je stad zijn; landelijk zijn het blogs
+   en nieuwssites in je niche.
 
-- **E-commerce**: niet de hele webshop, maar één categorie (zijn voorbeeld: creatine). Ook de
-  technische audit scope je op die ene categorie.
-- **Lokaal**: 25 tot 30 onderwerpen rond één stad voordat je naar de volgende gaat — en kies dan
-  een **aangrenzende** stad, zodat je relevantie doorbouwt.
+Alle drie is ideaal. Relevantie mag ontbreken als de site extreem betrouwbaar is (Wikipedia is voor
+vrijwel niemand 100% relevant, maar een vermelding is enorm waardevol).
 
-Sjabloonpagina's per stad met dezelfde tekst werken niet. In zijn voorbeeld: 41 pagina's met 83%
-overlap. Snoeien, samenvoegen, redirecten — niet eerst optimaliseren.
+### 6. Domeinsterkte
 
-## Stap 4: topic map en zoekwoorden
+Eén goede link is mooi, maar je hebt **consistente groei op lange termijn** nodig. Vergelijk je DR
+of autoriteitsscore én je aantal verwijzende domeinen met je drie belangrijkste concurrenten. Dat
+verschil is je doel.
 
-1. **Kies je zaad** met onderzoekende intentie (zie hierboven).
-2. **Breid uit via Google Search Console**: filter op je zaadonderwerp, download de queries, en
-   laat een AI daar ondersteunende onderwerpen uit afleiden.
-3. **Streef naar minstens 100 unieke onderwerpen** die direct aan het zaad raken, geordend in clusters.
-4. **Visualiseer het als een topic map**: een pijlerpagina in het midden, ondersteunende
-   onderwerpen eromheen, ingedeeld naar niveau.
+### 7. Merksignalen
 
-**Wanneer maak je een nieuwe pagina in plaats van hetzelfde zoekwoord op een bestaande?**
-Als de **intentie** anders is. "Dakdekker in X" is breed en dubbelzinnig; "dakreparatie",
-"dakinspectie" en "stormschade" zijn afzonderlijke intenties, dus afzonderlijke pagina's.
+Verzamel **recensies op de platforms die er in jouw niche toe doen.**
+
+- **Lokaal: 90% van je tijd op het Google Bedrijfsprofiel**, plus twee tot drie nicheplatforms
+  (thuisdiensten: Angi, Thumbtack; juridisch: Avvo, Super Lawyers).
+- **Diversiteit is cruciaal, want ChatGPT gebruikt Google Bedrijfsprofielen niet voor retrieval.**
+  Het put uit gezaghebbende directories zoals Yelp. Rank je perfect in het lokale pakket en sta je
+  nergens in de directories, dan blijf je onzichtbaar in AI.
+- **Hoe vind je de jouwe?** Draai een commerciële query ("beste letselschadeadvocaten in [stad]"),
+  klik door naar de citaties en kijk welke platforms daar worden gebruikt. Dat zijn je doelen.
+
+## Zoekwoordenonderzoek
+
+### Het sjabloon
+
+Per zoekwoord leg je vast: **prioriteit, bron, cluster, zoekwoord, SERP-functies, zoekvolume, KD,
+CPC, huidige positie, huidige URL, intentie, kanscategorie.**
+
+Drie kolommen worden vaak verkeerd begrepen:
+
+- **CPC is geen SEO-metriek maar een waardemeter.** Betalen veel adverteerders voor een term, dan is
+  die term waarschijnlijk waardevol. Filter op hogere CPC.
+- **KD meet alleen hoeveel links je op paginaniveau nodig hebt.** Dat is de helft van het verhaal;
+  je moet ook de **domeinsterkte van de concurrenten** meewegen. Pas die twee samen vertellen je hoe
+  competitief een SERP is.
+- **SERP-functies bepalen je verwachte CTR** — zie hieronder.
+
+**Intentie** houd je bewust grof: informatief of commercieel. Dat onderscheid alleen brengt je al ver.
+
+### Kanscategorieën op basis van je huidige positie
+
+| Positie | Categorie | Wat het betekent |
+|---|---|---|
+| **2-15** | Laaghangend fruit | Hier zit je snelste winst. |
+| **16-50** | Bestaand zoekwoord | Belangrijk, maar gewoon onderhoud. |
+| **> 50** | Clusteringmogelijkheid | Vaak een **intentiemismatch**: de pagina is niet de juiste pagina voor die query. Kandidaat voor een eigen pagina. |
+
+Bij die laatste groep: onderzoek waaróm hij niet presteert. Ontbrekende interne links, te dunne
+onderwerpdekking, te weinig backlinks — maar het is vaak intentie.
+
+Er zijn twee sporen: zoekwoorden waar je al voor in de top 100 staat, en volledig nieuwe zoekwoorden.
+
+### Waar je zoekwoorden vindt
+
+1. **Google Ads Keyword Planner** — volume en trends, gratis. Let op: de kolom *concurrentie* gaat
+   over advertenties, **niet** over SEO. Verwar die niet.
+2. **Google Search Console** — kliks, impressies, CTR, positie. Echte queries van je eigen site, maar
+   geen concurrentiedata.
+3. **Google zelf** — autosuggesties, "andere vragen", gerelateerde zoekopdrachten. Blijf doorklikken
+   en label waar je ze vandaan hebt.
+4. **Reddit** — onderwerpen waar mensen nú over praten. Meestal weinig tot geen volume, en juist
+   daarom een voorsprong.
+5. **YouTube** — suggesties, en de kanalen van concurrenten. **Sorteer op recent, niet op populair**:
+   een video van vijf jaar geleden met veel views herhaalt zich niet, want dat onderwerp is inmiddels
+   verzadigd.
+
+### Zoekwoorden met nul volume zijn geen slechte zoekwoorden
+
+Dit is een van zijn scherpste punten. De meeste queries zijn onbekend bij SEO-tools; zelfs Google
+kent de overgrote meerderheid niet. En query's worden **langer en gespreksachtiger** door AI, dus dat
+probleem groeit.
+
+Kijk daarom naar de **groei jaar op jaar** in plaats van naar absoluut volume. Zijn voorbeeld: "AEO
+services" had nauwelijks volume — en géén enkele concurrent die erop richtte. Publiceren, ranken,
+voorsprong opbouwen, en tegen de tijd dat de term groeit sta je er al.
+
+### SERP-analyse per zoekwoord
+
+Open het zoekwoord in een incognitovenster en kijk **wat er verschijnt**, niet alleen naar de tien
+blauwe links:
+
+- **Welke SERP-functies staan er?** Een lokaal pakket betekent dat je twee posities wilt: het
+  organische resultaat én je Google Bedrijfsprofiel.
+- **Welke directories staan erin?** Yelp, Clutch en vergelijkbare platforms. Sta je daar niet in, dan
+  is dat werk — en het is cruciaal voor AI, want die platforms worden gebruikt bij retrieval.
+- **Wat staat er op YouTube voor deze term?** Zijn dat verouderde video's, dan ligt dat kanaal open.
 
 ### Prioriteer op verwachte klikken, niet op positie
 
-Een derde plaats betekent niet meer wat het was. Klapt het AI-overzicht open, dan zakt resultaat
-drie volledig onder de vouw. Bij "best laptops": vier advertenties plus een AI-overzicht duwen
-alle organische resultaten weg.
+Een derde plaats betekent niet meer wat het was. Klapt het AI-overzicht open, dan zakt resultaat drie
+volledig onder de vouw. Bij "best laptops" duwen vier advertenties plus een AI-overzicht alles weg.
 
 - Plek één haalt ruwweg **30% CTR** op de klassieke blauwe links.
-- Sta je niet in de top drie, dan is een klik erg onwaarschijnlijk.
-- **AI-overzichten zijn veel schadelijker voor je CTR dan een forumblok**, want ze lossen de vraag
-  op in plaats van tot verder zoeken aan te zetten.
+- Buiten de top drie is een klik onwaarschijnlijk.
+- **AI-overzichten schaden je CTR veel meer dan een forumblok**, want ze beantwoorden de vraag in
+  plaats van tot doorzoeken aan te zetten.
 
-Doe dus een volledige SERP-analyse, niet alleen de tien blauwe links. **De SERP-functies zijn je
-concurrenten om de klik.**
+**De SERP-functies zijn je concurrenten om de klik.**
 
-Zijn verwachting over de blauwe links: die verdwijnen niet, maar worden vooral een bibliotheek
-die de AI-platforms voedt in plaats van iets waar gebruikers zelf doorheen klikken. Reden te meer
-om er te staan — je wilt een van de bronnen zijn.
+Zijn verwachting: de blauwe links verdwijnen niet, maar worden vooral een bibliotheek die de
+AI-platforms voedt. Reden te meer om er te staan — je wilt een van de bronnen zijn.
 
-## Stap 5: content
+## Categoriefocus
+
+**Eén categorie, 90 tot 180 dagen, volledig afdekken.** Dit is zijn hardste regel en zijn
+verklaring voor waarom bedrijven verliezen: ze gaan overal een centimeter de diepte in.
+
+- **E-commerce**: niet de hele webshop, maar één categorie. Scope ook je technische audit daarop.
+- **Lokaal**: 25 tot 30 onderwerpen rond één stad voordat je verder gaat — en dan naar een
+  **aangrenzende** stad, zodat je relevantie doorbouwt.
+
+Sjabloonpagina's per stad werken niet: in zijn voorbeeld 41 pagina's met 83% overlap. Snoeien,
+samenvoegen, redirecten — niet eerst optimaliseren.
+
+## Content
 
 ### Eén pagina, één intentie — en conversie eerst
 
-De meest voorkomende structurele fout: één pagina die drie doelgroepen tegelijk bedient. Dat zijn
-drie intenties en drie koopmotieven. Zelfs als zo'n pagina rankt, converteert hij niet.
+Eén pagina die drie doelgroepen bedient is drie intenties en drie koopmotieven. Zelfs als hij rankt,
+converteert hij niet.
 
 > Begin altijd met conversie. SEO komt daarna.
 
-Is een pagina fundamenteel verkeerd opgezet, dan bouw je hem opnieuw in plaats van te optimaliseren.
+Fundamenteel verkeerd opgezet? Opnieuw bouwen, niet optimaliseren.
 
-### On-page: de basis, en niet meer
-
-- Hoofdonderwerp in **URL**, **titel-tag**, **H1**, **meta-omschrijving** en de **eerste zin**.
-- **Entiteiten expliciet maken**: zet de staat of provincie erbij als een plaatsnaam meervoudig
-  voorkomt, zodat stad én regio als entiteit herkenbaar zijn.
-- **Geen exact-match-varianten najagen.** LLM's begrijpen synoniemen prima; dat werk is achterhaald.
-
-### Onderwerpdekking
-
-Vergelijk met de concurrenten die het onderwerp wél volledig afdekken en zoek de gaten. In zijn
-dakdekkersvoorbeeld ontbraken 44 relevante subonderwerpen. Ideaal analyseer je **40 tot 50
-concurrenten** per zoekwoord, haal je de entiteiten eruit en prioriteer je op frequentie.
-
-Let op: laat je een LLM dit zonder onderbouwing doen, dan hallucineert hij. Baseer het op wat
-aantoonbaar rankt.
-
-Check ook op **siteniveau** met een `site:`-zoekopdracht plus het onderwerp. Eén pagina over een
-onderwerp verslaat nooit iemand met dertig.
+**Nieuwe pagina of bestaande?** Als de **intentie** anders is, een nieuwe. "Dakdekker in X" is breed;
+"dakreparatie", "dakinspectie" en "stormschade" zijn aparte intenties.
 
 ### Structuur modelleren met swipe files
 
-Niet kopiëren — **modelleren**. Het gaat om structuur, niet inhoud.
+Niet kopiëren — **modelleren**. Kies vijf tot tien zoekwoorden, pak per zoekwoord de twee tot drie
+best presterende pagina's, en zoek vooral URL's die **zowel ranken als geciteerd worden**. Destilleer
+daar een herbruikbaar sjabloon per contenttype uit.
 
-1. Kies vijf tot tien belangrijke zoekwoorden.
-2. Pak per zoekwoord de twee tot drie best presterende pagina's.
-3. Zoek vooral URL's die **zowel ranken als geciteerd worden in AI**.
-4. Destilleer daar een herbruikbaar sjabloon per contenttype uit (lijstje, lokale servicepagina,
-   categoriepagina).
+Een structuur die zich honderden keren bewees gooi je niet overboord voor iets onbewezens. Je unieke
+bijdrage zit in inhoud en expertise, niet in de opbouw.
 
-Een structuur die zich honderden keren bewezen heeft gooi je niet overboord voor iets onbewezens.
-Je unieke bijdrage zit in de inhoud en expertise, niet in de opbouw.
-
-Beproefde opbouw voor een lokale servicepagina: diensten, vertrouwensbalk, waarom voor dit bedrijf
-kiezen, resultaten en sociaal bewijs, getuigenissen, hoe het werkt, werkgebied, veelgestelde vragen.
+Beproefde opbouw lokale servicepagina: diensten, vertrouwensbalk, waarom voor dit bedrijf kiezen,
+resultaten en sociaal bewijs, getuigenissen, hoe het werkt, werkgebied, veelgestelde vragen.
 
 ### De "paarse koe": 10% beter
 
-Analyseer je vijf belangrijkste concurrenten voor het zoekwoord en vraag: welke invalshoek maakt
-onze pagina meetbaar beter? Het hoeft niet radicaal anders — soms een betere gebruikerservaring,
-soms meer data, soms echte ervaring in de tekst.
+Analyseer je vijf belangrijkste concurrenten en zoek de invalshoek die je pagina meetbaar beter maakt.
+Niet radicaal anders — soms een betere gebruikerservaring, soms meer data, soms echte ervaring.
 
-### Pijler plus ondersteuning
+## Het merkverhaal beheersen
 
-Een perfecte pagina zonder ondersteuning wint niet. Publiceer na je hoofdonderwerp **minstens negen
-ondersteunende stukken** die eraan raken, onderling verbonden met interne links. Van één naar
-vijftien pagina's is bijna gegarandeerd vooruitgang — en vrijwel niemand doet het.
+AI leert alleen wat het aangeboden krijgt. Beantwoord jij een merkvraag niet, dan zoekt de AI door tot
+hij ergens iets vindt — en dat klopt lang niet altijd.
 
-## Stap 6: het merkverhaal beheersen
+- **Bouw een "super-FAQ"** die álle merkvragen beantwoordt ("Heeft [merk] een API?", "Wat kost [merk]?").
+  Uit onderzoek van duizenden merkqueries blijkt dat AI die informatie rechtstreeks bij de bron ophaalt.
+- **Ruim je entiteit op**: naam, adres, telefoonnummer, merkomschrijvingen consistent in álle profielen
+  en directories. Inconsistente bronnen leveren onjuiste AI-antwoorden op.
 
-AI leert alleen wat het aangeboden krijgt. Als jij een merkvraag niet beantwoordt, zoekt de AI
-door tot hij ergens een antwoord vindt — en dat is lang niet altijd juist.
+## Uitbreiden naar andere kanalen
 
-- **Bouw een "super-FAQ"**: een pagina of set pagina's die álle merkgerelateerde vragen beantwoordt
-  ("Heeft [merk] een API?", "Wat kost [merk]?"). Uit onderzoek van duizenden merkzoekopdrachten
-  blijkt dat AI die informatie rechtstreeks bij de bron ophaalt — jouw site.
-- **Ruim je entiteit op**: naam, adres, telefoonnummer, merkomschrijvingen en merkgegevens moeten
-  in álle profielen en directories consistent zijn. Inconsistente bronnen leveren onjuiste
-  AI-antwoorden op.
+Bepaal eerst welke van je eigen kanalen **indexeerbaar** zijn: plak de profiel-URL in Google en kijk of
+recente berichten verschijnen. Zo ja, dan staat het kanaal op je lijst.
 
-## Stap 7: uitbreiden naar andere kanalen
+**YouTube is vrijwel altijd de beste volgende stap**: op één na grootste zoekmachine, video's ranken in
+Google, en het is het op één na meest geciteerde sociale kanaal in AI-zoekopdrachten.
 
-Eerst je website, dan de rest. Bepaal welke van je eigen kanalen al **indexeerbaar** zijn: plak de
-profiel-URL in Google en kijk of je recente berichten verschijnen. Zo ja, dan staat het kanaal op
-je distributielijst.
+- **Lange video's worden wél als bron gebruikt** — de AI leest het transcript.
+- **Shorts vrijwel niet**: te weinig context om uit te putten. Voor **SERP-dominantie** in klassiek
+  zoeken zijn Shorts wél sterk. Verwar die twee doelen niet.
+- **Lees je artikel niet voor** — zet het om naar een script met een eigen invalshoek.
 
-**YouTube is vrijwel altijd de beste volgende stap**: op één na grootste zoekmachine, video's
-ranken in Google, en het is het op één na meest geciteerde sociale kanaal in AI-zoekopdrachten.
-
-- **Lange video's worden wel als bron gebruikt** — de AI kijkt geen video maar leest het transcript.
-- **Shorts vrijwel niet**: te kort script, te weinig context. Hij ziet ze over e-commerce, SaaS en
-  lokaal nooit terug in retrieval. Voor **SERP-dominantie** in klassiek zoeken zijn Shorts wél sterk.
-  Verwar die twee doelen niet.
-- **Lees je artikel niet voor** — zet het om naar een videoscript met een eigen invalshoek.
-
-**Bouw een YouTube-funnel:** publiceer eerst je **conversie-asset** (de video die je product
-demonstreert en naar een landingspagina leidt). Alle latere video's krijgen een CTA die daarnaartoe
-verwijst. Dat bouwt vertrouwen, houdt kijkers langer op het platform en bouwt expertise op je kanaal.
+**Bouw een funnel**: publiceer eerst je **conversievideo**, en laat alle latere video's daarnaar
+verwijzen.
 
 ## Dagelijkse praktijk
 
-Drie dingen, elke dag:
+**1. Optimaliseer één bestaand item.** Zoek in Search Console de zoekwoorden op **positie 2 tot 15**.
+Controleer zoekwoord in titel, meta, H1 en eerste zin. **Wijzig de URL niet** als de pagina daar al
+staat — te riskant. Vul daarna de onderwerpgaten aan en verbeter de interne links. Kun je nauwelijks
+pagina's vinden die zouden moeten linken, dan heb je meer ondersteunende content nodig.
 
-**1. Optimaliseer één bestaand item.** Zoek in Search Console zoekwoorden op **positie 2 tot 15** —
-laaghangend fruit. Controleer of het zoekwoord in titel, meta, H1 en eerste zin staat. **Wijzig de
-URL niet** als de pagina al in die zone staat; te riskant. Vul daarna de onderwerpgaten aan — dat is
-dekking verbeteren, geen zoekwoorden injecteren. Verbeter tot slot de interne links. Kun je nauwelijks
-pagina's vinden die zouden moeten linken, dan is dat het signaal dat je meer ondersteunende content nodig hebt.
+**2. Publiceer één nieuw item.** Neem een pagina die goed presteert en zoek de queries waarop diezelfde
+pagina **slecht** scoort (onder positie 50). Die passen vaak niet bij de intentie van de pagina. Bouw
+daar een eigen pagina voor: je ondersteunt het origineel én pakt bereik met een exacte intentiematch.
 
-**2. Publiceer één nieuw item.** Neem een pagina die al goed presteert en zoek in Search Console de
-zoekwoorden waarop diezelfde pagina **slecht** scoort — meestal onder positie 50. Die queries passen
-vaak niet bij de intentie van de pagina. Bouw daar een eigen pagina voor. Dit werkt bijna altijd als
-de pagina ergens in de top 100 staat maar de intentie niet dekt, en het levert twee dingen tegelijk:
-ondersteuning voor de oorspronkelijke pagina, en bereik met een exacte intentiematch.
-
-**3. Doe extern werk.** Vijf tot tien outreach-mails per dag, of vijf tot tien merkvermeldingen
-opschonen.
-
-Een jaar van dit ritme levert enorme vooruitgang op.
+**3. Doe extern werk.** Vijf tot tien outreach-mails per dag, of vijf tot tien merkvermeldingen opschonen.
 
 ## Snel scoren op opkomende zoekwoorden
 
-De uitzondering op "SEO duurt maanden": een **nieuw onderwerp in je branche heeft nauwelijks
-concurrentie**.
+Een nieuw onderwerp in je branche heeft nauwelijks concurrentie. Zijn voorbeeld: HubSpot lanceerde een
+AEO-tool, hij bouwde direct *"[product] alternatieven"* en *"[eigen product] versus [product]"* en stond
+binnen zes uur op nummer één, inclusief vermelding in de AI-overzichten.
 
-Zijn voorbeeld: HubSpot lanceerde een AEO-tool. Hij bouwde direct twee pagina's — *"[product]
-alternatieven"* en *"[eigen product] versus [product]"* — en stond binnen zes uur op nummer één,
-inclusief vermelding in de AI-overzichten.
-
-Het patroon is herhaalbaar: houd lanceringen en trends in je niche in de gaten, en bouw meteen de
-vergelijkings- en alternatievenpagina's. Daarna groeit de zichtbaarheid vanzelf door van Google naar
-ChatGPT en Perplexity over drie tot zes maanden; Grok loopt daarin doorgaans achter.
-
-Dit sluit aan bij zijn bredere aanbeveling voor concurrentie-content: begin met *"[concurrent]
-alternatieven"*, breid uit naar *"[concurrent A] versus [concurrent B]"* en dan naar *"[concurrent]
-versus ons"*. Je rankt op de merknamen van je concurrenten én kunt op die pagina je eigen aanbod
-positioneren.
+Houd lanceringen en trends in je niche in de gaten en bouw meteen de vergelijkingspagina's. De
+zichtbaarheid groeit daarna door van Google naar ChatGPT en Perplexity over drie tot zes maanden; Grok
+loopt achter.
 
 ## Lokale SEO
 
-- **Google Bedrijfsprofiel eerst.** De belangrijkste vestigingsplaats moet kloppen met je werkelijke
-  adres. In zijn voorbeeld stond een bedrijf in Ballwin met het profiel geoptimaliseerd op
-  Chesterfield; alleen dat corrigeren kan vijf tot zeven posities schelen.
-- **Recensies structureel binnenhalen**, niet in golven.
-- **Directories**: profiel aanmaken, recensies verzamelen, en de plaatsentiteit expliciet noemen.
-- **Lokale sponsoring**: verenigingen, evenementen, organisaties met een vertrouwde positie ter plaatse.
-  Klein budget, behandel het als advertentiekosten — je koopt zichtbaarheid bij entiteiten die daar
-  al vertrouwd zijn.
-- Wil je een stad echt domineren zonder adres daar, dan is dat een puur organische strategie buiten
-  het lokale pakket. Wees daar eerlijk over.
+- **Google Bedrijfsprofiel eerst.** De vestigingsplaats moet kloppen met je werkelijke adres. Een bedrijf
+  in Ballwin met een profiel geoptimaliseerd op Chesterfield: alleen dat corrigeren kan vijf tot zeven
+  posities schelen.
+- **Recensies structureel binnenhalen**, en op meerdere platforms — zie rankingfactor 7.
+- **Directories**: profiel aanmaken, recensies verzamelen, plaatsentiteit expliciet noemen.
+- **Lokale sponsoring**: klein budget, behandel het als advertentiekosten. Je koopt zichtbaarheid bij
+  entiteiten die ter plaatse al vertrouwd zijn.
 
-## Linkbait: onderzoek, geen generieke content
+## Linkbait en linkbuilding
 
-Wat vanzelf links en vermeldingen aantrekt is materiaal op basis van **onderzoek en data** — niet iets
-wat een AI in twee seconden genereert.
+Wat vanzelf links en vermeldingen aantrekt is materiaal op basis van **onderzoek en data**. Laat een AI
+ideeën genereren die **specifiek zijn voor jouw categorie** — "geef me linkbait-ideeën" levert niets op.
+Kies er één, laat er diepgaand onderzoek op los, en zet dat om in een vormgegeven stuk. Het onderzoek is
+grondstof, geen publicatie.
 
-Werkwijze: laat een AI ideeën genereren die **specifiek zijn voor jouw categorie**. "Geef me
-linkbait-ideeën" levert niets op; zelfs "we verkopen beef jerky" is te breed. Kies er één uit, laat er
-diepgaand onderzoek op los, en zet dat om in een goed vormgegeven stuk. Gebruik het onderzoek als
-grondstof, publiceer het niet rauw.
-
-Blijf daarnaast gewoon **klassieke linkbuilding doen** voor de autoriteit van je domein. Dat is nog
-steeds nodig om te ranken — en ranken is wat je tot geciteerde bron maakt. In honderden audits van
-slecht presterende sites lag de oorzaak vrijwel altijd eerst buiten de site: geen backlinks, slechte
-backlinks, of een zwak ankerprofiel.
+Blijf daarnaast **klassieke linkbuilding doen** voor domeinautoriteit. In honderden audits van slecht
+presterende sites lag de oorzaak vrijwel altijd eerst buiten de site: geen backlinks, slechte backlinks,
+of een zwak ankerprofiel.
 
 ## AI als werkwijze
 
-Hij werkt met een kennisbasis die hij "SEO-superintelligentie" noemt:
+Zijn kennisbasis ("SEO-superintelligentie"):
 
-- **Merkintelligentie** — producten, aanbod, veelgestelde vragen, beleid, sociaal bewijs, merkstem,
-  en expliciet ook de **aliassen** van het merk.
-- **Een entity record** als **bron van waarheid**. Het belangrijkste document; alles wat je later op
-  consistentie controleert toets je hieraan. Loop het regel voor regel na met menselijk inzicht.
+- **Merkintelligentie** — producten, aanbod, veelgestelde vragen, beleid, sociaal bewijs, merkstem, en
+  expliciet de **aliassen** van het merk.
+- **Een entity record** als **bron van waarheid**. Loop het regel voor regel na met menselijk inzicht.
 - **Data** — Search Console (16 maanden), Analytics, Bing Webmaster Tools, gedragsdata, positie- en
-  citatietracking. Label elke import met een datum. Let op: een GSC-export geeft maar circa 1.000
-  queries; per pagina exporteren werkt maar is traag, via de API haal je er tot 50.000 op.
-- **Ervaring en expertise** — interview één tot drie vakinhoudelijke experts, neem op, transcribeer.
-  **Gooi het ruwe transcript er niet in.** Comprimeer het tot een gestructureerd artefact; een
-  interview van twee uur wordt zo ongeveer 2.900 woorden. Reden: de AI moet het makkelijk kunnen
-  terugvinden, en dat voorkomt hallucinaties. Streef naar **tien artefacten** in je kennisbank.
-- **Een uitvoeringslogboek** — leg elke actie vast, zodat je later kunt nagaan waarom iets wel of
-  niet werkte.
+  citatietracking. Label elke import met een datum. Een GSC-export geeft maar circa 1.000 queries; via
+  de API haal je er tot 50.000 op.
+- **Ervaring en expertise** — interview één tot drie experts, transcribeer, en **gooi het ruwe transcript
+  er niet in**. Comprimeer tot een gestructureerd artefact; twee uur interview wordt ongeveer 2.900
+  woorden. Streef naar **tien artefacten**.
+- **Een uitvoeringslogboek** — leg elke actie vast, zodat je later kunt nagaan waarom iets werkte.
 
 Twee praktische regels:
 
-- **Sla artefacten lokaal op als markdown**, niet opgesloten bij één aanbieder. Dan kun je vrij
-  wisselen van model en houd je je materiaal in handen.
-- **Gebruik niet je zwaarste model voor deterministische klusjes.** Een transcript comprimeren vraagt
-  geen redeneerwerk; daar verbrand je alleen tokens. Zet zware modellen in waar echt geredeneerd moet
-  worden.
+- **Sla artefacten lokaal op als markdown**, niet opgesloten bij één aanbieder.
+- **Gebruik niet je zwaarste model voor deterministische klusjes.** Een transcript comprimeren vraagt geen
+  redeneerwerk; daar verbrand je alleen tokens.
 
 ### Wat AI wel en niet kan
 
-> AI kan geen strategie ontwikkelen zoals ik je laat zien. Het lukt gewoon niet. En geloof me,
-> ik heb het geprobeerd.
+> AI kan geen strategie ontwikkelen zoals ik je laat zien. Het lukt gewoon niet. En geloof me, ik heb het
+> geprobeerd.
 
-Goed in: onderzoek, data-analyse, eerste versies van content en design. Slecht in: strategie. Zonder
-echte data geeft het algemene aanbevelingen zonder onderbouwing. Er moet altijd een mens tussen.
+Goed in onderzoek, data-analyse en eerste versies. Slecht in strategie, en zonder echte data geeft het
+algemene aanbevelingen zonder onderbouwing.
 
 > De magie zit in het redigeren.
 
-Je hoeft nooit meer met een leeg canvas te beginnen, maar de eerste generatie is het begin van het
-werk. Behandel content als een product: reken op twee tot vier revisies voor zowel tekst als ontwerp.
+Behandel content als een product: reken op twee tot vier revisies voor zowel tekst als ontwerp.
+
+## Meten
+
+- **Momentopname, geen dagelijkse tracking.** Dagelijks posities volgen heeft geen zin als je die week
+  niet aan die categorie werkt. Een benchmarkrapport, een logboek van wat je publiceert, en periodiek een
+  nieuwe scan.
+- **Grijp niet meteen in** als je iets kapots ziet — zeker bij klantwerk. Leg eerst de nulmeting vast,
+  anders kun je later niet aantonen wat je hebt opgeleverd.
+- **Wees sceptisch over AI-rank-trackers.** Hij bestudeerde er meer dan dertig, gemiddeld $337 per maand,
+  en ziet claims die niet kloppen. Meten is nodig, maar controleer wat een tool werkelijk meet.
+- **Citaties zijn niet-deterministisch** — dezelfde vraag geeft een andere set. Maar het is geen
+  draaideur: over maanden blijven doorgaans **vijf tot zeven bronnen structureel in de top staan**.
 
 ## Werkwijze
 
-1. **Meet eerst per oppervlak** en leg de nulmeting vast vóór je iets verandert.
-2. **Bepaal welk van de twee problemen speelt**: ranken we niet (klassiek SEO-probleem), of ranken we
-   wel maar wordt het merk niet genoemd (citatie- en autoriteitsprobleem)? Die twee vragen totaal
-   verschillend werk.
-3. **Doe de citatie-analyse** voordat je aan content begint. Daar komt de werklijst uit.
-4. **Dwing focus af.** Eén categorie, 90 dagen. Zeg het als iemand te breed begint — dat is volgens
-   hem de hoofdoorzaak van verliezen.
-5. **Weeg de klikwaarde**, niet alleen de positie. Een top-3 onder een AI-overzicht is weinig waard.
-6. **Controleer bij elke pagina eerst intentie en conversie**, dan pas optimalisatie.
-7. **Wees concreet met aantallen**: 100+ onderwerpen per zaad, 25-30 onderwerpen per stad, 5-10
-   zoekwoorden voor je swipe file, 40-50 concurrenten per zoekwoord, 10 kennisartefacten, 9
-   ondersteunende stukken per hoofdonderwerp, 5-10 outreach-mails per dag, 2-4 revisies.
+1. **Meet eerst per oppervlak** — traditioneel, AI-antwoorden, AI-citaties, video, sociaal — en leg de
+   nulmeting vast vóór je iets verandert.
+2. **Bepaal welk probleem speelt**: ranken we niet (klassiek), of ranken we wel maar wordt het merk niet
+   genoemd (citatie- en autoriteitsprobleem)? Dat vraagt totaal verschillend werk.
+3. **Loop de zeven rankingfactoren af** als iets niet rankt. Begin bij indexering — dat is de goedkoopste
+   en meest overgeslagen oorzaak.
+4. **Doe de citatie-analyse** voor je aan content begint. Daar komt de werklijst uit.
+5. **Dwing focus af.** Eén categorie, 90 dagen.
+6. **Weeg de klikwaarde**, niet alleen de positie.
+7. **Controleer intentie en conversie** voor je aan optimalisatie begint.
+8. **Wees concreet met aantallen**: 100+ onderwerpen per zaad, 25-30 per stad, 5-10 zoekwoorden voor je
+   swipe file, 5-10 concurrenten voor je vergelijkingscluster, 10 kennisartefacten, 9 ondersteunende
+   stukken per hoofdonderwerp, 5-10 outreach-mails per dag, 2-4 revisies.
 
 ## Let op
 
-- **Zijn invalshoek is uitgesproken AI-eerst.** Dat is een standpunt, geen consensus. Wijkt het af
-  van wat de gebruiker elders leest, benoem dat het zijn aanpak is.
+- **Zijn invalshoek is uitgesproken AI-eerst.** Dat is een standpunt, geen consensus. Benoem dat het zijn
+  aanpak is als het afwijkt van wat de gebruiker elders leest.
 - **Hij promoot zwaar zijn eigen software.** Die plugs zijn hier weggelaten; de methodes staan er
-  tool-onafhankelijk in, wat kan omdat hij zelf steeds de handmatige route erbij geeft.
-- **Platformdetails verouderen snel** — welke SERP-functies er zijn, hoe AI-overzichten eruitzien,
-  welke bots wat crawlen. Controleer dat voor je het als vaststaand presenteert.
+  tool-onafhankelijk in, wat kan omdat hij zelf steeds de handmatige route erbij geeft. Screaming Frog
+  beveelt hij expliciet zonder commissie aan.
+- **Platformdetails verouderen snel** — welke bots wat crawlen, hoe AI-overzichten eruitzien, welke
+  directories worden geciteerd. Controleer dat voor je het als vaststaand presenteert.
