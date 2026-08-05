@@ -382,6 +382,19 @@ bijdrage zit in inhoud en expertise, niet in de opbouw.
 Beproefde opbouw lokale servicepagina: diensten, vertrouwensbalk, waarom voor dit bedrijf kiezen,
 resultaten en sociaal bewijs, getuigenissen, hoe het werkt, werkgebied, veelgestelde vragen.
 
+### Het publicatiefilter
+
+Zijn scherpste toets voor AI-ondersteunde content, en de moeite waard om letterlijk aan te houden:
+
+> Als AI het gemakkelijk kan creëren, publiceer het dan niet.
+
+Voeg toe wat AI niet kan vervalsen: **originele data, echte ervaringen, echte screenshots, echte
+documentatie, echte meningen.** Een artikel automatisch genereren en publiceren levert generieke pagina's
+op die niet ranken, niet converteren en geen vertrouwen wekken.
+
+De werkwijze die wel werkt: kennisbank → structuur → generatie → **mens erbij** voor kwaliteitscontrole,
+bewijs toevoegen en zorgen dat het klinkt alsof een expert het schreef.
+
 ### De "paarse koe": 10% beter
 
 Analyseer je vijf belangrijkste concurrenten en zoek de invalshoek die je pagina meetbaar beter maakt.
@@ -394,8 +407,13 @@ hij ergens iets vindt — en dat klopt lang niet altijd.
 
 - **Bouw een "super-FAQ"** die álle merkvragen beantwoordt ("Heeft [merk] een API?", "Wat kost [merk]?").
   Uit onderzoek van duizenden merkqueries blijkt dat AI die informatie rechtstreeks bij de bron ophaalt.
-- **Ruim je entiteit op**: naam, adres, telefoonnummer, merkomschrijvingen consistent in álle profielen
-  en directories. Inconsistente bronnen leveren onjuiste AI-antwoorden op.
+- **Ruim je entiteit op**: naam, adres, telefoonnummer, merkomschrijvingen, producten en unieke
+  verkooppunten consistent in álle profielen en directories. Inconsistente bronnen leveren onjuiste
+  AI-antwoorden op.
+- **Optimaliseer je profielen, vul ze niet alleen in.** Jarenlang was het een afvinklijstje: profiel
+  aanmaken, vakje aan, door. Dat werkt niet meer. Bepaal de **vijf tot tien platforms die er in jouw
+  niche toe doen** (uit je citatie-analyse), schrijf één merkomschrijving die de kernonderwerpen dekt,
+  en gebruik die overal. Probeer op die platforms zélf te ranken.
 
 ## Uitbreiden naar andere kanalen
 
@@ -669,6 +687,22 @@ Let ook op: veel tools **beweren citaties te extraheren** maar bootsen in werkel
 zou doen — ze halen bronnen uit de topresultaten van een gewone zoekmachine. Dat zijn niet de citaties
 die een echte gebruiker kreeg. En blijf weg bij tools die met proxy's en duizenden nepaccounts werken:
 dat is in strijd met de voorwaarden en levert bans op.
+
+### De vier metrieken
+
+Wil je AI-zichtbaarheid kunnen aantonen — aan jezelf of aan een klant — dan zijn dit de vier cijfers:
+
+1. **Marktgewogen dekking.** Wordt je merk genoemd in het antwoord, ja of nee? Maar weeg de platforms:
+   het Google-ecosysteem en ChatGPT wegen zwaar, Perplexity, Claude en Grok tellen mee als secundair.
+   Verschijnen op een groot platform is meer waard dan op een klein.
+2. **Positie.** Niet alleen óf je genoemd wordt, maar wáár. Bovenaan of als nummer tien? **Je wilt in de
+   top drie** — daar zit de zichtbaarheid en het vertrouwen.
+3. **Share of voice.** Dekking en positie gecombineerd tot één getal, afgezet tegen hoeveel concurrenten
+   er in de antwoorden opduiken.
+4. **Merkaanwezigheid in de citaties.** Dit is de **voorlopende indicator**: verschijnen we in de bronnen
+   die de modellen gebruiken? Neem een echte steekproef — **500 tot 1.000 citaties** — anders zie je geen
+   patroon. Word je niet aanbevolen, dan sta je vrijwel zeker ook niet in die bronnen. Daarmee is de
+   strategie meteen duidelijk.
 
 ### Hoe je het dan wél meet
 
