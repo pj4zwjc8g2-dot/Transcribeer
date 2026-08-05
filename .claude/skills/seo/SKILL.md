@@ -397,13 +397,105 @@ loopt achter.
 
 ## Lokale SEO
 
-- **Google Bedrijfsprofiel eerst.** De vestigingsplaats moet kloppen met je werkelijke adres. Een bedrijf
-  in Ballwin met een profiel geoptimaliseerd op Chesterfield: alleen dat corrigeren kan vijf tot zeven
-  posities schelen.
-- **Recensies structureel binnenhalen**, en op meerdere platforms — zie rankingfactor 7.
-- **Directories**: profiel aanmaken, recensies verzamelen, plaatsentiteit expliciet noemen.
-- **Lokale sponsoring**: klein budget, behandel het als advertentiekosten. Je koopt zichtbaarheid bij
-  entiteiten die ter plaatse al vertrouwd zijn.
+### Verdiend, eigen, gehuurd
+
+Een indeling die zijn hele lokale aanpak stuurt:
+
+- **Verdiend** — backlinks, merkvermeldingen, recensies, UGC, influencers. **Hier gebeurt de magie.**
+  Dit is sinds 2011 de doorslaggevende factor geweest en dat is niet veranderd.
+- **Eigen** — je website en je e-maillijst. Meer bezit je niet.
+- **Gehuurd** — Google Bedrijfsprofiel, Facebook, Instagram, LinkedIn, YouTube. Je bouwt er publiek op,
+  maar het is andermans grond. Gedraag je ernaar; ze kunnen je schorsen.
+
+Voor lokaal geldt: **begin met links van vertrouwde partijen in je eigen plaats**, breid daarna uit naar
+regio, provincie en landelijk. En sta je in de lijstjes van "beste [dienst] in [stad]", dan vergroot dat
+je kans in Google én in AI.
+
+> Je kunt niets optimaliseren binnen ChatGPT. Er is geen profiel. Het is de optelsom van alles wat je
+> daarbuiten doet. Doe gewoon goede marketing voor je merk.
+
+### Begin bij wie er wint
+
+Zoek het bedrijf dat het in jouw plaats al goed doet en meet het over alle oppervlakken: lokaal pakket,
+organisch, AI-modus, ChatGPT, Perplexity. Reverse-engineer daarna hoe ze dat bereikt hebben.
+
+Crawl vervolgens je belangrijkste concurrent met **Screaming Frog plus de Ahrefs-API** (zet zoekwoorden
+en verkeer aan) en exporteer. Twee dingen haal je daaruit:
+
+- **Welke pagina's trekken hun backlinks?** Meestal zie je een patroon.
+- **Hoeveel pagina's hebben ze voor jouw stad?** Filter op de plaatsnaam. In zijn voorbeeld: 57
+  geïndexeerde pagina's voor één stad. Dat is het niveau dat je moet evenaren.
+
+Sorteer op URL en je ziet hun clusters liggen — airco, commercieel, warmtepompen, ductless,
+luchtkwaliteit. Kopieer ze niet klakkeloos; ze doen ook dingen fout. Zoek waar je het beter kunt.
+
+### Google Bedrijfsprofiel
+
+- **Match je categorie met die van de top drie.** Zijn zij "HVAC-aannemer" en jij "airco-installateur",
+  dan speel je een ander spel. Alleen die wissel kan al fors schelen in het lokale pakket.
+- **Vestigingsplaats moet kloppen met je werkelijke adres.** Een bedrijf in Ballwin met een profiel
+  geoptimaliseerd op Chesterfield: alleen dat corrigeren kan vijf tot zeven posities schelen.
+- **Echte foto's, geen stockfoto's.** Foto's van de eigenaar en van het werk zelf.
+
+### Recensies systematisch
+
+Benchmark tegen de **koploper**, niet tegen het gemiddelde — je moet in de top drie komen, dus dat is je
+doel, hoe ver weg ook.
+
+- **Automatiseer de vraag**: laat je werkbonsysteem na afronding automatisch een sms en mail met
+  reviewlink sturen.
+- **Wekelijkse opvolging** van klanten die niets achterlieten.
+- **Beloon je monteurs**, niet je klanten. Klanten belonen voor een recensie is in strijd met Google's
+  voorwaarden — veel bedrijven doen het toch, maar het is een overtreding. Een interne bonus of
+  competitie mag wel.
+- **Laat de klant de monteur bij naam noemen** in de recensie. Dan kun je intern bijhouden wie ze
+  binnenhaalt.
+- **Haal wrijving weg**: QR-codes, een tablet op kantoor bij publieksbedrijven.
+- **Maak het een dagelijkse gewoonte**, geen sprint.
+
+### De website als conversiemachine
+
+Onderzoek laat zien dat **homepages het meeste verkeer uit LLM's krijgen**, dus ontwerp en
+conversie-elementen doen er extra toe.
+
+- Menu gestructureerd naar wat de klant wil ("airco repareren", "verwarming repareren",
+  "binnenluchtkwaliteit"), doorlinkend naar de losse servicepagina's.
+- Meerdere duidelijke call-to-actions boven de vouw.
+- **Relevantie boven omvang**: 587 woorden die alle kernonderwerpen dekken verslaan een opgeblazen pagina.
+- Van 1% naar 2% conversie verdubbelt je opbrengst bij hetzelfde verkeer. Ontwerp is geen bijzaak.
+
+### Contentstructuur
+
+- **Aparte pagina per intentie.** Iemand wiens airco om 1 uur 's nachts uitvalt heeft een compleet andere
+  mindset dan iemand die jaarlijks onderhoud zoekt. Dat scheelt voor ranking én conversie.
+- **Eén cluster tegelijk, en begin altijd met de commerciële pagina's.**
+- **Statische, snel ladende, goed crawlbare HTML-pagina's.** Let op de spanning met bouwtools: je mag
+  Replit of Lovable gebruiken om snel een ontwerp te maken, maar wat je publiceert moet crawlbare HTML
+  zijn — anders slaan de AI-platforms je over.
+- Reken op zo'n **vijftien ondersteunende stukken per cluster**, in twee smaken: **gelokaliseerde
+  contentmarketing** en **linkbait**.
+
+### YouTube lokaal ligt open
+
+Bij zijn voorbeeldzoekopdracht: concurrentievideo's met tien weergaven, vier tot negen jaar oud. De
+sleutel is **lokaliseren** — kernonderwerp én kernlocatie moeten er allebei in zitten. Niet "wat gebeurt
+er bij een airco-installatie", maar "achter de schermen bij een airco-installatie in [stad]". Modelleer
+je kanaal niet naar een breed vakkanaal; dat levert lokaal geen leads op.
+
+### Promotie
+
+Content maken is niet hetzelfde als marketing. Zet er advertenties achter, gericht op je eigen regio —
+Facebook en Instagram werken daar goed voor.
+
+Zijn toets of een onderwerp de moeite waard is: **zou je ervoor betalen om het te promoten?** Zo ja,
+bouwen.
+
+Voor **lokale sponsoring en donaties** werkt diepgaand AI-onderzoek uitstekend: vraag om honderd lokale
+sponsormogelijkheden voor jouw type bedrijf in jouw stad. Hij gebruikt daarvoor bewust Gemini in plaats
+van ChatGPT, omdat ChatGPT geen toegang heeft tot Google's index en op zwakkere bronnen leunt. Controleer
+het resultaat wel — het verzint URL's.
+
+> We zijn bezig met marketing. Denk niet te veel na over hoe je de algoritmes manipuleert.
 
 ## Linkbait en linkbuilding
 
