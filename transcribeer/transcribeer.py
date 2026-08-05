@@ -66,7 +66,16 @@ MIN_DELAY = 8
 MAX_DELAY = 20
 REST_EVERY = 15
 REST_SECS = 300
-COOLDOWN_SECS = 900
+
+# Oplopende cooldowns in plaats van één vaste van 15 minuten. YouTube laat het IP
+# vaak al eerder weer los; met een vaste 900s zit je dan tien minuten per keer voor
+# niks te wachten. Lukt het na 300s niet, dan pas escaleren.
+COOLDOWNS = [300, 600, 900]
+
+# Hoe lang een route die net geblokkeerd werd wordt overgeslagen. Een route die
+# twintig video's op rij dichtzat, hoeft niet bij video 21 opnieuw geprobeerd te
+# worden: dat verzoek faalt gegarandeerd en warmt het IP verder op.
+ROUTE_BLOKKADE = 600
 
 # Klein-batch-snelpad: de blokkade komt in de praktijk pas na ~30 snelle verzoeken,
 # dus bij weinig op te halen video's kan de jitter fors korter. De dual-route- en
@@ -575,8 +584,42 @@ def lokale_routes(taal, vertaal):
     ]
 
 
-def haal_lokaal(video_id, routes, head):
-    """Loopt de routes af tot er één ondertitels teruggeeft.
+class RouteStatus:
+    """Onthoudt welke routes geblokkeerd zijn en welke het laatst werkte.
+
+    Zonder dit geheugen kost elke video drie verzoeken, ook als route 1 al twintig
+    keer op rij dichtzat. Met dit geheugen blijft er meestal één verzoek over."""
+
+    def __init__(self, routes):
+        self.routes = routes
+        self.geblokkeerd_tot = {naam: 0.0 for naam, _ in routes}
+        self.laatst_gelukt = None
+
+    def beschikbaar(self):
+        """De routes die nu geprobeerd mogen worden, best gokje eerst."""
+        nu = time.time()
+        vrij = [(naam, fn) for naam, fn in self.routes if self.geblokkeerd_tot[naam] <= nu]
+        if self.laatst_gelukt:
+            vrij.sort(key=lambda nf: nf[0] != self.laatst_gelukt)
+        return vrij
+
+    def blokkeer(self, naam):
+        self.geblokkeerd_tot[naam] = time.time() + ROUTE_BLOKKADE
+        if self.laatst_gelukt == naam:
+            self.laatst_gelukt = None
+
+    def gelukt(self, naam):
+        self.laatst_gelukt = naam
+        self.geblokkeerd_tot[naam] = 0.0
+
+    def reset(self):
+        """Na een cooldown krijgt elke route weer een eerlijke kans."""
+        for naam in self.geblokkeerd_tot:
+            self.geblokkeerd_tot[naam] = 0.0
+
+
+def haal_lokaal(video_id, status, head):
+    """Loopt de beschikbare routes af tot er één ondertitels teruggeeft.
 
     Geeft (tekst, taalcode, vertaald, routenaam, pogingen). Vond geen enkele route
     ondertitels, dan is tekst None en staat de laatste reden op de plek van de taalcode.
@@ -585,14 +628,20 @@ def haal_lokaal(video_id, routes, head):
     'pogingen' telt alleen de routes die YouTube echt te woord heeft gestaan. Een
     geblokkeerde route kost geen quota, dus die mag de rustpauze niet vervroegen -
     anders gaat het script juist langzamer draaien naarmate het vaker geblokkeerd wordt."""
+    beschikbaar = status.beschikbaar()
+    if not beschikbaar:
+        # Alles staat nog in de route-cooldown; geen verzoek waard.
+        raise AllesGeblokkeerdError()
+
     reden = "geen ondertitels"
     geblokkeerd = 0
     pogingen = 0
-    for naam, fetch in routes:
+    for naam, fetch in beschikbaar:
         try:
             text, lang, translated = fetch(video_id)
         except IpBlockedError:
             geblokkeerd += 1
+            status.blokkeer(naam)
             print(head + " - " + naam + "-route geblokkeerd")
             continue
         except Exception as e:
@@ -601,9 +650,10 @@ def haal_lokaal(video_id, routes, head):
             continue
         pogingen += 1
         if text is not None:
+            status.gelukt(naam)
             return text, lang, translated, naam, pogingen
         reden = lang
-    if geblokkeerd == len(routes):
+    if geblokkeerd == len(beschikbaar):
         raise AllesGeblokkeerdError()
     return None, reden, False, None, pogingen
 
@@ -696,10 +746,11 @@ def main():
         pauze_label = "random jitter"
     if max_p < min_p:
         max_p = min_p
-    routes = lokale_routes(args.taal, args.vertaal)
+    routestatus = RouteStatus(lokale_routes(args.taal, args.vertaal))
     if modus == "lokaal":
         print("Pauze           : " + str(min_p) + "-" + str(max_p) + "s (" + pauze_label + ")")
-        print("Lokale routes   : " + ", ".join(naam for naam, _ in routes))
+        print("Lokale routes   : " + ", ".join(naam for naam, _ in routestatus.routes))
+        print("Cooldowns       : " + ", ".join(str(c) + "s" for c in COOLDOWNS) + " (oplopend)")
     print()
 
     done = skipped = failed = apify_calls = local_fetches = 0
@@ -715,33 +766,36 @@ def main():
         translated = False
 
         if modus == "lokaal":
-            try:
-                text, lang, translated, route, pogingen = haal_lokaal(v["id"], routes, head)
-                local_fetches += pogingen
-            except AllesGeblokkeerdError:
-                # Alle routes geblokkeerd: cooldown en één keer opnieuw langs de hele rij
-                print(head + " - alle lokale routes geblokkeerd. "
-                      + str(COOLDOWN_SECS) + "s afkoelen...")
-                save_state(out_dir, state)
-                time.sleep(COOLDOWN_SECS)
+            # Eerst gewoon proberen; daarna oplopende cooldowns tot het lukt of ze op zijn.
+            for wacht in [0] + COOLDOWNS:
+                if wacht:
+                    print(head + " - alle lokale routes geblokkeerd. "
+                          + str(wacht) + "s afkoelen...")
+                    save_state(out_dir, state)
+                    time.sleep(wacht)
+                    routestatus.reset()
                 try:
-                    text, lang, translated, route, pogingen = haal_lokaal(v["id"], routes, head)
+                    text, lang, translated, route, pogingen = haal_lokaal(v["id"], routestatus, head)
                     local_fetches += pogingen
+                    break
                 except AllesGeblokkeerdError:
-                    # Nog steeds geblokkeerd: naar Apify of stoppen
-                    resterend = len(videos) - i + 1
-                    print(head + " - nog steeds geblokkeerd na cooldown.")
-                    if token:
-                        print(">> Overschakelen naar Apify voor de resterende "
-                              + str(resterend) + " video's (~$" + ("%.2f" % (resterend * 0.01)) + ").")
-                        modus = "apify"
-                    else:
-                        print("\n>> GESTOPT om een IP-ban te voorkomen.")
-                        print(">> Draai later hetzelfde commando opnieuw: hij hervat waar hij bleef.")
-                        print(">> Tip: met APIFY_API_KEY in .env schakelt hij automatisch over.")
-                        gestopt = True
-                        save_state(out_dir, state)
-                        break
+                    continue
+            else:
+                # Alle cooldowns verbruikt: naar Apify of stoppen
+                resterend = len(videos) - i + 1
+                print(head + " - nog steeds geblokkeerd na "
+                      + str(sum(COOLDOWNS)) + "s afkoelen.")
+                if token:
+                    print(">> Overschakelen naar Apify voor de resterende "
+                          + str(resterend) + " video's (~$" + ("%.2f" % (resterend * 0.01)) + ").")
+                    modus = "apify"
+                else:
+                    print("\n>> GESTOPT om een IP-ban te voorkomen.")
+                    print(">> Draai later hetzelfde commando opnieuw: hij hervat waar hij bleef.")
+                    print(">> Tip: met APIFY_API_KEY in .env schakelt hij automatisch over.")
+                    gestopt = True
+                    save_state(out_dir, state)
+                    break
 
         if modus == "apify" and text is None:
             text, lang, translated = fetch_apify(token, v["id"])
