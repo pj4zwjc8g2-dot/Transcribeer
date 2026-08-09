@@ -45,7 +45,8 @@ transcripties in <kennis_map>/<kanaal>. De installatie-wizard vraagt daarnaar bi
 
 Taal: standaard zoekt 'ie een Nederlandse ondertitel; bestaat die niet, dan pakt 'ie de beste
 beschikbare in de oorspronkelijke taal. Met --vertaal laat je YouTube 'm naar --taal vertalen.
-Via de Apify-route is de taalcode een schatting (stopwoorden-heuristiek).
+Ook de Apify-route vertaalt: met --vertaal krijgt de actor een targetLanguage mee.
+Zonder --vertaal is de taalcode daar een schatting (stopwoorden-heuristiek).
 
 Gemaakt door Bart Boonstra (Slim Werken AI).
 """
@@ -536,14 +537,22 @@ def fetch_captions_innertube(video_id, taal, vertaal):
 
 # ---------- ondertitels ophalen: route 4 (Apify-afvanger, ~$0,01/video) ----------
 
-def fetch_apify(token, video_id):
-    """Zelfde contract als fetch_captions: (tekst, taalcode, False) of (None, reden, False)."""
+def fetch_apify(token, video_id, vertaal_naar=None):
+    """Zelfde contract als fetch_captions: (tekst, taalcode, vertaald) of (None, reden, False).
+
+    Met vertaal_naar (ISO 639-1) krijgt de actor een targetLanguage mee en levert hij
+    de vertaalde variant. Zonder die parameter komt de oorspronkelijke taal binnen en
+    is de taalcode niet meer dan een stopwoorden-schatting.
+    """
     import requests
+    payload = {"videoUrl": "https://www.youtube.com/watch?v=" + video_id}
+    if vertaal_naar:
+        payload["targetLanguage"] = vertaal_naar
     try:
         r = requests.post(
             "https://api.apify.com/v2/acts/" + APIFY_ACTOR + "/run-sync-get-dataset-items",
             params={"token": token, "timeout": 120},
-            json={"videoUrl": "https://www.youtube.com/watch?v=" + video_id},
+            json=payload,
             timeout=150)
         r.raise_for_status()
         items = r.json()
@@ -565,7 +574,14 @@ def fetch_apify(token, video_id):
     text = " ".join(parts).strip()
     if not text:
         return None, "apify: lege transcript", False
-    return text, taal_heuristiek(text), False
+    if not vertaal_naar:
+        return text, taal_heuristiek(text), False
+    # Vertaling gevraagd. De heuristiek kent alleen nl en en; kan die de gevraagde taal
+    # toetsen en spreekt hij hem tegen, dan heeft de actor targetLanguage genegeerd.
+    geschat = taal_heuristiek(text)
+    if vertaal_naar in ("nl", "en") and not geschat.startswith(vertaal_naar):
+        return text, geschat, False
+    return text, vertaal_naar, True
 
 
 # ---------- de lokale routes achter elkaar ----------
@@ -754,6 +770,7 @@ def main():
     print()
 
     done = skipped = failed = apify_calls = local_fetches = 0
+    apify_vertaal_gemeld = False
     t_all = time.time()
     gestopt = False
 
@@ -798,8 +815,13 @@ def main():
                     break
 
         if modus == "apify" and text is None:
-            text, lang, translated = fetch_apify(token, v["id"])
+            text, lang, translated = fetch_apify(
+                token, v["id"], args.taal if args.vertaal else None)
             route = "apify"
+            if args.vertaal and text is not None and not translated and not apify_vertaal_gemeld:
+                print(">> LET OP: de Apify-actor levert geen vertaling; --vertaal blijft daar zonder"
+                      " effect.\n>>   De transcripties komen binnen in de oorspronkelijke taal (" + lang + ").")
+                apify_vertaal_gemeld = True
             apify_calls += 1
 
         if text is None:
