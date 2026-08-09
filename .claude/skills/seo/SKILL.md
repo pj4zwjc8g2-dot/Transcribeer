@@ -477,6 +477,12 @@ loopt achter.
 
 ## Lokale SEO
 
+> Voor het lokale pakket, Google Bedrijfsprofiel, Maps-rankings, recensies en schorsingen is er een
+> aparte en veel uitgebreidere skill: **`/lokale-seo`** (werkwijze van Sterling Sky). Die is
+> operationeel waar deze sectie strategisch is, en spreekt deze skill op één punt tegen — zie de
+> waarschuwing bij [AI als werkwijze](#ai-als-werkwijze). Gebruik hem zodra het over kaartresultaten
+> gaat.
+
 ### Verdiend, eigen, gehuurd
 
 Een indeling die zijn hele lokale aanpak stuurt:
@@ -620,6 +626,15 @@ algemene aanbevelingen zonder onderbouwing.
 > De magie zit in het redigeren.
 
 Behandel content als een product: reken op twee tot vier revisies voor zowel tekst als ontwerp.
+
+⚠️ **Hier is tegenbewijs voor, en dat moet je niet gladstrijken.** Sterling Sky draaide bij een
+letselschadeadvocaat AI-content en verhaal-gedreven content **tegelijk naast elkaar**: de AI-content
+deed vrijwel niets, de verhalen schoten omhoog. In dezelfde lijn: een tandarts +50% conversie en een
+schilder +350% verkeer na het toevoegen van een echte zaak, echte kosten en echte foto's. Zie
+`/lokale-seo` → "Waar deze skill botst met `/seo`" voor de onderbouwing van beide kanten. Beide zijn
+anekdotisch; presenteer geen van beide als vaststaand. Het verschil zit vermoedelijk in het terrein —
+Gotch test op brede informatieve SEO, Sterling Sky op lokale dienstverleners, waar het
+onderscheidende juist is wat alleen dat ene bedrijf kan vertellen.
 
 ## Mythes die je moet ontkrachten
 
