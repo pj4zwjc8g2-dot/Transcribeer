@@ -6,7 +6,7 @@ description: Lokale SEO en Google Bedrijfsprofiel volgens de werkwijze van Sterl
 # Lokale SEO en Google Bedrijfsprofiel
 
 De werkwijze van **Sterling Sky** — het bureau van Joy Hawkins, gespecialiseerd in lokale SEO, dat
-zijn advies op eigen tests en klantcases baseert. Gedistilleerd uit 30 recente video's (2024–2026)
+zijn advies op eigen tests en klantcases baseert. Gedistilleerd uit 34 recente video's (2024–2026)
 van een corpus van 98, inclusief gesprekken met twee ex-Googlers die elk ruim elf jaar aan Google
 Bedrijfsprofiel werkten (Brad Weatherall, Joel Headley) en met recensie-specialist Claudia Tomina.
 
@@ -1134,54 +1134,154 @@ wat er rankt en wat geciteerd wordt, en negeer de rest. Zeg erbij dat dit een af
 
 ## Links
 
+Sterling Sky's driejarige linkonderzoek. Joy Hawkins begon het omdat ze SEO's bleef vragen hoe ze de
+impact van een link meten en nooit een concreet antwoord kreeg — niemand kon zeggen *"ik bouwde deze
+link en deze pagina steeg"*. De testopzet: een verlaten site zonder enige SEO-historie, zodat er
+niets anders meespeelde.
+
+Ze heeft in dit onderzoek meerdere keren haar eigen standpunt omgedraaid. Die omkeringen staan hier
+expliciet in, want ze zijn leerzamer dan de conclusies.
+
 ### Organisch veel, lokaal weinig
 
-Sterling Sky bouwde drie jaar aan tests om te meten wat één link doet. In de scherpste opzet:
-één link vanaf hun eigen site (domain rating 71, thematisch verwant) naar een testsite zonder verdere
-SEO.
+In de scherpste opzet: **één link** vanaf hun eigen site (domain rating 71, thematisch verwant) naar
+die testsite.
 
 - **Organisch: enorme sprong** — van vrijwel nergens naar de top drie.
 - **Lokaal pakket: van 4 naar 3.** Eén positie.
 
-Ze hebben dit meerdere keren herhaald met steeds hetzelfde beeld.
+Meerdere keren herhaald met hetzelfde beeld.
 
-**Wat dat betekent voor je budget:** verdeel je linkbudget naar waar je leads vandaan komen. Een
-advocaat haalt veel leads uit organische posities en moet links bouwen. Een verzekeringsagent haalt
-het leeuwendeel uit zijn bedrijfsprofiel — daar is linkbuilding een inefficiënte manier om de
-kaartposities te bewegen.
+Eén positie in het lokale pakket kan wel degelijk het verschil maken — net binnen of net buiten de
+drie. Maar het eerlijke voorbehoud dat Joy zelf maakt: **linkbuilding is duur en arbeidsintensief**,
+en voor veel kleine bedrijven is er geen rendement als het doel alleen het lokale pakket is. Je moet
+te veel volume maken voor te weinig beweging.
 
-### Indexering is de belangrijkste kwaliteitsmaat
+**Verdeel je budget naar waar je leads vandaan komen.** Een advocaat haalt veel leads uit organische
+posities en moet links bouwen. Een verzekeringsagent haalt het leeuwendeel uit zijn bedrijfsprofiel —
+daar is linkbuilding een inefficiënte manier om de kaartposities te bewegen.
 
-Staat de pagina waarop jouw link staat niet in Google's index, dan is de link **waardeloos**.
+### Vergeet domain authority
+
+De metriek waar bijna iedereen op stuurt — en waarvoor mensen letterlijk meer betalen — deugt niet als
+enige maat. DA en DR zijn grotendeels gebaseerd op **linkvolume**: 2.000 links leveren een hoge score
+op, ongeacht of die links iets waard zijn.
+
+Het patroon dat ze steeds ziet: een site met een hoge domain authority die na een algoritme-update
+nergens meer rankt. Zo'n link levert niets op, hoe mooi de score ook is.
+
+### De vier dingen die je wél controleert
+
+Na drie jaar onderzoek, in deze volgorde:
+
+1. **Staat de pagina waarop je link komt in Google's index?** Zo niet, dan is de link waardeloos.
+2. **Is de link gevolgd of nofollow?** Gevolgde links doen meer — met een belangrijke uitzondering,
+   zie [Nofollow-links](#nofollow-links-doen-wél-iets).
+3. **Kun je de ankertekst bepalen?** Dat blijkt zwaarder te wegen dan verwacht.
+4. **Hoe staat de site er als geheel voor?** De *organic pages*-metriek in Ahrefs: hoeveel pagina's
+   van dat domein staan in de index. Eén pagina die al het verkeer trekt is veel slechter dan
+   duizenden die het goed doen, want jouw link komt op zo'n gewone pagina te staan.
+
+**Aanvullende rode vlag:** een site die volgestouwd is met advertenties, waar je de content nauwelijks
+kunt lezen zonder pop-ups weg te klikken. Dat is precies het type site waar Google achteraan gaat.
+
+### Indexering is de kern
 
 Joy ziet linkbuildingrapporten van klanten waarin de gelinkte pagina's simpelweg niet geïndexeerd
 zijn. Ze sprak een fulltime linkbuilder voor wie indexering **geen onderdeel van het proces** was:
 link binnen is klaar.
 
-**Controleer voor je een link najaagt:** de trend in *organic pages* van dat domein in Ahrefs. Manta
-was ooit een sterke directory en verliest nu duizenden pagina's uit de index. Een vlakke lijn is
-prima, een dalende lijn niet — en bij veel citatiesites daalt hij, zeker over vijf jaar bekeken.
+**Waarom die pagina's uit de index vallen:** contentsites zetten nieuwe stukken vooraan; naarmate er
+meer bijkomt, zakt jouw gastartikel steeds verder naar achteren. Dat is voor Google een signaal dat
+het niet belangrijk is. Linkt niemand ernaar en praat niemand erover, dan komt daar nog een signaal
+bij. Google indexeert niet alles — dat kost tijd, geld en middelen, en hij houdt liever wat hij nog
+niet heeft.
 
-Let ook op de **duur van het patroon**: private blog networks zien er een tijd goed uit tot een
-algoritme-update toeslaat en hun organic pages instorten.
+**Controleer de trend in *organic pages*** voor je een link najaagt. Een vlakke lijn is prima, een
+dalende niet. Let ook op de **duur van het patroon**: private blog networks zien er een tijd goed uit
+tot een update toeslaat en hun organic pages instorten.
 
-### Linkecho's
+### Ankertekst weegt zwaarder dan de link zelf
 
-Rand Fishkin beschreef in 2014 "link echoes" of "link ghosts": links weghalen deed de gewonnen
-posities niet verdwijnen. Er was daarna niets recents over te vinden, dus Sterling Sky toetste het.
+De meest verrassende uitkomst van het hele onderzoek, en Joy noemt het zelf schokkend.
 
-Een site waar klanten gastartikelen op hadden staan werd door een algoritme-update geraakt, waarna die
-artikelen uit de index vielen — functioneel hetzelfde als verwijderd. De rankingwinst **bleef staan**.
-Concreet: een orthodontist ging door één link van positie 5 naar 3, wat zijn verkeer op dat zoekwoord
-over drie maanden verdubbelde — en die winst bleef ook nadat de link uit de index verdween.
+Ze bouwde een link met een ankertekst gericht op een specifiek zoekwoord: **positie omhoog**.
+Vervolgens veranderde ze **alleen de ankertekst** naar een ander zoekwoord in hetzelfde vakgebied. De
+link bleef bestaan.
 
-⚠️ **Maar dit geldt niet overal.** Bij **citaties** ziet ze juist wél een daling zodra ze
-gedeïndexeerd raken. Bij **gastartikelen** blijft de winst staan. Dezelfde regel geldt dus niet voor
-elk type link. En niemand weet hoe lang de echo standhoudt — mogelijk verdwijnt hij alsnog na een paar
-algoritme-updates.
+> Ik verwachtte een kleine daling. Het ging van een klif af. Alle winst van die link verdween.
 
-Hetzelfde echo-effect lijkt te spelen bij het **lokale algoritme**: een descriptor of categorie
-toevoegen en later weghalen liet de gewonnen posities soms staan.
+Ze kreeg wel winst op de nieuwe ankertekst, maar de oude ging volledig verloren.
+
+**Dat maakt ankertekst mogelijk belangrijker dan de link zelf** — de link stond er nog, alleen het
+zoekwoord was weg. En anders dan bij linkecho's is er **geen ankertekstecho**: Google onthoudt de
+oude ankertekst niet.
+
+Deze omkering was ook zichtbaar in het **lokale pakket**: link erbij → in de drie; ankertekst
+gewijzigd → terug naar af.
+
+⚠️ Dit is precies de tactiek waar Google achteraan gaat, juist omdat hij werkt. Doe het **niet op
+schaal**.
+
+### Nofollow-links doen wél iets
+
+Nog een omkering. Het gangbare beeld is dat nofollow-links niets doen. Het concept komt van Kyle
+Roof, en Sterling Sky heeft het meerdere keren gerepliceerd:
+
+> Een nofollow-link geeft wél rankingwaarde door, mits hij staat op een pagina die op Google rankt en
+> daar verkeer van krijgt.
+
+Waarom SEO's dit misten: de meeste links die ze analyseren staan op pagina's die **helemaal geen
+verkeer** krijgen. Een gastartikel op een willekeurige site is misschien geïndexeerd, maar trekt niets.
+Dan geeft hij ook niets door — en de conclusie "nofollow doet niets" is dan een verkeerde generalisatie.
+
+De onderbouwing sluit aan bij wat er over het algoritmelek is besproken: Google volgt waar mensen
+klikken. Een pagina waar mensen op klikken en naartoe gaan krijgt autoriteit, en geeft die door aan
+wat hij linkt — gevolgd of niet.
+
+**Haar test:** een nofollow-link in een reactie op een oude, veel bezochte forumpagina, naar een
+artikel op de site van Sterling Sky. De dag erna verscheen er in de zoekresultaten voor die ankertekst
+een **YouTube-sectie die er niet was** — met de video van die pagina erin.
+
+**Praktisch gevolg:** schrijf digitale PR niet af omdat grote publicaties hun links nofollow zetten.
+Forbes rankt overal; zo'n link geeft je waarschijnlijk veel waarde.
+
+### Gastartikelen: ze had ongelijk, en toen weer gelijk
+
+Joy dacht dat gastartikelen spam waren en niet zouden werken. Ze huurde een bureau in dat "white hat"
+gastartikelen beloofde en bestelde er zes, twee per maand.
+
+**Ze werkten.** Vanaf de tweede maand zag ze stijgingen — op een testsite waar verder niets speelde.
+
+**En daarna niet meer.** De winst hield geen stand naarmate die pagina's uit de index verdwenen. Van
+de zes links stond er een paar jaar later nog **één** in de index.
+
+> Stel je een rij voor bij een nachtclub. Een deel komt binnen met een vals identiteitsbewijs. Het is
+> een kwestie van tijd voor de uitsmijter doorheeft dat je er niet hoort en je weer op straat zet.
+
+**De grote case:** een thuisdienstenbedrijf dat twee jaar lang door een ander bureau
+gastartikelen liet bouwen — **425 links** in totaal. In Analytics was het patroon glashelder: het team
+optimaliseerde een pagina, verkeer omhoog; het linkbureau bouwde één of twee links naar die pagina,
+verkeer nog verder omhoog. Dat bevestigde opnieuw dat je de impact van een **enkele** link kunt meten.
+
+Tot een core update. Daarna zakte het maandenlang door — al het betaalde werk maakte zichzelf ongedaan.
+Van de onderzochte links stond **36%** niet meer in de index.
+
+**Hoe je een gastartikelfabriek herkent:**
+
+- Een **"artikel indienen"-knop** prominent op de homepage
+- Bij "wie mag indienen": **iedereen**. Geen enkele echte uitgever laat willekeurige vreemden
+  publiceren zonder redactie
+- Opvallend veel bijdragen van **letselschadeadvocaten** — een branche die berucht is om deze tactiek,
+  simpelweg omdat één zaak een heel SEO-budget terugverdient
+
+### Wat te doen na een algoritme-update
+
+Word je geraakt, controleer dan twee dingen aan je backlinkprofiel:
+
+1. **Hoeveel van je links staan nog in de index?** (Er zijn bulk-indexcheckers voor.)
+2. **Hoe doen de sites die naar je linken het zelf?** Zakken die weg, dan zakt jouw waarde mee. Je zit
+   aan ze vast.
 
 ### Wanneer links giftig worden
 
@@ -1198,6 +1298,115 @@ behandelen: nieuwe pagina's zónder links presteerden beter dan de pagina's mét
 Het meest verontrustende geval: een thuisdienstenbedrijf met tientallen zulke links van andere kleine
 bedrijven in dezelfde branche — deels directe concurrenten. Ze wisten er niets van en hadden nooit
 een SEO-bureau ingehuurd.
+
+### De ene handmatige maatregel die ze in jaren zag
+
+Handmatige maatregelen voor links zijn zeldzaam. Joy vroeg publiekelijk of iemand er recent een had
+gezien en kreeg vrijwel geen reacties. Daarna deelde Google er in korte tijd een reeks uit, rond de
+core update van maart.
+
+Het geval dat zij analyseerde: een klein thuisdienstenbedrijf dat een **bekend, veelgebruikt
+linkbureau** had ingehuurd.
+
+**Wat ze deden:**
+
+- Van **0 naar ongeveer 87 tot 100 verwijzende domeinen** in zeer korte tijd — voor een lokaal
+  thuisdienstenbedrijf een volstrekt onnatuurlijk patroon
+- Gastartikelen waarin **hetzelfde stuk telkens licht herschreven** werd, vermoedelijk via AI, en in
+  sommige gevallen **letterlijk woord voor woord** op tientallen sites geplaatst
+- Sites vol advertenties, waar de content nauwelijks leesbaar was
+- Auteurs die op dezelfde sites ook over **gokken en cryptocurrency** publiceerden
+- Verwijzende domeinen omhoog terwijl het organische verkeer van die sites omlaag ging
+
+**En het werkte** — hun posities en verkeer stegen aantoonbaar. Daarom deden ze het.
+
+**Drie dingen die tegen de intuïtie ingaan:**
+
+1. **De maatregel had niet meteen effect.** Ze kregen hem in maart; posities en verkeer bleven
+   gewoon staan. De klap kwam pas twee maanden later met de spamupdate van juni. Dat is anders dan de
+   Penguin-tijd, toen het onmiddellijk was.
+2. **Ze herstelden weer**, bij de update van augustus. Een handmatige maatregel is niet de doodsteek
+   die mensen ervan maken.
+3. **De reputatie van je linkbureau zegt niets.** Dit was een bekende partij die iedereen gebruikt.
+   Controleer wat ze feitelijk doen.
+
+**Actiepunt bij een handmatige maatregel:** stop met wat je deed, evalueer je strategie, en dien een
+disavow in.
+
+### Wat "links kopen" eigenlijk betekent
+
+Joy's standpunt hierover is de afgelopen jaren verschoven, en het is een nuttige nuance tegen
+morele paniek.
+
+> Betaal je een bureau om links te bouwen, dan koop je links. Sponsor je een jeugdteam dat je een
+> link geeft, dan koop je een link. Betaal je voor gastartikelen of citaties, dan koop je links.
+
+Ze vindt het niet verkeerd om **een publicatie een vergoeding te betalen** die de werkelijke kosten
+dekt van het plaatsen van een artikel. Waar de grens ligt is een grijs gebied waarover mensen van
+mening verschillen.
+
+Belangrijker is haar observatie over wat Google aanpakt:
+
+> Google gaat achter precies die dingen aan die werken — gevolgde links meer dan nofollow,
+> zoekwoordrijke ankertekst meer dan een link naar je homepage. Juist omdat ze werken.
+
+En Google's eigen richtlijn zegt dat je geen links mag bouwen om posities te beïnvloeden, wat
+feitelijk alle SEO uitsluit. Dat is niet werkbaar; wat je wél doet is kiezen voor wat het minste
+risico oplevert.
+
+### Scale is de scheidslijn
+
+Dit is het terugkerende thema in het hele linkonderzoek, en het geldt evengoed voor ankertekst,
+gastartikelen, servicegebiedpagina's en AI-content.
+
+Twee mogelijke aanpakken:
+
+| | Op schaal | Methodisch |
+|---|---|---|
+| Methode | Veel links, goedkoop ingekocht, kijken wat blijft plakken | Zeer kleine lijst sites die aan alle criteria voldoen, één tot twee links per site |
+| Werkt het? | Ja, aantoonbaar | Ja, meetbaar per link |
+| Houdbaarheid | Maakt zichzelf ongedaan bij de volgende core update | Blijft staan |
+| Detecteerbaarheid | Patronen zijn triviaal voor Google te herkennen | Nauwelijks een patroon |
+
+> Ik wil geen strategieën voor klanten die zichzelf over een paar maanden ongedaan maken bij de
+> volgende core update.
+
+### Linkecho's
+
+Rand Fishkin beschreef in 2014 "link echoes" of "link ghosts": links weghalen deed de gewonnen
+posities niet verdwijnen. Er was daarna niets recents over te vinden, dus Sterling Sky toetste het.
+
+Een site waar klanten gastartikelen op hadden staan werd door een update geraakt, waarna die artikelen
+uit de index vielen — functioneel hetzelfde als verwijderd. De rankingwinst **bleef staan**:
+
+| Klant | Effect van één link | Na deïndexering |
+|---|---|---|
+| Orthodontist | 5 → 3, verkeer op dat zoekwoord **verdubbeld** over drie maanden | Behouden |
+| Tandarts | 4 → 2 | Behouden |
+| Echtscheidingsadvocaat | 3 → 1 | Behouden |
+
+⚠️ **Maar dit geldt niet overal.** Bij **citaties** ziet ze juist wél een daling zodra ze
+gedeïndexeerd raken; bij **gastartikelen** blijft de winst staan. Dezelfde regel geldt dus niet voor
+elk type link.
+
+**Joy's theorie waarom sommigen het houden en anderen niet:** verdien je de positie en heb je een
+gezonde doorklikratio, dan houd je hem. Ben je met een link boven een partij gekomen waar je
+eigenlijk niet boven hoort — haar voorbeeld is Reddit — dan houd je hem niet.
+
+Hetzelfde echo-effect lijkt te spelen bij het **lokale algoritme**: een descriptor of categorie
+toevoegen en later weghalen liet de gewonnen posities soms staan. Vermoedelijk moet iets een zekere
+tijd bestaan voor Google het vasthoudt.
+
+### Elke link heeft een houdbaarheidsdatum
+
+Het onderbelichte deel van het echo-verhaal. De testlink vanaf Sterling Sky's eigen site hield de
+site bijna een jaar hoog — en na **ongeveer acht maanden** begon hij te zakken.
+
+> Verwacht niet dat je positie eeuwig blijft. Daarom moet je links blijven bouwen en aan je SEO
+> blijven werken.
+
+Praktisch: controleer dit soort dingen **herhaald over tijd**. Dat er in drie tot zes maanden niets
+gebeurde, betekent niet dat er over acht maanden niets gebeurt.
 
 ### Classifiers
 
@@ -1241,7 +1450,9 @@ site is dit geen veilige tactiek.
 Voor een winkelketen zochten ze lokale organisaties die op hun site naar sponsors linken, en regelden
 links per vestiging. De locaties die zo'n backlink kregen gingen beter ranken.
 
----
+Dit is ook het type link waar het echo-effect logisch voelt: je sponsort niet elk jaar opnieuw, en de
+link blijft toch iets waard.
+
 
 ## Mythes, getest
 
@@ -1733,7 +1944,10 @@ En: **één vermelding per locatie.** Twee vermeldingen op hetzelfde adres kunne
 - **Sponsorblokken en productplugs zijn weggelaten.** Waar een onderliggend principe los daarvan
   terugkwam, is het principe zonder het product opgenomen — zo staat de antwoordservice erin als middel
   om 24/7-openingstijden waar te maken, zonder de aanbieder die ze aanraden.
-- **Wat hier niet in staat, stond niet in de bronnen.** Deze skill is gebouwd op 30 gelezen video's uit
-  een corpus van 98. Onderbelicht blijven: lokale SEO buiten de VS, e-commerce met lokale voorraad, en
-  de details van meerlocatie-strategie voorbij bulkverificatie. Is een gebied hier te dun onderbouwd,
-  zeg dat dan in plaats van het aan te vullen met aannames.
+- **Wat hier niet in staat, stond niet in de bronnen.** Deze skill is gebouwd op 34 gelezen video's uit
+  een corpus van 98. De ongelezen 64 zijn beoordeeld op titel en lengte; het gaat vooral om herhaling
+  van geteste tactieken, brede SEO-gastinterviews en verkoop- en branchevideo's. Onderbelicht blijven:
+  lokale SEO buiten de VS, e-commerce met lokale voorraad, meerlocatie-strategie voorbij
+  bulkverificatie, en parasite SEO — dat laatste noemt Joy expliciet werkend, maar de onderbouwing zit
+  in een video die hier niet gelezen is. Is een gebied hier te dun onderbouwd, zeg dat dan in plaats
+  van het aan te vullen met aannames.
