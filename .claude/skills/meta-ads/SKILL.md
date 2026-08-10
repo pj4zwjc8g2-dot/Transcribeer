@@ -11,6 +11,13 @@ in beheer heeft. Alles hieronder is gedistilleerd uit zijn recente video's (2026
 
 De skill is zelfdragend: alle principes staan hier. Er is geen externe kennismap nodig.
 
+> **Gaat de vraag over Google Ads?** Gebruik dan `/google-ads`. Meta is interruptiemarketing —
+> niemand zocht je, dus creatie en hoek doen het werk. Google Ads vangt bestaande vraag, waar
+> intentie, conversiedata en de match tussen zoekopdracht, advertentie en landingspagina het werk
+> doen. Die skill bevat ook de tegenwerping die je hier niet vindt: dat Meta volgens die praktijk
+> in negen van de tien gevallen beter presteert tijdens verkoopperiodes, terwijl Google zijn plek
+> verdient in de opbouwmaanden ervoor.
+
 ## Begin altijd hier: diagnose vóór advies
 
 Dit is het belangrijkste denkraam. Bij elke vraag "mijn advertenties presteren niet" stel je
