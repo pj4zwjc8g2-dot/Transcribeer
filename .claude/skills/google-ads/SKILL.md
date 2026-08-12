@@ -83,6 +83,12 @@ wie dagelijks sleutelt, geeft het systeem nooit de kans om te leren.
 
 Begin altijd hier. Spring niet naar instellingen voordat je weet welk probleem je oplost.
 
+> **Werk je voor een aannemer of installateur?** Voer dan éérst de tegenvraag uit `/aannemer` op:
+> reken de break-even uit als overhead gedeeld door de brutomarge. Wie op 30% marge draait heeft bij
+> gelijke overhead ongeveer tien leads per maand méér nodig dan wie op 50% draait. Meer advertentie-
+> budget bij een kapotte prijs versnelt alleen het verlies. Klopt de marge, dan is dit hoofdstuk
+> waar je bent.
+
 ### Diagnose 0 — ligt het aan Google Ads, of aan alles?
 
 Ga naar GA4 → verkeersacquisitie → sessies per bron/medium. Zakt organisch óók, of alleen betaald?
