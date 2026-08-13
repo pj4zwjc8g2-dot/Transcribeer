@@ -1,15 +1,16 @@
 ---
 name: google-ads
-description: Google Ads-strategie, diagnose en optimalisatie volgens Aaron Young (Define Digital Academy), gedestilleerd uit 45 video's uit 2026. Gebruik deze skill bij alles rond Google Ads: campagnes die geen of te weinig conversies opleveren, verspilde besteding, rommelleads, stijgende CPC's, een account dat niet verder wil schalen, keuzes tussen search, shopping, Performance Max, Demand Gen en AI Max, biedstrategieën (maximize clicks/conversions, tCPA, tROAS), matchtypes en negatieve keywords, accountstructuur en het aantal campagnes, advertentieteksten en landingspagina's, conversietracking en offline conversies, Merchant Center en productfeeds, budgetberekening voor een nieuw account, en het gebruik van AI-tools bij het optimaliseren. Ook bij vragen over Local Service Ads, Black Friday-planning en agentic commerce. Niet voor Meta/Facebook-advertenties — daarvoor is /meta-ads.
+description: Google Ads-strategie, diagnose en optimalisatie volgens Aaron Young (Define Digital Academy), gedestilleerd uit 100 video's uit 2026. Gebruik deze skill bij alles rond Google Ads: campagnes die geen of te weinig conversies opleveren, verspilde besteding, rommelleads, stijgende CPC's, een account dat niet verder wil schalen, keuzes tussen search, shopping, Performance Max, Demand Gen en AI Max, biedstrategieën (maximize clicks/conversions, tCPA, tROAS), matchtypes en negatieve keywords, accountstructuur, advertentieteksten en landingspagina's, conversietracking en offline conversies, Merchant Center en productfeeds, budgetberekening, een account doorlichten, scripts en AI-tools. Ook bij de vraag of je een bureau inhuurt of het zelf doet, wat je van je Google-vertegenwoordiger moet aannemen, lokale dienstverleners en reactiesnelheid op leads, Local Service Ads, Black Friday en agentic commerce. Niet voor Meta/Facebook-advertenties — daarvoor is /meta-ads.
 ---
 
 # Google Ads volgens Aaron Young
 
-Gedestilleerd uit 45 video's van het YouTube-kanaal van Aaron Young (Define Digital Academy),
+Gedestilleerd uit 100 video's van het YouTube-kanaal van Aaron Young (Define Digital Academy),
 opgenomen tussen ongeveer februari en augustus 2026. Aaron draait Google Ads sinds 2010, voor
 accounts van onder de $500 per maand tot ver boven zes cijfers per maand. Waar zijn coaches (Johan
 voor leadgen, Brent voor e-commerce, Daniel, Ashley) of gasten (Andrew Lok, Mike Rhodes, Mike Ryan,
-Fred) aan het woord zijn, staat dat erbij — vooral omdat ze het niet altijd met hem eens zijn.
+Mike Mancini, Fred) aan het woord zijn, staat dat erbij — vooral omdat ze het niet altijd met hem
+eens zijn.
 
 Alle bedragen in dit document zijn in dollars, zoals in de transcripties. Reken ze om naar euro's
 als dat relevant is; de verhoudingen kloppen wel.
@@ -273,6 +274,66 @@ voorafgaande periode.
 
 ---
 
+## Een bestaand account doorlichten: de audit in drie stappen
+
+Gebruik dit als je een account overneemt of als je niet weet waar je moet beginnen. STAB is de
+optimalisatielus; dit is de nulmeting eronder.
+
+### Stap 1 — technische audit
+
+**Accountniveau**
+
+- **Auto-apply recommendations uit.** Google verandert doelen te vaak en te veel. Het systeem is niet
+  dom, het mist alleen de context van jouw bedrijf — welke marges je draait, welke diensten je
+  werkelijk levert, hoe druk je bent.
+- **Automatische assets uit** bij gereguleerde branches (medisch, financieel, juridisch), waar Google
+  iets kan bijverzinnen dat je niet mag beweren.
+
+**Campagneniveau**
+
+- Locatietargeting op **presence only**.
+- **Zoekpartners en display uit** bij searchcampagnes.
+- Biedstrategie tegen het **doel van de klant** houden. Een tCPA van $15 terwijl de klant $40–50
+  prima vindt, is een rem — niet een prestatie.
+- Advertentieschema's controleren: draai je op uren waarop niemand opneemt?
+
+**Keyword- en advertentiegroepniveau**
+
+- Kwaliteitsscore boven 5 (daarboven diminishing returns, zie hieronder).
+- **Kruisbestuiving controleren.** Filter je zoektermenrapport op één woord en kijk of het opduikt in
+  campagnes of advertentiegroepen waar het niet hoort. Verschijnt dezelfde term op drie plekken, dan
+  concurreer je met jezelf om data.
+
+### Stap 2 — resultatenaudit
+
+Drie soorten vondsten, in deze volgorde:
+
+1. **Makkelijke winst** — converteert goed, lage impression share ⇒ budget erbij. Dit doe je eerst,
+   want het levert direct op.
+2. **Bloedingen stoppen** — veel besteding, geen rendement ⇒ pauzeren of het budget knijpen terwijl
+   je optimaliseert. Kijk hierbij óók naar de landingspagina en het aanbod; de oorzaak zit vaak niet
+   in Google Ads.
+3. **Kansen** — weinig besteding, goede conversies ⇒ uitbreken naar een eigen campagne. **De best
+   presterende advertentiegroep blijft in de oorspronkelijke campagne staan**, anders sloop je de
+   campagne die het werk deed.
+
+### Stap 3 — het stoplicht
+
+Zet elke bevinding op groen, oranje of rood:
+
+- **Groen** — dit werkt, hier gaat meer geld in.
+- **Oranje** — belangrijk, maar niet deze week.
+- **Rood** — nu veranderen.
+
+En dan: **follow the money.** Begin bij waar het meeste geld doorheen loopt, niet bij wat het
+makkelijkst te repareren is.
+
+> **Resultaten die hij bij dit proces noemt.** Een e-commerceaccount van 20 naar 40 verkopen per dag
+> in zes weken. Een Amerikaanse aannemer die $5.000 per maand mínder uitgaf en méér gekwalificeerde
+> leads kreeg. Een therapeut van 3 naar 6 nieuwe klanten per dag.
+
+---
+
 ## Accountstructuur
 
 ### Het uitgangspunt: één campagne, één advertentiegroep
@@ -411,6 +472,73 @@ offline conversies.
 
 ---
 
+## Een bureau inhuren, of het zelf doen
+
+**Onder ongeveer $10.000 advertentiebudget per maand is een bureau weggegooid geld.** Zijn stelling:
+in 2026 zou je met de beschikbare hulpmiddelen zelf tot $30.000–50.000 per maand moeten kunnen
+schalen voor je die hulp echt nodig hebt.
+
+### De twee soorten bureaus die misgaan
+
+- **De onervaren operator.** Begon een bureau na een video over hoe je een bureau begint. Huurt
+  freelancers in, besteedt zijn eigen tijd aan verkoop, belooft te veel omdat hij niet weet hoe
+  Google Ads werkt. Niet kwaadaardig, wel schadelijk.
+- **Het gevestigde bureau.** Hier zitten geen slechte mensen, maar er is een **modelprobleem**: een
+  paar grote klanten slurpen de capaciteit op. Betaal jij $1.000–2.000 beheerfee en een ander
+  $20.000–50.000, wie krijgt de aandacht als het druk wordt? Daar bovenop gaat **40 tot 60% van elke
+  beheerfee** op aan overhead — kantoor, HR, boekhouding, verkoop — vóór er iemand naar jouw campagne
+  kijkt.
+
+### De vragen die je stelt vóór je tekent
+
+1. Hoeveel ervaring heb je?
+2. **Wie draait mijn account werkelijk** — jij, een teamlid, of een freelancer?
+3. **Wat zijn de resultaten bij klanten die evenveel uitgeven als ik?** Niet de vitrinecases met
+   twintig keer jouw budget.
+
+### Wanneer wél een bureau
+
+- Als je niet verder kunt schalen. In leadgen ligt dat meestal rond $20.000–30.000 per maand, soms
+  $50.000; in e-commerce vaker $50.000–60.000.
+- Als je creatiebehoefte (video, beeld) te groot wordt voor je eigen team.
+
+Wat hij wél zou uitbesteden, en dan **eenmalig**: het opzetten van conversietracking en de
+koppelingen — Shopify ↔ Google Ads ↔ Merchant Center, of CRM ↔ Google Ads. *"Dat is iets waar ik
+zeker voor zou betalen om te zorgen dat het klopt."*
+
+Zijn rekensom: 10–30% beheerfee op $10.000 besteding is $1.000–3.000 per maand, en die fee stijgt
+mee als je meer uitgeeft. En het werk is minder dan je denkt: **je kunt een account in 1 tot 3 uur
+per week optimaliseren.** Het idee dat een bureau dagelijks in je account zit is onjuist — en zou
+ook slecht zijn, want dagelijks sleutelen is precies wat smart bidding kapotmaakt.
+
+> Weeg dit tegen zijn eigen positie: hij verkoopt coaching aan mensen die het zelf doen. Dat maakt
+> het argument niet fout, maar het is geen neutrale bron.
+
+---
+
+## Wat je van een Google-vertegenwoordiger moet aannemen
+
+Voor elke slechte rep is er een goede. Maar sommigen vinken vooral hun quota af, en **alles wat een
+rep zegt is een aanbeveling, geen voorschrift** — ook als het gepresenteerd wordt als "Google's best
+practice".
+
+**Twee vragen die je altijd stelt:**
+
+1. *"Hoeveel ervaring heb je met het beheren van Google Ads-campagnes bùiten je rol bij Google?"*
+   In Australië kun je als account strategist beginnen met **één jaar** ervaring in digitale
+   marketing — niet eens per se in Google Ads. En bij kleinere budgetten bel je vaak niet met Google
+   zelf, maar met een extern bedrijf dat namens Google mag opereren.
+2. *"Kun je me twee of drie casussen geven van vergelijkbare bedrijven in mijn niche die ongeveer
+   evenveel uitgeven, en wat daar het resultaat was?"* Namen hoeven niet. Het gaat erom of de data
+   iets over jouw situatie zegt.
+
+> **Waarom die tweede vraag ertoe doet.** Bij de lancering van AI Max noemde Google een verdubbeling
+> van de conversieratio bij 31% lagere kosten per conversie. Dat cijfer kwam van **L'Oréal** — een
+> bedrijf dat ook op Meta, billboards en tv adverteert, met een budget in een compleet andere orde.
+> Hij betwist de data niet; hij betwist dat je er iets aan hebt bij $1.500–2.000 per maand.
+
+---
+
 ## Keywords, matchtypes en negatieven
 
 ### Waarom broad match niet meer optioneel is
@@ -431,20 +559,32 @@ maand**. In sommige branches verschijnt bij meer dan 80% van de zoekopdrachten e
 
 ### Hoe je broad match veilig inzet
 
-- **Broad match keywords van minstens drie of vier woorden**, liefst langer. Niet "beste tandpasta"
-  maar "beste tandpasta voor tandvleesontsteking".
+- **Broad match keywords van minstens drie woorden, liever vier tot zes.** Niet
+  "airco-installatie" maar "split system airconditioning installatie voor woningen". Google target
+  de **context** van het keyword, niet de losse woorden — dus hoe meer context je meegeeft, hoe
+  strakker de match. Kort broad match keyword = alle kanten op.
 - **Samen met exact match keywords in dezelfde advertentiegroep.** Dit is de sleutel: een van de
   kernsignalen die Google gebruikt voor een broad match keyword zijn **de andere keywords in
-  diezelfde advertentiegroep**. Exact match houdt broad match in het gareel.
-- Een paar negatieven.
-
-Een typische opzet die hij laat zien: twee broad match keywords van drie à vier woorden plus een
-handvol exact match varianten, in één advertentiegroep.
+  diezelfde advertentiegroep**. Exact match houdt broad match in het gareel. Zijn verhouding:
+  **twee of drie long-tail broad keywords plus 5 tot 25 exact match keywords.** Soms werken twee
+  broad keywords in hun eentje ook.
+- **De landingspagina moet echt aansluiten.** Geen keyword stuffing, wel inhoud die het thema
+  daadwerkelijk behandelt — de pagina is óók een targetingsignaal.
+- **Negatieven als vangrails**: blokkeer de thema's die je niet levert, niet meer dan dat.
 
 Over "near me": hij is er geen fan van, maar bij één lokale klant werkte het en was er geen bruikbaar
 alternatief.
 
-**Phrase match** gebruikt hij bewust niet — "ik denk gewoon niet dat het nu relevant is".
+**Phrase match** gebruikt hij bewust niet — "ik denk gewoon niet dat het nu relevant is". Zie het
+volgende hoofdstuk voor de onderbouwing.
+
+> **Casus die zijn eigen tegenwerping ondergraaft.** Online begeleiding specifiek voor zwangere
+> vrouwen — een niche binnen een niche, precies het geval waarvan iedereen zegt dat broad match er
+> onmogelijk kan werken. Van 12–15 leads per week naar structureel boven de 30, met een piek van 50.
+> Het bedrijf had er 30 nodig om te draaien.
+
+*"Had je me dit in 2022 gevraagd, dan had ik je uitgelachen."* Hij is hier van mening veranderd, en
+zegt dat er ook bij.
 
 ### Negatieve keywords: hij is hierin van mening veranderd
 
@@ -494,6 +634,65 @@ schalen als verspilling stoppen onmogelijk.
 
 Johans nuance: overlap tussen twee verschillende *diensten* (gazonverzorging en bomen snoeien bij
 één hovenier) is wél een probleem, want dan kloppen de advertentie en de landingspagina niet meer.
+
+---
+
+## Zes strategieën die niet meer werken
+
+De onderliggende reden dat deze allemaal tegelijk verlopen: het **zoekvolume stijgt, maar het aantal
+clicks daalt**, omdat mensen hun antwoord al in het AI-overzicht krijgen. Technieken die uitgingen
+van veel, goedkoop, fijnmazig te sturen verkeer zijn daardoor stuk voor stuk verzwakt.
+
+1. **SKAG's — single keyword ad groups — zijn dood.** Al sinds ongeveer 2022, en ze duiken nog steeds
+   op. Reden: **exact match werkt nu zoals phrase match vroeger werkte.** Google's eigen voorbeeld:
+   een exact match op "furniture store" toont ook bij "home furnishing store". Controleer het in je
+   zoektermenrapport — duiken dezelfde termen in meerdere advertentiegroepen op, dan heb je het
+   probleem. Vervang door **STAG's: single theme ad groups.**
+2. **Phrase match is dood.** Hij gebruikt alleen nog exact en broad. Twee redenen: exact doet nu wat
+   phrase deed, én **broad match is het enige matchtype dat alle zes targetingsignalen gebruikt** —
+   waaronder de andere keywords in de advertentiegroep, de landingspagina en de verwachte CTR. Phrase
+   en exact delen een kleinere set. **Draaien je phrase-keywords goed? Zet ze niet uit** — faseer ze
+   uit door varianten in broad en exact toe te voegen en pas te stoppen als die het overnemen.
+3. **Honderden of duizenden negatieve keywords toevoegen.** Ze halen die nu weg in batches van
+   **10–20%**, wachten op data, en halen weer weg. *"In alle gevallen zagen we betere prestaties."*
+   De nieuwe rationale: negatieven bestaan niet om de perfecte zoekterm te vinden, maar om **thema's
+   uit de testpoel te halen die je niet levert** — alleen installatie en geen onderhoud, alleen
+   split-units en geen kanaalsystemen, alleen producten voor volwassenen.
+4. **IP-blokkers.** Hij heeft er nooit waarde voor geld in gezien. Standaardwerkwijze bij een nieuw
+   account: pauzeren, de lijst eruit halen (bewaren voor het geval dat), 4–6 weken wachten. De
+   uitkomst is óf niets, óf **betere** resultaten. Daarna zeggen ze het abonnement op.
+5. **Producttitels volstoppen met keywords.** Niet drie keer hetzelfde zeggen ("kussen voor
+   zijslapers, zijslaapkussen, kussen tegen nekpijn"). Wel: **één sterke keywordfocus vooraan, dan
+   het merk, dan modifiers** (latex, veren, bamboehoes). De attributen in je feed doen de rest.
+6. **Alleen search draaien als leadgenbedrijf.** Search blijft je basis, maar op enig moment heb je
+   PMax nodig. *"Dat PMax slecht is voor leadgen is simpelweg niet waar"* — mits je offline
+   conversies op orde hebt (zie het PMax-hoofdstuk).
+
+---
+
+## Je CPC verlagen: vier manieren
+
+1. **Kwaliteitsscores — met een belangrijke nuance.** Een goede kwaliteitsscore zet alleen
+   **neerwaartse druk** op je CPC; het lost niets op. Je kunt betere scores hebben dan drie maanden
+   geleden en tóch meer betalen, omdat het een live veiling is met nieuwe concurrenten en steeds meer
+   smart bidding. En er zijn **diminishing returns**: van 2–3 naar 5–6 scheelt veel, van 5–6 naar
+   9–10 nauwelijks. Let wel op je **landingspagina-score** — een trage site drijft je CPC echt op.
+2. **Broad match testen.**
+   > **Casus, 11 maanden data, accreditatiebedrijf.** Exact match $11+ per klik, broad match $6,50.
+   > Conversieratio exact 23%, broad 11–12%. CPA exact $48, broad $52–55 — en de klant had $70 nodig.
+   > **Broad won op volume tegen acceptabele kwaliteit.** De les: staar je niet blind op de CPC, kijk
+   > naar de balans met de conversiemetrics. Was de klantbehoefte $45 geweest, dan was de conclusie
+   > omgekeerd.
+3. **Probleem- of oplossingsgerichte keywords**, hoger in de funnel.
+   > **Casus acnécrème.** Het koopintentie-keyword kostte **$7,19** per klik; "beste
+   > huidverzorgingsroutine voor vette huid" kostte **$3**.
+
+   Zet dit in een **aparte campagne**, want de conversie duurt langer en je wilt het budget en de
+   beoordeling gescheiden houden van je bottom-of-funnel campagne.
+4. **Diversifiëren naar andere netwerken** — YouTube, Demand Gen, display. Begin met **5 tot 10% van
+   je searchbudget**, en beoordeel op **accountniveau**, niet per campagne. De losse campagne kan
+   break-even draaien terwijl het hele account beter presteert doordat je searchcampagnes goedkoper
+   converteren.
 
 ---
 
@@ -577,6 +776,32 @@ De les: **een tROAS verlagen is geen schaalknop.** Het verandert met wie Google 
 Praktisch: de gemiddelde tROAS is zichtbaar in het overzicht van een PMax-campagne. Bij **standaard
 shoppingcampagnes zie je die alleen met een portfolio-biedstrategie** — daarom raadt Brent portfolio
 aan zodra je meerdere standaardcampagnes hebt.
+
+### De risico's van smart bidding
+
+*"Van alle optimalisaties die je kunt doen, draagt deze het meeste risico."* Vier dingen die
+misgaan:
+
+- **De tCPA/tROAS-mythe: het dashboardcijfer is geen bedrijfsgezondheid.** Het doel is een
+  optimalisatie-instrument, geen winstmeting.
+  > Zijn bekendste voorbeeld: een clip waarin een ROAS van 200% te zien is, waar iedereen op
+  > reageerde met "waarom adverteer je überhaupt". Voor dát bedrijf was het de beste beslissing ooit,
+  > want de winst zat niet in de eerste verkoop maar in een **onderhoudscontract van 24 maanden**
+  > erna. Ze verlaagden het doel bewust om volume te kopen.
+- **De klokcurve.** Er is een optimale waarde, geen "hoe hoger hoe beter". Zet je de tROAS te hoog
+  (of de tCPA te laag), dan wordt het **restrictief**: minder clicks, minder impressies, minder
+  omzet. Te laag en je koopt rommel. *"Er zijn meer mensen die converteren bij 300% ROAS dan bij
+  800%."*
+- **Een doel is geen gaspedaal maar een rem.** Zet het op de **ondergrens** van wat je nodig hebt,
+  niet op je ambitie.
+- **Zet het doel op de huidige data, niet op je wens.** Wil je 600% terwijl je 300% draait, dan
+  gebeurt er simpelweg niets — je uitgaven vallen stil. Je klimt de trap op via optimalisatie:
+  300 → 350 → 400.
+
+> **Casus die alle vier samenvat.** Nieuwe e-commercecampagne. Ze wachtten **acht weken** voor ze
+> überhaupt een tROAS toevoegden, en zetten hem toen op 600 terwijl het account 700+ draaide —
+> bewust láger, omdat de klant wilde opschalen. Later zelfs naar 500. *"Bij schalen is het altijd
+> veiliger je doel lager te zetten dan wat je werkelijk presteert."*
 
 ### De laddermethode
 
@@ -1235,6 +1460,32 @@ Stap 2 (informatie → inzicht) vereist context.
   gaven in mei 2026 de voorkeur aan **Claude** voor keyword- en tekstanalyse, omdat het terugduwt in
   plaats van te pleasen. Ze zeggen er expliciet bij dat dat over drie maanden anders kan zijn.
 
+### Drie scripts die hij onmisbaar noemt
+
+Zijn selectiecriteria: makkelijk op te zetten, veel tijdwinst, en het moet iets geven dat **niet al
+in het dashboard staat**. Een script dat een bestaande rapportage nabouwt, is werk voor niets.
+
+1. **n-gram-keywordanalyse.** Groepeert je zoektermen op los woord in plaats van op hele zoekopdracht.
+   Levert drie soorten optimalisaties tegelijk: negatieve keywords, nieuwe keywordthema's, en
+   segmentatie.
+   > **Casus militaire uitrusting.** Alles met het woord "dive" erin converteerde veel beter dan de
+   > zoekopdrachten met alleen "snorkel".
+   > **Casus airco-bedrijf.** Alles met het woord "calculator" presteerde fors beter — daar hebben ze
+   > vervolgens een eigen campagne voor gemaakt.
+2. **Smart bidding-analyse.** Draait de ja/nee/wacht-checklist uit het biedhoofdstuk automatisch over
+   al je campagnes: 30 conversies per maand? · wekelijkse conversies stabiel binnen 20% variatie? ·
+   biedstrategie in de laatste 6 weken gewijzigd? · budget recent gewijzigd? Zes campagnes in 10–15
+   seconden, waar hij er handmatig 5–10 minuten per campagne over doet. Bij een "ja" controleert hij
+   het altijd zelf na — het script is een filter, geen beslisser. (Hij liet dit bouwen omdat het niet
+   bestond.)
+3. **Een PMax-script.** Nog steeds onmisbaar ondanks de betere rapportage in het dashboard, om drie
+   dingen: scheiding tussen het search- en het shoppingnetwerk, vergelijking tussen meerdere
+   PMax-campagnes (overlappen ze in producten?), en een kwadrantweergave die je **zombieproducten**
+   toont — producten die in je feed zitten maar geen enkele besteding krijgen.
+
+De scripts die hij noemt komen grotendeels van Mike Rhodes. Het punt hier is niet welk script, maar
+welke drie analyses je mist als je alleen naar het dashboard kijkt.
+
 ### Wat je bewust níét hoeft te automatiseren
 
 Met de juiste structuur en data hoef je veel minder te optimaliseren dan je denkt:
@@ -1246,6 +1497,61 @@ Met de juiste structuur en data hoef je veel minder te optimaliseren dan je denk
 
 Terugkerende reactie van klanten na twee tot drie maanden in zijn programma: *"wat deed mijn vorige
 bureau eigenlijk?"* — omdat de winst in structuur en data zat, niet in wekelijks sleutelen.
+
+---
+
+## Lokale dienstverleners en aannemers
+
+Uit een gesprek met **Mike Mancini**, die uitsluitend met home-servicebedrijven werkt (loodgieters,
+elektriciens, dakdekkers, hoveniers). Hij is het op een paar punten oneens met Aaron; die
+meningsverschillen staan hieronder zoals ze in het materiaal staan.
+
+### Waar Mancini afwijkt
+
+- **Hij houdt formulieren juist kort.** *"Mensen gaan veel te diep en vragen zich dan af waarom ze
+  geen conversies krijgen. Je vraagt naar hun bloedgroep."* Zelfs om een adres vragen is volgens hem
+  al een drempel: ze hebben je nog niet ingehuurd. Dit staat **haaks op Aarons meerstapsformulier**
+  uit het leadgenhoofdstuk. Aaron laat het staan zonder het glad te strijken.
+- **Hij start met ongeveer 2.000 negatieve keywords** uit branche-ervaring, vóór de campagne
+  überhaupt draait. Dat wringt met "voeg niet honderden negatieven toe".
+- **Geen display remarketing bij spoedeisend werk.** *"Mijn wc lekt"* vraagt niet om iemand die je
+  twee weken achtervolgt. Aaron nuanceert: bij lange aankooptrajecten — zijn voorbeeld is zakelijke
+  IT — werkt remarketing wél.
+- **PMax pas met offline conversies**: daar zijn ze het over eens, maar Mancini is strenger. Hij test
+  het alleen in zeer competitieve markten en heeft er zelf nog geen goede resultaten mee.
+
+### Waar het bij kleine dienstverleners echt om draait: reactiesnelheid
+
+Dit is het punt waar beiden het hardst op drukken, en het ligt buiten Google Ads.
+
+- Onderzoek dat Mancini aanhaalt: **341% meer kans** op een lead bij reageren binnen 5 minuten, en
+  **400%** binnen 60 seconden.
+- Zijn eigen test: vier aannemers gebeld via hun advertenties, allemaal voicemail. De eerste belde na
+  10 minuten terug, daarna 4 uur, 8 uur, de volgende dag. **De eerste kreeg de klus van $1.700.**
+- Ze bellen klanten op via het tracking-nummer: *"Jullie hebben de laatste tien telefoontjes niet
+  opgenomen. Hoe moet dit dan werken?"*
+- *"Je kunt tegenwoordig een antwoorddienst inhuren voor onder de $200 per maand. Levert die één klus
+  op, dan heb je hem voor zes maanden terugverdiend."*
+- Wat ze het vaakst horen in gespreksopnames: **"O, je neemt op."** En die krijgt de klus.
+
+### De rest van het beeld
+
+- **Een conversie is de eerste winst, niet het einde.** Niemand sluit 100% van zijn leads. Voorbeeld:
+  één elektricien die hij inhuurde leverde via twee doorverwijzingen ruim $5.000 op.
+- **Wat je meet als je geen CRM hebt**: een simpele spreadsheet waarin de ondernemer 10–20 minuten
+  per week de werkelijke omzet per lead invult. Waarschuwing erbij: *"is het niet geautomatiseerd,
+  dan gebeurt het niet"* — Aaron zegt dat je 3–6 maanden nodig hebt voor bruikbare data, Mancini zegt
+  meestal sneller.
+- **Twee waarschuwingen over lead*kwaliteit*.** Beiden vertellen een casus waarin de klant klaagde
+  over slechte leads en het probleem **buiten Google Ads** lag: bij Aaron een nieuwe receptioniste,
+  bij Mancini een verkoper die was gepasseerd voor promotie en bewust deals liet klappen. Controleer
+  wie de leads aanneemt voor je aan de campagne sleutelt.
+- **Verwachtingen**: maand twee is beter dan maand één, maand drie beter dan twee. *"Google Ads is
+  geen Hail Mary."* Is het je laatste redmiddel omdat het bedrijf omvalt, dan is het geen goede
+  match.
+
+> **Werk je aan een aannemersbedrijf?** Reken dan eerst met `/aannemer` na of de marge en de
+> break-even kloppen. Meer leads bij een kapotte prijs versnelt alleen het verlies.
 
 ---
 
@@ -1607,7 +1913,11 @@ Deze staan zo in het materiaal. Doe niet alsof het één antwoord is.
 | **Broad match** | Aaron: onmisbaar in 2026. Andrew Lok: breekt de relevantieketen en is een slechte ervaring. |
 | **AI Max** | Aaron ziet potentie maar raadt het af; Andrew Lok is enthousiast. Brent schat twee jaar. Aaron zelf verschuift binnen enkele maanden van "nee" naar "2026 wordt het jaar". |
 | **PMax als concept** | Aaron: 90%+ van zijn accounts draait erop. Andrew Lok: fel tegen. |
-| **Negatieve keywords** | Vroeger agressief, nu conservatief; Andrew Lok gebruikt er helemaal geen. |
+| **Negatieve keywords** | Vroeger agressief, nu conservatief; Andrew Lok gebruikt er helemaal geen; Mike Mancini start bij lokale dienstverleners met ~2.000 negatieven vóór de campagne draait. |
+| **Formulierlengte** | Aaron: meerstapsformulier, meer velden filteren beter. Mancini: kort houden, *"je vraagt naar hun bloedgroep"*. Beiden werken met leadgen. |
+| **Remarketing bij dienstverleners** | Mancini: zinloos bij spoedwerk. Aaron: waardevol bij lange aankooptrajecten. Het onderscheid zit in de urgentie van de klus, niet in de branche. |
+| **Doel verlagen om te schalen** | Video 77: bij schalen is lager altijd veiliger dan je werkelijke prestatie. Casus B en C hierboven: verlagen kostte clicks én waarde. Verschil: nieuwe campagne met ruimte versus volwassen campagne op een verzadigde veiling. |
+| **Zelf doen versus bureau** | Onder $10.000 per maand een bureau weggegooid geld — maar hij verkoopt coaching aan wie het zelf doet. |
 | **Promotie-PMax tijdens Black Friday** | Aaron blijft voorstander, Brent is er terughoudender in geworden. |
 | **Google's AI Max-belofte** | "+14% conversies" versus "+7% conversieratio" — twee verschillende claims. |
 
@@ -1651,11 +1961,18 @@ Behandel het volgende als momentopname en controleer het:
 - **Het percentage gebruikers dat nog eerst naar Google Search gaat** (90–95% begin 2026) is precies
   het cijfer dat gaat schuiven.
 - **Local Service Ads-beschikbaarheid** per land.
+- **De budgetgrenzen waarboven een bureau zinvol wordt** ($10.000 / $30.000 / $50.000) — die
+  verschuiven met wat je zelf met hulpmiddelen aankunt.
+- **Welke scripts bestaan en wat het dashboard inmiddels zelf toont.** Google haalt functionaliteit
+  in; een script dat vandaag onmisbaar is, kan volgend jaar overbodig zijn.
+- **De reactiesnelheidscijfers** (341% / 400%) komen uit aangehaald onderzoek waarvan de bron en het
+  jaar in het materiaal niet worden genoemd. De richting is aannemelijk, het precieze getal niet
+  controleerbaar.
 
 Wat waarschijnlijk lang meegaat: de success loop, follow the money, de kwadrantenkaart, het
 onderscheid tussen platformdata en bedrijfsdata, de mechaniek van budget-op-campagneniveau, de
-sessieduur-diagnose, de vier redenen voor een extra campagne, en de vier onderdelen van een goede
-advertentietekst.
+sessieduur-diagnose, de vier redenen voor een extra campagne, de drie stappen van de accountaudit,
+de klokcurve onder biedstrategieën, en de vier onderdelen van een goede advertentietekst.
 
 ---
 
