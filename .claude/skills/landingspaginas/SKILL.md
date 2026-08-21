@@ -1,6 +1,6 @@
 ---
 name: landingspaginas
-description: Landingspagina's, formulieren en conversie voor leadgeneratie volgens de werkwijze van Sam van Atomic Marketing, gedestilleerd uit 39 video's. Gebruik deze skill bij alles wat ná de advertentieklik gebeurt: een landingspagina ontwerpen of verbeteren, de hero-sectie boven de vouw, headlines en call-to-actions, formulieren die niet worden afgemaakt, uitval per vraagstap, meerstapsformulieren, welke velden je wel en niet vraagt, conversieratio's die tegenvallen, heatmaps en scrollmaps analyseren met Microsoft Clarity, dode zones op een pagina, mobiel versus desktop, sociale bewijskracht en vertrouwenssignalen. Ook bij leadkwaliteit: leads die niet opnemen, valse telefoonnummers, lage contactratio, het onderscheid tussen offerabele en niet-offerabele leads, offline conversietracking met GCLID, en campagnestructuur voor leadgeneratie in Google Ads. Ook bij "mijn landingspagina converteert niet", "we krijgen leads maar niemand neemt op" of /landingspaginas.
+description: Landingspagina's, formulieren en conversie voor leadgeneratie volgens de werkwijze van Sam van Atomic Marketing, gedestilleerd uit 39 video's. Gebruik deze skill bij alles wat ná de advertentieklik gebeurt: een landingspagina ontwerpen of verbeteren, de hero-sectie boven de vouw, headlines en call-to-actions, formulieren die niet worden afgemaakt, uitval per vraagstap, meerstapsformulieren, welke velden je wel en niet vraagt, conversieratio's die tegenvallen, heatmaps en scrollmaps analyseren met Microsoft Clarity, dode zones op een pagina, mobiel versus desktop, sociale bewijskracht en vertrouwenssignalen. Ook bij leadkwaliteit: leads die niet opnemen, valse telefoonnummers, lage contactratio, het onderscheid tussen offerabele en niet-offerabele leads, en offline conversietracking met GCLID. Ook bij "mijn landingspagina converteert niet", "we krijgen leads maar niemand neemt op" of /landingspaginas.
 ---
 
 # Landingspagina's en conversie voor leadgeneratie
@@ -48,7 +48,7 @@ Twee stellingen die daaruit volgen en die het advies in deze skill sturen:
 | Leads komen binnen maar niemand neemt op | Verkeerde velden gevraagd | *Het e-mailveld schrappen* |
 | Uitval direct onder de hero | Eerste sectie te zwaar of niet relevant | *Scrollmap-analyse*, punten 2 tot 6 |
 | Lange pagina, lage conversie | Te lang om te diagnosticeren | Inkorten, dan sectie voor sectie terugbouwen |
-| Veel leads, weinig offertes | Leads van buiten het werkgebied | *Campagnestructuur* — locatie-advertentiegroepen |
+| Veel leads, weinig offertes | Leads van buiten het werkgebied | *Wat hij anders doet in de campagne* |
 | Klant klaagt over leadkwaliteit | Ongedefinieerd probleem | *Leadkwaliteit* — eerst definiëren, dan meten |
 
 ---
@@ -404,20 +404,15 @@ heeft een betere verhouding offerabel tegenover niet-offerabel. Dat zie je allee
 
 ---
 
-## Campagnestructuur voor leadgeneratie
+## Wat hij anders doet in de campagne
 
-Dit hoofdstuk raakt aan `/google-ads`. Waar ze elkaar tegenspreken staat dat in de spanningentabel.
+> **De campagnekant staat in `/google-ads`** — biedstrategieën, budgetopbouw, accountvolgorde en
+> campagne-instellingen staan daar uitgebreider en op een veel groter corpus. Hier alleen wat Sam
+> aantoonbaar ánders doet, en wat rechtstreeks raakt aan de kwaliteit van wat er binnenkomt.
 
-### Budget dicteert de opbouw
+### Zijn vijf advertentiegroepen
 
-*"Smeer de boter niet te dun."* Beperkt budget betekent minder campagnes, minder advertentiegroepen,
-minder keywords en minder experimenten — niet dezelfde opzet met kleinere bedragen.
-
-> **Casus.** Budget verdeeld over twee campagnes gaf drie weken lang middelmatige resultaten. Ze
-> pauzeerden de isolatiecampagne en stopten alles in de stucwerkcampagne. Met meer data konden ze
-> sneller bijsturen en zakten de kosten per lead snel naar £30.
-
-### De vijf standaard advertentiegroepen
+Een andere indeling dan de themagroepen uit `/google-ads`. Hij splitst op **intentieniveau**:
 
 1. **General** — de dienst zonder duidelijke intentie: "dakdekker", "dakwerk"
 2. **Intent** — iemand zoekt duidelijk een bedrijf: "dakdekkersbedrijf", "dakdekker aannemer"
@@ -426,55 +421,27 @@ minder keywords en minder experimenten — niet dezelfde opzet met kleinere bedr
 5. **Cost and price** — "kosten dakreparatie", "prijs nieuw dak". Bovenin de funnel: **lagere
    conversieratio maar goedkopere kliks**, dus zoek de balans
 
-Nuance bij "near me": denk na over wat "in de buurt" voor die persoon betekent. Bestrijk je een groot
-gebied, dan is tien kilometer verderop níét in de buurt — dan verdient die groep een eigen
-advertentiegroep met een passende landingspagina.
+**Nuance bij "near me"**: denk na over wat "in de buurt" voor die persoon betekent. Bestrijk je een
+groot gebied, dan is tien kilometer verderop níét in de buurt — dan verdient die groep een eigen
+advertentiegroep met een passende landingspagina, anders klopt de belofte niet.
 
-### Alles onder één dak
+### De casus die raakt aan leadkwaliteit
 
-Zijn voorkeur boven aparte campagnes per locatie: **één campagne per dienst, met de locaties als
-advertentiegroepen.** Bij multilocatiecampagnes krijg je "dakwerk Londen", "zolderverbouwing Londen",
-"dakwerk Kent" enzovoort — *"als beheerder wordt dat stressvol en te versnipperd."*
-
-Meerdere diensten van vergelijkbare waarde: advertentiegroepen. Wezenlijk andere diensten met een
-andere ordergrootte: eigen campagnes met eigen budget.
-
-**Waarschuwing tegen oversegmentatie**: *"dat is de SKAG-aanpak in een nieuw jasje."* Controleer of je
-advertentiegroepen niet toch op dezelfde zoektermen verschijnen — dan kun je ze net zo goed
-samenvoegen.
-
-> **De casus die het hardst spreekt.** Een dakdekker in Londen draaide met general, intent, cost en
-> service veel leads binnen, maar met een **lead-naar-offerte-ratio van 23%** en veel aanvragen van
-> buiten het werkgebied — *"Londen is groot, mensen werken er zonder er te wonen."* Ze schakelden over
-> op **uitsluitend locatie-advertentiegroepen met locatiekeywords** en gingen naar **46%**.
+> Een dakdekker in Londen draaide met general, intent, cost en service veel leads binnen, maar met
+> een **lead-naar-offerte-ratio van 23%** en veel aanvragen van buiten het werkgebied — *"Londen is
+> groot, mensen werken er zonder er te wonen."* Ze schakelden over op **uitsluitend
+> locatie-advertentiegroepen met locatiekeywords** en gingen naar **46%**.
 >
-> Zonder leadattributie had hij dit nooit gezien: binnen Google Ads zag de oude opzet er prima uit.
+> Het punt is niet de structuur maar de meting: zonder leadattributie had hij dit nooit gezien.
+> Binnen Google Ads zag de oude opzet er prima uit.
 
-### Instellingen bij de start
+### Eén waarschuwing over matchtypes
 
-Doel op leads · **handmatige CPC (enhanced)** voor nieuwe accounts, bestaande accounts met data mogen
-meteen op maximize conversions met tCPA · doelgroepen op observatie · **broad match uit** bij een
-nieuwe campagne · **automatisch gegenereerde assets uit** (*"we hebben daar rare dingen mee gezien"*) ·
-advertentierotatie geoptimaliseerd bij één advertentie, maar op "niet optimaliseren" zodra je een
-tweede toevoegt, zodat beide verkeer krijgen · advertentieschema pas aanpassen als de klant
-telefonisch niet bereikbaar is.
+Op intentiekeywords met "bedrijf" of "aannemer" erin kwamen bij hem vooral **concurrentnamen**
+binnen, bij $20 per klik. *"Houd er rekening mee dat Google je toont bij zoekopdrachten naar
+concurrenten."* Zijn reactie is de hele advertentiegroep omzetten naar exact match.
 
-**Startbiedingen**: *"tijd is geld, er is niets ergers dan een campagne lanceren en geen kliks
-krijgen."* Uitgaan van eerstepaginabiedingen, liever iets hoger bieden, maar niet de
-bovenaan-de-paginabiedingen betalen. Dagelijks kliks en impressies controleren.
-
-### Biedstrategie in twee fasen
-
-- **Fase 1 — kosten beheersen.** Handmatige CPC om een basislijn te leggen: wat kost een klik per
-  keyword, wat is het benchmarkbedrag per conversie.
-- **Fase 2 — maximize conversions introduceren**, meestal als **50/50-experiment**, of 70/30 als de
-  handmatige campagne goed loopt en hij het resultaat wil beschermen. Een tCPA alleen instellen als de
-  kosten per conversie te hoog liggen.
-
-> **Casus.** Handmatig: CPC $9,31, conversieratio 11%, kosten per conversie $79,91.
-> Maximize conversions met tCPA: CPC $14,67 — fors hoger — maar conversieratio **26,67%** en kosten
-> per conversie **$55**. *"Alleen door de biedstrategie te veranderen."* Hij zegt er meteen bij dat de
-> steekproef klein is.
+Dit is meteen het punt waarop hij het oneens is met `/google-ads` — zie de spanningentabel hieronder.
 
 ---
 
