@@ -957,6 +957,11 @@ wat hij daar aantreft.
 
 ## Landingspagina's
 
+> **Voor het ontwerp zelf is er `/landingspaginas`** — de hero-anatomie, formulieruitval per
+> vraagstap, scrollmap-analyse en leadkwaliteit, uit de praktijk van een bureau dat er ruim
+> vijfhonderd heeft gebouwd voor vakbedrijven. Dit hoofdstuk geeft het kader; die skill geeft de
+> uitvoering. Ze verschillen op één punt van mening over formulierlengte — zie de spanningentabel daar.
+
 **De landingspagina weegt zwaarder dan de campagne.** Een middelmatige campagne met targetingfouten
 en zwakke teksten haalt op een goed converterende pagina nog steeds resultaat. Andersom niet: een
 perfecte campagne die naar een slechte pagina stuurt, converteert niet.
