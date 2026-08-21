@@ -12,16 +12,21 @@ Wat het doet:
   3. Schrijft per video een leesbaar .md-bestand met de tekst.
   Al-opgehaalde video's worden overgeslagen (herkenbaar aan het video-ID in de naam).
 
-Blokkade-bescherming (v2, 18 juli 2026):
+Blokkade-bescherming (v3, 4 augustus 2026):
   - Random jitter (8-20s) tussen video's in plaats van een vaste pauze.
     Kleine batches (t/m 15 nog op te halen video's) krijgen automatisch een
     snelpad met korte jitter (2-4s): de blokkade komt pas na ~30 snelle
     verzoeken, dus daar is de lange pauze onnodig. Expliciete --min-pauze/
     --max-pauze/--pauze winnen altijd; --pauze N is de oude vaste pauze (alias).
-  - Twee lokale routes: eerst youtube-transcript-api, bij een block de yt-dlp
-    caption-route (andere client-handtekening, werkt vaak nog).
+  - Drie lokale routes achter elkaar, elk met een andere client-handtekening;
+    bij een block gaat 'ie door naar de volgende:
+      1. youtube-transcript-api
+      2. yt-dlp caption-route
+      3. InnerTube (rechtstreeks youtubei.googleapis.com/youtubei/v1/player
+         met de mobiele ANDROID/IOS-clients - de handtekening waar YouTube
+         het minst streng op is)
   - Rustpauze (5 min) na elke 15 lokale fetches.
-  - Bij een block op beide routes: 15 min cooldown, dan opnieuw proberen.
+  - Bij een block op alle drie de routes: 15 min cooldown, dan opnieuw proberen.
   - Lukt het na de cooldown nog niet en is er een Apify-key: overschakelen
     naar de Apify-afvanger voor de rest.
   - State file (.transcript_state.json) in de doelmap: hervat altijd waar
@@ -40,7 +45,8 @@ transcripties in <kennis_map>/<kanaal>. De installatie-wizard vraagt daarnaar bi
 
 Taal: standaard zoekt 'ie een Nederlandse ondertitel; bestaat die niet, dan pakt 'ie de beste
 beschikbare in de oorspronkelijke taal. Met --vertaal laat je YouTube 'm naar --taal vertalen.
-Via de Apify-route is de taalcode een schatting (stopwoorden-heuristiek).
+Ook de Apify-route vertaalt: met --vertaal krijgt de actor een targetLanguage mee.
+Zonder --vertaal is de taalcode daar een schatting (stopwoorden-heuristiek).
 
 Gemaakt door Bart Boonstra (Slim Werken AI).
 """
@@ -61,7 +67,16 @@ MIN_DELAY = 8
 MAX_DELAY = 20
 REST_EVERY = 15
 REST_SECS = 300
-COOLDOWN_SECS = 900
+
+# Oplopende cooldowns in plaats van één vaste van 15 minuten. YouTube laat het IP
+# vaak al eerder weer los; met een vaste 900s zit je dan tien minuten per keer voor
+# niks te wachten. Lukt het na 300s niet, dan pas escaleren.
+COOLDOWNS = [300, 600, 900]
+
+# Hoe lang een route die net geblokkeerd werd wordt overgeslagen. Een route die
+# twintig video's op rij dichtzat, hoeft niet bij video 21 opnieuw geprobeerd te
+# worden: dat verzoek faalt gegarandeerd en warmt het IP verder op.
+ROUTE_BLOKKADE = 600
 
 # Klein-batch-snelpad: de blokkade komt in de praktijk pas na ~30 snelle verzoeken,
 # dus bij weinig op te halen video's kan de jitter fors korter. De dual-route- en
@@ -216,6 +231,20 @@ class IpBlockedError(Exception):
 
 
 BLOK_NAMEN = ("IpBlocked", "RequestBlocked", "TooManyRequests", "YouTubeRequestFailed")
+# YouTube blokkeert tegenwoordig vaker met een bot-check dan met een kale 429.
+# Die komt via alle routes binnen als een gewone foutmelding, dus herkennen we 'm
+# aan de tekst - anders boeken we een blokkade weg als 'video zonder ondertitels'
+# en slaat de cooldown nooit aan.
+# google.com/sorry is de bot-muur waar YouTube je naartoe stuurt bij verdacht
+# verkeer; die redirect komt per route in een ander jasje naar buiten.
+BLOK_TEKSTEN = ("429", "too many requests", "blocking requests from your ip",
+                "sign in to confirm", "confirm you're not a bot",
+                "confirm you are not a bot", "bevestigen dat je geen bot bent",
+                "google.com/sorry", "/sorry/index")
+
+
+def lijkt_op_blokkade(exc):
+    return type(exc).__name__ in BLOK_NAMEN or any(s in str(exc).lower() for s in BLOK_TEKSTEN)
 
 
 def fetch_captions(video_id, taal, vertaal):
@@ -227,11 +256,9 @@ def fetch_captions(video_id, taal, vertaal):
     try:
         tl = api.list(video_id)
     except Exception as e:
-        name = type(e).__name__
-        msg = str(e)
-        if name in BLOK_NAMEN or "429" in msg or "blocking requests from your IP" in msg:
-            raise IpBlockedError(msg) from e
-        return None, "geen ondertitels (" + name + ")", False
+        if lijkt_op_blokkade(e):
+            raise IpBlockedError(str(e)) from e
+        return None, "geen ondertitels (" + type(e).__name__ + ")", False
 
     transcript = None
     try:
@@ -256,11 +283,9 @@ def fetch_captions(video_id, taal, vertaal):
     try:
         fetched = transcript.fetch()
     except Exception as e:
-        name = type(e).__name__
-        msg = str(e)
-        if name in BLOK_NAMEN or "429" in msg or "blocking requests from your IP" in msg:
-            raise IpBlockedError(msg) from e
-        return None, "ophalen mislukt (" + name + ")", False
+        if lijkt_op_blokkade(e):
+            raise IpBlockedError(str(e)) from e
+        return None, "ophalen mislukt (" + type(e).__name__ + ")", False
 
     snippets = getattr(fetched, "snippets", fetched)
     parts = []
@@ -274,17 +299,61 @@ def fetch_captions(video_id, taal, vertaal):
     return text, transcript.language_code, translated
 
 
+# ---------- gedeeld: de timedtext-endpoint (route 2 en 3 halen daar allebei op) ----------
+
+# De endpoint knijpt snel af maar laat net zo snel weer los. Twee retries met
+# oplopende backoff kosten in het slechtste geval een halve minuut; dat is een stuk
+# goedkoper dan de cooldown van 15 minuten die er anders achteraan komt.
+TIMEDTEXT_BACKOFF = [(8, 12), (25, 35)]
+
+
+def _timedtext_url(base_url, **extra):
+    """fmt en tlang staan niet in 'sparams', dus die mogen we herschrijven
+    zonder de signature in de URL ongeldig te maken."""
+    import urllib.parse
+    parts = urllib.parse.urlparse(base_url)
+    query = urllib.parse.parse_qs(parts.query)
+    for key, value in extra.items():
+        query[key] = [value]
+    return urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(query, doseq=True)))
+
+
+def _haal_timedtext(url, route):
+    """Haalt een caption-spoor op. Geeft de ruwe tekst of None bij een HTTP-fout
+    die geen blokkade is. Gooit IpBlockedError als ook de laatste poging 429 geeft."""
+    import urllib.error, urllib.request
+    for poging in range(len(TIMEDTEXT_BACKOFF) + 1):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8", errors="ignore")
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                return None
+            if poging == len(TIMEDTEXT_BACKOFF):
+                raise IpBlockedError("429 op de timedtext-URL (" + route + "-route)") from e
+            lo, hi = TIMEDTEXT_BACKOFF[poging]
+            time.sleep(random.uniform(lo, hi))
+    return None
+
+
 # ---------- ondertitels ophalen: route 2 (yt-dlp caption-URL's) ----------
 
-def fetch_captions_ytdlp(video_id, taal):
+def fetch_captions_ytdlp(video_id, taal, vertaal=False):
     """Route 2: yt-dlp's caption-URL's (andere client-handtekening).
     Werkt vaak nog als de transcript-api al geblokkeerd is.
-    Geeft (tekst, taalcode, False) of (None, reden, False).
+    Geeft (tekst, taalcode, vertaald_bool) of (None, reden, False).
     Gooit IpBlockedError bij een 429."""
-    import urllib.request
+    import urllib.error, urllib.request
     from yt_dlp import YoutubeDL
-    with YoutubeDL({"quiet": True, "no_warnings": True, "skip_download": True}) as ydl:
-        info = ydl.extract_info("https://www.youtube.com/watch?v=" + video_id, download=False)
+    # De bot-check komt hier als een gewone DownloadError naar buiten, niet als 429.
+    try:
+        with YoutubeDL({"quiet": True, "no_warnings": True, "skip_download": True}) as ydl:
+            info = ydl.extract_info("https://www.youtube.com/watch?v=" + video_id, download=False)
+    except Exception as e:
+        if lijkt_op_blokkade(e):
+            raise IpBlockedError(str(e)[:200]) from e
+        raise
     tracks = {}
     for source in (info.get("subtitles") or {}, info.get("automatic_captions") or {}):
         for lang, formats in source.items():
@@ -300,16 +369,23 @@ def fetch_captions_ytdlp(video_id, taal):
         chosen_lang, formats = next(iter(tracks.items()))
     if not formats:
         return None, "geen ondertiteling beschikbaar (yt-dlp)", False
+    lang_clean = chosen_lang.replace("-orig", "") if chosen_lang else taal
+    # Dit zijn dezelfde timedtext-URL's als bij de InnerTube-route, dus fmt en tlang
+    # mogen we herschrijven zonder de signature te breken. fmt hard op json3 zetten
+    # scheelt bovendien een JSONDecodeError als yt-dlp alleen een xml/vtt-spoor geeft.
     fmt = next((f for f in formats if f.get("ext") == "json3"), formats[0])
-    req = urllib.request.Request(fmt["url"], headers={"User-Agent": "Mozilla/5.0"})
+    params = {"fmt": "json3"}
+    translated = False
+    if vertaal and lang_clean.split("-")[0] != taal.split("-")[0]:
+        params["tlang"] = taal
+        translated = True
+    raw = _haal_timedtext(_timedtext_url(fmt["url"], **params), "yt-dlp")
+    if not raw:
+        return None, "yt-dlp: caption-spoor niet op te halen", False
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            raw = resp.read().decode("utf-8", errors="ignore")
-    except urllib.error.HTTPError as e:
-        if e.code == 429:
-            raise IpBlockedError("429 op caption-URL (yt-dlp-route)") from e
-        return None, "yt-dlp caption HTTP " + str(e.code), False
-    data = json.loads(raw)
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return None, "yt-dlp: onverwacht caption-formaat", False
     parts = []
     for event in data.get("events", []):
         text = "".join(seg.get("utf8", "") for seg in event.get("segs", [])).strip()
@@ -318,20 +394,165 @@ def fetch_captions_ytdlp(video_id, taal):
     text = " ".join(parts).strip()
     if not text:
         return None, "caption-bestand was leeg (yt-dlp)", False
-    lang_clean = chosen_lang.replace("-orig", "") if chosen_lang else taal
-    return text, lang_clean, False
+    return text, (taal if translated else lang_clean), translated
 
 
-# ---------- ondertitels ophalen: route 3 (Apify-afvanger, ~$0,01/video) ----------
+# ---------- ondertitels ophalen: route 3 (InnerTube, rechtstreeks) ----------
 
-def fetch_apify(token, video_id):
-    """Zelfde contract als fetch_captions: (tekst, taalcode, False) of (None, reden, False)."""
+# De mobiele clients krijgen een player-antwoord met caption-tracks zonder PO-token;
+# de WEB-client geeft daar tegenwoordig UNPLAYABLE op. Op volgorde van betrouwbaarheid.
+INNERTUBE_URL = "https://youtubei.googleapis.com/youtubei/v1/player"
+INNERTUBE_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"
+INNERTUBE_CLIENTS = [
+    ({"clientName": "ANDROID", "clientVersion": "20.10.38", "androidSdkVersion": 30},
+     "com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip"),
+    ({"clientName": "IOS", "clientVersion": "20.10.4", "deviceModel": "iPhone16,2"},
+     "com.google.ios.youtube/20.10.4 (iPhone16,2; U; CPU iOS 18_3 like Mac OS X)"),
+    ({"clientName": "ANDROID_VR", "clientVersion": "1.62.27", "deviceModel": "Quest 3",
+      "androidSdkVersion": 32},
+     "com.google.android.apps.youtube.vr.oculus/1.62.27 (Linux; U; Android 12; Quest 3) gzip"),
+]
+
+
+def _is_botcheck(status, reason):
+    """LOGIN_REQUIRED betekent hier niet 'privevideo' maar de bot-check
+    ('Log in om te bevestigen dat je geen bot bent') - oftewel een blokkade
+    op het IP, geen video die er niet is. De reden-tekst is vertaald naar --taal,
+    dus de status is leidend en de tekst alleen een vangnet."""
+    if status == "LOGIN_REQUIRED":
+        return True
+    low = (reason or "").lower()
+    return any(s in low for s in BLOK_TEKSTEN)
+
+
+def _innertube_player(video_id, client, user_agent, taal):
+    """Eén player-call. Geeft (data, status, reden); data is None als deze
+    client de video niet mag zien."""
+    import urllib.error, urllib.request
+    ctx = dict(client)
+    ctx["hl"] = taal
+    ctx["gl"] = "NL"
+    body = json.dumps({
+        "context": {"client": ctx},
+        "videoId": video_id,
+        "contentCheckOk": True,
+        "racyCheckOk": True,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        INNERTUBE_URL + "?key=" + INNERTUBE_KEY, data=body,
+        headers={"Content-Type": "application/json", "User-Agent": user_agent,
+                 "X-Youtube-Client-Name": client["clientName"],
+                 "X-Youtube-Client-Version": client["clientVersion"]})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8", errors="ignore"))
+    except urllib.error.HTTPError as e:
+        if e.code in (429, 403):
+            raise IpBlockedError("HTTP " + str(e.code) + " op de InnerTube-player") from e
+        raise
+    ps = data.get("playabilityStatus") or {}
+    status, reason = ps.get("status"), ps.get("reason")
+    if status != "OK":
+        return None, status, reason
+    return data, status, reason
+
+
+def _kies_innertube_track(tracks, taal):
+    """Voorkeur: gevraagde taal, dan Engels; binnen een taal handmatig boven automatisch."""
+    def zelfde_taal(track, code):
+        lc = track.get("languageCode") or ""
+        return lc == code or lc.split("-")[0] == code.split("-")[0]
+
+    for code in (taal, "en"):
+        kandidaten = [t for t in tracks if zelfde_taal(t, code)]
+        handmatig = [t for t in kandidaten if t.get("kind") != "asr"]
+        if handmatig:
+            return handmatig[0]
+        if kandidaten:
+            return kandidaten[0]
+    return tracks[0]
+
+
+def fetch_captions_innertube(video_id, taal, vertaal):
+    """Route 3: rechtstreeks de InnerTube-player bevragen.
+    Zelfde contract als fetch_captions: (tekst, taalcode, vertaald_bool)
+    of (None, reden, False). Gooit IpBlockedError bij een rate-limit-block."""
+    # Elke client krijgt een kans: waar de een een bot-check vangt, komt de ander
+    # er vaak nog gewoon langs. Pas als geen enkele client binnenkomt tellen we de
+    # bot-check als blokkade - dan mag de cooldown zijn werk doen.
+    data = None
+    botcheck = False
+    laatste = "geen speelbaar antwoord"
+    for client, user_agent in INNERTUBE_CLIENTS:
+        try:
+            data, status, reason = _innertube_player(video_id, client, user_agent, taal)
+        except IpBlockedError:
+            raise
+        except Exception as e:
+            if lijkt_op_blokkade(e):
+                raise IpBlockedError(str(e)[:200]) from e
+            laatste = type(e).__name__
+            continue
+        if data is not None:
+            break
+        laatste = str(reason or status or laatste)
+        if _is_botcheck(status, reason):
+            botcheck = True
+    if data is None:
+        if botcheck:
+            raise IpBlockedError("InnerTube-bot-check: " + laatste)
+        return None, "innertube: " + laatste, False
+
+    tracklist = (data.get("captions") or {}).get("playerCaptionsTracklistRenderer") or {}
+    tracks = tracklist.get("captionTracks") or []
+    if not tracks:
+        return None, "geen ondertitels beschikbaar (innertube)", False
+
+    track = _kies_innertube_track(tracks, taal)
+    lang = track.get("languageCode") or taal
+    translated = False
+    params = {"fmt": "json3"}
+    if vertaal and lang.split("-")[0] != taal.split("-")[0] and track.get("isTranslatable"):
+        params["tlang"] = taal
+        translated = True
+
+    raw = _haal_timedtext(_timedtext_url(track["baseUrl"], **params), "innertube")
+    if not raw:
+        return None, "innertube: caption-spoor niet op te halen", False
+
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError:
+        return None, "innertube: onverwacht caption-formaat", False
+    parts = []
+    for event in payload.get("events", []):
+        text = "".join(seg.get("utf8", "") for seg in event.get("segs", [])).strip()
+        if text and text != "\n":
+            parts.append(text.replace("\n", " "))
+    text = " ".join(parts).strip()
+    if not text:
+        return None, "innertube: lege ondertitel", False
+    return text, (taal if translated else lang), translated
+
+
+# ---------- ondertitels ophalen: route 4 (Apify-afvanger, ~$0,01/video) ----------
+
+def fetch_apify(token, video_id, vertaal_naar=None):
+    """Zelfde contract als fetch_captions: (tekst, taalcode, vertaald) of (None, reden, False).
+
+    Met vertaal_naar (ISO 639-1) krijgt de actor een targetLanguage mee en levert hij
+    de vertaalde variant. Zonder die parameter komt de oorspronkelijke taal binnen en
+    is de taalcode niet meer dan een stopwoorden-schatting.
+    """
     import requests
+    payload = {"videoUrl": "https://www.youtube.com/watch?v=" + video_id}
+    if vertaal_naar:
+        payload["targetLanguage"] = vertaal_naar
     try:
         r = requests.post(
             "https://api.apify.com/v2/acts/" + APIFY_ACTOR + "/run-sync-get-dataset-items",
             params={"token": token, "timeout": 120},
-            json={"videoUrl": "https://www.youtube.com/watch?v=" + video_id},
+            json=payload,
             timeout=150)
         r.raise_for_status()
         items = r.json()
@@ -353,12 +574,109 @@ def fetch_apify(token, video_id):
     text = " ".join(parts).strip()
     if not text:
         return None, "apify: lege transcript", False
-    return text, taal_heuristiek(text), False
+    if not vertaal_naar:
+        return text, taal_heuristiek(text), False
+    # Vertaling gevraagd. De heuristiek kent alleen nl en en; kan die de gevraagde taal
+    # toetsen en spreekt hij hem tegen, dan heeft de actor targetLanguage genegeerd.
+    geschat = taal_heuristiek(text)
+    if vertaal_naar in ("nl", "en") and not geschat.startswith(vertaal_naar):
+        return text, geschat, False
+    return text, vertaal_naar, True
+
+
+# ---------- de lokale routes achter elkaar ----------
+
+class AllesGeblokkeerdError(Exception):
+    """Elke lokale route liep op een blokkade - tijd voor de cooldown."""
+
+
+def lokale_routes(taal, vertaal):
+    """De routes op volgorde. Elk een andere client-handtekening richting YouTube,
+    dus een blokkade op de een betekent lang niet altijd een blokkade op de ander."""
+    return [
+        ("transcript-api", lambda vid: fetch_captions(vid, taal, vertaal)),
+        ("yt-dlp", lambda vid: fetch_captions_ytdlp(vid, taal, vertaal)),
+        ("innertube", lambda vid: fetch_captions_innertube(vid, taal, vertaal)),
+    ]
+
+
+class RouteStatus:
+    """Onthoudt welke routes geblokkeerd zijn en welke het laatst werkte.
+
+    Zonder dit geheugen kost elke video drie verzoeken, ook als route 1 al twintig
+    keer op rij dichtzat. Met dit geheugen blijft er meestal één verzoek over."""
+
+    def __init__(self, routes):
+        self.routes = routes
+        self.geblokkeerd_tot = {naam: 0.0 for naam, _ in routes}
+        self.laatst_gelukt = None
+
+    def beschikbaar(self):
+        """De routes die nu geprobeerd mogen worden, best gokje eerst."""
+        nu = time.time()
+        vrij = [(naam, fn) for naam, fn in self.routes if self.geblokkeerd_tot[naam] <= nu]
+        if self.laatst_gelukt:
+            vrij.sort(key=lambda nf: nf[0] != self.laatst_gelukt)
+        return vrij
+
+    def blokkeer(self, naam):
+        self.geblokkeerd_tot[naam] = time.time() + ROUTE_BLOKKADE
+        if self.laatst_gelukt == naam:
+            self.laatst_gelukt = None
+
+    def gelukt(self, naam):
+        self.laatst_gelukt = naam
+        self.geblokkeerd_tot[naam] = 0.0
+
+    def reset(self):
+        """Na een cooldown krijgt elke route weer een eerlijke kans."""
+        for naam in self.geblokkeerd_tot:
+            self.geblokkeerd_tot[naam] = 0.0
+
+
+def haal_lokaal(video_id, status, head):
+    """Loopt de beschikbare routes af tot er één ondertitels teruggeeft.
+
+    Geeft (tekst, taalcode, vertaald, routenaam, pogingen). Vond geen enkele route
+    ondertitels, dan is tekst None en staat de laatste reden op de plek van de taalcode.
+    Zijn ALLE routes geblokkeerd, dan volgt een AllesGeblokkeerdError.
+
+    'pogingen' telt alleen de routes die YouTube echt te woord heeft gestaan. Een
+    geblokkeerde route kost geen quota, dus die mag de rustpauze niet vervroegen -
+    anders gaat het script juist langzamer draaien naarmate het vaker geblokkeerd wordt."""
+    beschikbaar = status.beschikbaar()
+    if not beschikbaar:
+        # Alles staat nog in de route-cooldown; geen verzoek waard.
+        raise AllesGeblokkeerdError()
+
+    reden = "geen ondertitels"
+    geblokkeerd = 0
+    pogingen = 0
+    for naam, fetch in beschikbaar:
+        try:
+            text, lang, translated = fetch(video_id)
+        except IpBlockedError:
+            geblokkeerd += 1
+            status.blokkeer(naam)
+            print(head + " - " + naam + "-route geblokkeerd")
+            continue
+        except Exception as e:
+            pogingen += 1
+            reden = naam + ": " + type(e).__name__
+            continue
+        pogingen += 1
+        if text is not None:
+            status.gelukt(naam)
+            return text, lang, translated, naam, pogingen
+        reden = lang
+    if geblokkeerd == len(beschikbaar):
+        raise AllesGeblokkeerdError()
+    return None, reden, False, None, pogingen
 
 
 # ---------- output ----------
 
-def write_transcript(out_dir, meta, text, index, lang, translated):
+def write_transcript(out_dir, meta, text, index, lang, translated, route=None):
     title_safe = safe_name(meta["title"])
     vid = meta["id"]
     fname = str(index).zfill(2) + " - " + title_safe + " [" + vid + "].md"
@@ -368,7 +686,7 @@ def write_transcript(out_dir, meta, text, index, lang, translated):
         "",
         "- **Video:** https://www.youtube.com/watch?v=" + vid,
         "- **Ondertitel-taal:** " + taal_regel,
-        "- **Bron:** YouTube-ondertitels",
+        "- **Bron:** YouTube-ondertitels" + (" (via " + route + ")" if route else ""),
         "",
         "---",
         "",
@@ -444,11 +762,15 @@ def main():
         pauze_label = "random jitter"
     if max_p < min_p:
         max_p = min_p
+    routestatus = RouteStatus(lokale_routes(args.taal, args.vertaal))
     if modus == "lokaal":
         print("Pauze           : " + str(min_p) + "-" + str(max_p) + "s (" + pauze_label + ")")
+        print("Lokale routes   : " + ", ".join(naam for naam, _ in routestatus.routes))
+        print("Cooldowns       : " + ", ".join(str(c) + "s" for c in COOLDOWNS) + " (oplopend)")
     print()
 
     done = skipped = failed = apify_calls = local_fetches = 0
+    apify_vertaal_gemeld = False
     t_all = time.time()
     gestopt = False
 
@@ -457,55 +779,49 @@ def main():
         if already_done(out_dir, v["id"], state):
             print(head + " - al gedaan, overslaan"); skipped += 1; continue
 
-        text = lang = None
+        text = lang = route = None
         translated = False
 
         if modus == "lokaal":
-            # Route 1: youtube-transcript-api
-            try:
-                text, lang, translated = fetch_captions(v["id"], args.taal, args.vertaal)
-                local_fetches += 1
-            except IpBlockedError:
-                # Route 2: yt-dlp caption-URL's (andere client-handtekening)
-                print(head + " - transcript-api geblokkeerd, probeer yt-dlp-route...")
-                try:
-                    text, lang, translated = fetch_captions_ytdlp(v["id"], args.taal)
-                    local_fetches += 1
-                except IpBlockedError:
-                    # Beide routes geblokkeerd: cooldown en opnieuw proberen
-                    print(head + " - beide routes geblokkeerd. " + str(COOLDOWN_SECS) + "s afkoelen...")
+            # Eerst gewoon proberen; daarna oplopende cooldowns tot het lukt of ze op zijn.
+            for wacht in [0] + COOLDOWNS:
+                if wacht:
+                    print(head + " - alle lokale routes geblokkeerd. "
+                          + str(wacht) + "s afkoelen...")
                     save_state(out_dir, state)
-                    time.sleep(COOLDOWN_SECS)
-
-                    # Tweede poging na cooldown
-                    try:
-                        text, lang, translated = fetch_captions(v["id"], args.taal, args.vertaal)
-                        local_fetches += 1
-                    except IpBlockedError:
-                        try:
-                            text, lang, translated = fetch_captions_ytdlp(v["id"], args.taal)
-                            local_fetches += 1
-                        except IpBlockedError:
-                            # Nog steeds geblokkeerd: naar Apify of stoppen
-                            resterend = len(videos) - i + 1
-                            if token:
-                                print(head + " - nog steeds geblokkeerd na cooldown.")
-                                print(">> Overschakelen naar Apify voor de resterende "
-                                      + str(resterend) + " video's (~$" + ("%.2f" % (resterend * 0.01)) + ").")
-                                modus = "apify"
-                            else:
-                                print(head + " - nog steeds geblokkeerd na cooldown.")
-                                print("\n>> GESTOPT om een IP-ban te voorkomen.")
-                                print(">> Draai later hetzelfde commando opnieuw: hij hervat waar hij bleef.")
-                                print(">> Tip: met APIFY_API_KEY in .env schakelt hij automatisch over.")
-                                gestopt = True
-                                save_state(out_dir, state)
-                                break
-                except Exception as e:
-                    text, lang = None, str(e)[:120]
+                    time.sleep(wacht)
+                    routestatus.reset()
+                try:
+                    text, lang, translated, route, pogingen = haal_lokaal(v["id"], routestatus, head)
+                    local_fetches += pogingen
+                    break
+                except AllesGeblokkeerdError:
+                    continue
+            else:
+                # Alle cooldowns verbruikt: naar Apify of stoppen
+                resterend = len(videos) - i + 1
+                print(head + " - nog steeds geblokkeerd na "
+                      + str(sum(COOLDOWNS)) + "s afkoelen.")
+                if token:
+                    print(">> Overschakelen naar Apify voor de resterende "
+                          + str(resterend) + " video's (~$" + ("%.2f" % (resterend * 0.01)) + ").")
+                    modus = "apify"
+                else:
+                    print("\n>> GESTOPT om een IP-ban te voorkomen.")
+                    print(">> Draai later hetzelfde commando opnieuw: hij hervat waar hij bleef.")
+                    print(">> Tip: met APIFY_API_KEY in .env schakelt hij automatisch over.")
+                    gestopt = True
+                    save_state(out_dir, state)
+                    break
 
         if modus == "apify" and text is None:
-            text, lang, translated = fetch_apify(token, v["id"])
+            text, lang, translated = fetch_apify(
+                token, v["id"], args.taal if args.vertaal else None)
+            route = "apify"
+            if args.vertaal and text is not None and not translated and not apify_vertaal_gemeld:
+                print(">> LET OP: de Apify-actor levert geen vertaling; --vertaal blijft daar zonder"
+                      " effect.\n>>   De transcripties komen binnen in de oorspronkelijke taal (" + lang + ").")
+                apify_vertaal_gemeld = True
             apify_calls += 1
 
         if text is None:
@@ -513,8 +829,9 @@ def main():
             failed += 1
             state["failed"][v["id"]] = str(lang)[:200]
         else:
-            fname = write_transcript(out_dir, v, text, i, lang, translated)
-            print(head + " - " + str(len(text.split())) + " woorden (" + lang + ") -> " + fname)
+            fname = write_transcript(out_dir, v, text, i, lang, translated, route)
+            print(head + " - " + str(len(text.split())) + " woorden (" + lang
+                  + ", via " + str(route) + ") -> " + fname)
             done += 1
             state["done"][v["id"]] = fname
             state["failed"].pop(v["id"], None)

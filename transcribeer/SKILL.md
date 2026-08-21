@@ -16,7 +16,7 @@ De standaard-opslagplek staat in `config.json` naast dit bestand, sleutel `kenni
 `<kennis_map>/<kanaalnaam>/`. Met `--out "<pad>"` kies je per keer een andere map.
 Staat er geen `kennis_map`, dan gebruikt het script `./transcripties/<kanaal>`.
 
-## Blokkade-bescherming (v2)
+## Blokkade-bescherming (v3)
 
 YouTube blokkeert het IP tijdelijk bij te veel ondertitel-verzoeken achter elkaar.
 Het script heeft drie verdedigingslagen:
@@ -27,10 +27,19 @@ Het script heeft drie verdedigingslagen:
    jitter automatisch 2-4s (de blokkade komt pas na ~30 snelle verzoeken; de
    overige lagen blijven als vangnet actief). Expliciete pauze-vlaggen winnen.
    `--pauze N` bestaat nog als alias voor een vaste pauze (zet min=max=N).
-2. **Twee lokale routes**: eerst `youtube-transcript-api`, bij een block de
-   `yt-dlp` caption-route (andere client-handtekening, werkt vaak nog).
-3. **Cooldown + retry**: zijn beide routes geblokkeerd, dan wacht het script
-   15 minuten en probeert opnieuw. Lukt het dan nog niet, dan:
+2. **Drie lokale routes** achter elkaar, elk met een andere client-handtekening.
+   Loopt route 1 op een blokkade, dan gaat 'ie meteen door naar de volgende:
+   1. `youtube-transcript-api`
+   2. de `yt-dlp` caption-route
+   3. **InnerTube**: rechtstreeks `youtubei.googleapis.com/youtubei/v1/player`
+      met de mobiele ANDROID-, IOS- en ANDROID_VR-clients. Geen extra pakket
+      nodig (kale `urllib`), één HTTP-verzoek per video, en de handtekening
+      waar YouTube het minst streng op is. Elke client krijgt een eigen kans:
+      waar de een een bot-check vangt, komt de ander er vaak nog wel langs.
+   In de scriptoutput staat achter elke video via welke route 'ie binnenkwam;
+   dat staat ook in de `.md` op de **Bron**-regel.
+3. **Cooldown + retry**: zijn alle drie de routes geblokkeerd, dan wacht het
+   script 15 minuten en gaat opnieuw de hele rij langs. Lukt het dan nog niet, dan:
    - Met Apify-key: automatisch overschakelen naar de Apify-actor
      `pintostudio/youtube-transcript-scraper` (~$0,01/video, betrouwbaar met
      Nederlandse ondertitels).
@@ -47,6 +56,14 @@ via Apify beginnen (handig bij grote batches).
 **Valkuilen:**
 - De goedkopere actor `supreme_coder/youtube-transcript-scraper` kan NIET met
   Nederlandse ondertitels overweg; gebruik pintostudio.
+- YouTube blokkeert tegenwoordig vaker met een **bot-check** ("Log in om te
+  bevestigen dat je geen bot bent", of een redirect naar `google.com/sorry`) dan
+  met een kale 429. Het script herkent die in alle routes als blokkade. Ziet
+  het script wél "geen ondertitels" waar je ze verwacht, controleer dan of het
+  niet stiekem een bot-check is - anders slaat de cooldown niet aan.
+- Vanaf een datacenter- of VPN-IP komt de bot-check véél sneller dan vanaf een
+  gewone thuisverbinding; daar zijn alle lokale routes vaak meteen dicht en is
+  `--apify` de snelste weg.
 - Het script heeft GEEN datumfilter ("video's van het afgelopen jaar" kan niet direct),
   alleen `--max N` (de N nieuwste video's). Wil je toch een periode? Bepaal dan eerst het
   aantal: de video-lijst (flat playlist) heeft geen upload-datums, dus probe de datum van
