@@ -15,6 +15,10 @@ in tien jaar. *"Wij bouwen de pagina's, wij draaien het verkeer, wij laten de da
 
 Bedragen staan in ponden en dollars, zoals in de transcripties.
 
+> **De grens met andere skills.** Voor de woorden op de pagina — koppen, waardeproposities,
+> bewijs en call-to-actions — is er `/copywriting`. Deze skill gaat over de opbouw, het
+> formulier en de meting.
+>
 > **De grens met `/google-ads`.** Die skill gaat over alles vóór de klik: campagnes, biedstrategieën,
 > matchtypes, budget. Deze skill gaat over alles erná: de pagina, het formulier, en de kwaliteit van
 > wat er binnenkomt. Ze spreken elkaar op één punt tegen — zie *Spanningen* onderaan.
