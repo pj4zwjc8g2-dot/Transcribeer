@@ -1,14 +1,55 @@
 ---
 name: seo
-description: SEO-strategie en AI-zichtbaarheid volgens de werkwijze van Nathan Gotch (Gotch SEO, Rankability, auteur van AI SEO for Dummies). Gebruik deze skill bij vragen over SEO, zoekmachineoptimalisatie, ranken in Google, zichtbaarheid in ChatGPT/Perplexity/AI Overviews, AI SEO, AEO of GEO, zoekwoordenonderzoek, contentstrategie, topical authority, on-page optimalisatie, technische SEO, interne links, backlinks en autoriteit, reviews, lokale SEO, e-commerce SEO, SEO-audits, of wanneer iemand zegt "waarom rankt deze pagina niet", "we worden niet genoemd door AI", "hoe krijg ik meer organisch verkeer", of "/seo" typt.
+description: SEO-strategie en AI-zichtbaarheid volgens de werkwijze van Nathan Gotch (Gotch SEO, Rankability, auteur van AI SEO for Dummies), gedistilleerd uit 277 video's. Gebruik deze skill bij vragen over SEO, zoekmachineoptimalisatie, ranken in Google, zichtbaarheid in ChatGPT/Perplexity/AI Overviews, AI SEO, AEO of GEO, zoekwoordenonderzoek en het kiezen van haalbare zoekwoorden, contentstrategie en clusters, topical authority, on-page optimalisatie, technische SEO, interne links, backlinks, linkbuilding en outreach, reviews, lokale SEO, e-commerce SEO, SEO-audits en het opschonen van een site, verkeer dat wegzakt, herstel na een algoritme-update, deïndexatie en handmatige acties, kannibalisatie, AI-content en waar de grens ligt, en E-E-A-T. Ook wanneer iemand zegt "waarom rankt deze pagina niet", "we worden niet genoemd door AI", "mijn impressies stijgen maar mijn kliks dalen", "hoe krijg ik meer organisch verkeer", of "/seo" typt.
 ---
 
 # SEO en AI-zichtbaarheid
 
 De werkwijze van Nathan Gotch — vijftien jaar SEO, honderden campagnes, oprichter van Gotch SEO
-en Rankability, auteur van *AI SEO for Dummies*. Gedistilleerd uit 56 van zijn recente video's (2026).
+en Rankability, auteur van *AI SEO for Dummies*. Gedistilleerd uit 277 van zijn video's.
 
 Zelfdragend: alles staat hier, er is geen externe kennismap nodig.
+
+Alle bedragen staan in dollars, zoals in het bronmateriaal. Zijn praktijk is overwegend Amerikaans.
+
+## Hoe hij denkt
+
+Vier stellingen die onder vrijwel alles hierna liggen.
+
+**1. Het doel is rendement, niet verkeer.** *"Voor elke dollar die je in SEO stopt zou je er drie,
+vier of vijf uit moeten halen — en dat is aan de lage kant. Denk eerder aan tien op één."* Daarom
+begint hij onderaan de funnel, bij de commerciële zoekopdrachten, en werkt hij omhoog. Nooit
+andersom.
+
+**2. De cijfers van vandaag zijn het bijproduct van het werk van gisteren.** Vandaar zijn onderscheid
+tussen leading en lagging indicators (zie *Meten*). Wil je over zes maanden beter presteren, dan
+begint dat vandaag.
+
+**3. Moeite is de variabele die niemand kan namaken.** *"Ik heb dit inmiddels honderden keren getest:
+content met weinig moeite verliest altijd van content met veel moeite. Zonder één uitzondering."*
+Zijn hele contentaanpak is een poging dat systematisch te maken.
+
+**4. Verzamel je eigen bewijs.** Over de eeuwige "SEO is dood"-koppen: die worden geschreven door
+mensen die per klik betaald worden. Zijn tegenvoorbeeld is e-mailmarketing, al tien jaar dood
+verklaard, waar hij nog steeds 45 tot 50% openingsratio op haalt.
+
+## Diagnose: begin hier
+
+Loop dit door voordat je iets aanraakt. De volgorde loopt van goedkoop en snel naar duur en traag.
+
+| Symptoom | Waarschijnlijke oorzaak | Waar je gaat kijken |
+|---|---|---|
+| **Impressies stijgen, kliks dalen** | Structureel, niet jouw fout: AI-overzichten en SERP-functies vangen de klik af | *Prioriteer op verwachte klikken*; herzie je KPI's |
+| **Pagina staat op 2-15 en beweegt niet** | Onvoldoende relevantie, te weinig interne links, te weinig ondersteunende content | *Kansen* — dit is je goudmijn |
+| **Pagina staat op 50+ en is gevestigd** | De pagina is te breed voor dat specifieke zoekwoord | *Primair, variant, secundair* — afsplitsen |
+| **Nieuwe pagina staat op 50-100** | Normaal. Niets doen. | — |
+| **Veel gepubliceerd, geen resultaat** | Kwantiteit zonder linkondersteuning | *Gewoontes die je posities slopen*, punt 3 |
+| **Verkeer weg na een update** | Stapeling van kwaliteitsproblemen, zelden één oorzaak | *Als het misgaat* |
+| **Volledig uit de index** | Handmatige actie, geen algoritme | *Als het misgaat* |
+| **Rankt goed, verdient niets** | Verkeerde funnelfase gekozen | *Vijf fasen van klantbewustzijn* |
+| **AI noemt ons nooit** | Te weinig signalen van derden; misschien een keywordrijk domein | *De belangrijkste rankingfactor voor AI* |
+| **Lokaal onzichtbaar in het lokale pakket** | Reviewkloof of verkeerde categorie | *Lokale SEO* |
+| **Veel verkeer, geen conversie** | Ontwerp niet op conversie gebouwd | *De website als conversiemachine* |
 
 ## De kernstelling
 
@@ -203,6 +244,61 @@ Problematisch wordt het pas bij twee pagina's met dezelfde intentie én dezelfde
 
 ## Zoekwoordenonderzoek
 
+### De vijf fasen van klantbewustzijn — omgekeerd
+
+*"Als je één ding uit dit hoofdstuk meeneemt, prent dit dan in je hoofd."* Dit is het model dat
+bepaalt waar je tijd heen gaat, en het geldt net zo goed voor je contentstrategie op YouTube of
+LinkedIn.
+
+| Fase | Voorbeeld | Prioriteit |
+|---|---|---|
+| **Most aware** | "[merk] [product] offerte", "gratis proefversie", "kortingscode" | **Hier begin je** |
+| **Product aware** | reviews mét merknaam erin | Direct daarna |
+| **Solution aware** | "beste [dienst] in [stad]" | **Hier gebeurt de meeste magie** |
+| **Problem aware** | "waarom rankt mijn site niet" | Later |
+| **Unaware** | "hoe krijg ik meer klanten online" | Laatst, of nooit |
+
+De solution-aware laag is wat je in **elke** campagne volgt, in Google én in de AI-antwoorden. Zoekt
+iemand "beste X in Y", dan wil je dat je merk in het AI-antwoord staat.
+
+*"De fout die veel mensen maken is bovenaan beginnen, want al dat zoekvolume is verleidelijk."*
+Bovenaan de funnel wordt bovendien het hardst opgegeten door AI-overzichten, en het converteert niet.
+Het enige wat je met die vroege fase kunt, is een lead magnet aanbieden of ze dieper de funnel in
+duwen — en dat duurt lang.
+
+De most-aware onderwerpen zijn zijn favoriete startpunt om een andere reden: *"dit is de makkelijkste
+winst die er is, want je concurrenten kunnen je op je eigen merk niet verslaan."*
+
+### Bewezen vraag, niet zoekvolume
+
+*"Volume is één variabele tussen vele."* Vier bronnen van bewezen vraag:
+
+1. Zoekvolume uit de Keyword Planner
+2. Impressies in Search Console — met de kanttekening dat daar botimpressies tussen zitten
+3. Gebruikerssignalen: Reddit, Quora, fora
+4. **First-party data**: de vragen die je op verkoopgesprekken en coachingcalls krijgt. *"Die
+   verschijnen niet in de tools, maar het is echte vraag."*
+
+**80/20-regel**: 80% van je onderwerpen heeft aantoonbare vraag, 20% zijn experimenten zonder volume.
+
+En de nuance bij CPC die de meeste mensen omdraaien: een zoekwoord **zónder** adverteerders is geen
+blue ocean. *"Waarschijnlijk heeft iemand daar zijn geld verspild, en dat ga ik dan ook doen."*
+
+### Concurrentie meten op drie niveaus
+
+Het AI-tijdperk voegt er een niveau aan toe:
+
+- **Domeinniveau** — verwijzende domeinen van de concurrent
+- **Paginaniveau** — links naar die pagina, **plus de kwaliteit van hun content**. Hebben zij
+  vakinhoudelijke experts, dan kom je daar niet met AI-slop tegenin; dan heb je zelf ook experts nodig.
+- **Merkniveau (nieuw)** — merken die matig ranken in Google maar constant door AI worden aanbevolen,
+  op grond van reviews en consensus. *"In klassieke zoekmachines stuurt autoriteit het resultaat. In
+  AI is het een ander spel."*
+
+Zijn standaardzet als een zoekwoord te zwaar is: kies een **doelgroepmodifier** in plaats van je vast
+te bijten in de brede term. Niet "SEO tools" (Zapier, Wix, Ahrefs, Semrush) maar "SEO tools voor
+bureaus" — zelfde onderwerp, haalbaar.
+
 ### Het sjabloon
 
 Per zoekwoord leg je vast: **prioriteit, bron, cluster, zoekwoord, SERP-functies, zoekvolume, KD,
@@ -231,6 +327,32 @@ Bij die laatste groep: onderzoek waaróm hij niet presteert. Ontbrekende interne
 onderwerpdekking, te weinig backlinks — maar het is vaak intentie.
 
 Er zijn twee sporen: zoekwoorden waar je al voor in de top 100 staat, en volledig nieuwe zoekwoorden.
+
+### Primair, variant, secundair
+
+Het onderscheid waar de meeste mensen op vastlopen, en het bepaalt wanneer je een pagina afsplitst.
+
+- **Primair zoekwoord** — het kernonderwerp van de pagina. **Eén per pagina.** Gaat in de URL, de
+  titel, de meta-omschrijving, de H1 en de eerste zin. *"Mensen denken hier veel te ingewikkeld over
+  na."* Heb je een nette URL-structuur, dan lees je het primaire zoekwoord gewoon van de URL af.
+  Zonder dit kun je bovendien niets fatsoenlijk volgen.
+- **Variant** — "blauwe schoen" naast "blauwe schoenen". Zelfde pagina, geen actie nodig.
+- **Secundair zoekwoord** — een specifiek zoekwoord waarvoor deze pagina op bijvoorbeeld positie 67
+  staat. De diagnose is altijd dezelfde: **de URL is te breed voor iets zo specifieks.** Afsplitsen
+  naar een eigen, relevantere pagina.
+
+**Slechte prestatie is het beste signaal dat je moet afsplitsen.** Je hoeft er niet over te
+speculeren; de data wijst het aan.
+
+### Sprints, geen eeuwige lus
+
+De uitkomst van je onderzoek is **10 tot 20 zoekwoorden voor de komende 30 tot 90 dagen**, niet 500.
+*"500 zoekwoorden targeten levert alleen verlamming op."*
+
+De tweede reden vindt hij belangrijker dan de effectiviteit: **een gevoel van afronding.** Zonder
+sprints zit je in een eeuwige lus van "we doen elke maand SEO" waarin niemand ooit iets afmaakt.
+Volgens hem het grootste risico bij bureaus, en de reden dat klanten zich gaan afvragen waar hun geld
+heen gaat. Behandel SEO als een reeks projecten: dit is de sprint, dit is af, wat is de volgende.
 
 ### Waar je zoekwoorden vindt
 
@@ -399,6 +521,67 @@ bewijs toevoegen en zorgen dat het klinkt alsof een expert het schreef.
 
 Analyseer je vijf belangrijkste concurrenten en zoek de invalshoek die je pagina meetbaar beter maakt.
 Niet radicaal anders — soms een betere gebruikerservaring, soms meer data, soms echte ervaring.
+
+### Information gain: de drie hefbomen die hij zelf gebruikt
+
+Houd het bewezen formaat aan, maar kies een hoek die niemand heeft. Volgens hem is dat op dit moment
+makkelijker dan ooit: *"bijna iedereen is lui geworden, want ze denken dat ChatGPT hun contentprobleem
+oplost."*
+
+> **Moeite.** Voor "beste SEO-boeken" schreef iedereen van Amazon af. Hij kocht de boeken, las ze, en
+> plaatste een foto van de stapel in zijn hand — met verwijzing naar zijn aankoopgeschiedenis als
+> bewijs.
+>
+> **Originele data.** Voor "beste CMS voor SEO" had iedereen meningen. Hij deed een eigen datastudie
+> in 2016, herhaalde die in 2024, en heeft nu historische data die niemand kan namaken. Hij rankt er
+> sinds 2016 voor.
+>
+> **User generated content.** Bij een controversieel artikel keurt hij **élke** reactie goed, ook de
+> negatieve. *"Die uniciteit staat nergens anders."* Originaliteit zit niet alleen in de tekst die jij
+> schrijft.
+
+Dubbel voordeel: de zoekmachines herkennen information gain, én afwijkende content trekt vanzelf
+backlinks — het is meteen je linkbait.
+
+De formule die hij eruit destilleert: **extreem hoge relevantie plus information gain.** In een
+NLP-tool betekent dat groen (je dekt de onderwerpen die de koplopers dekken) én veel witruimte (je
+voegt iets toe dat niemand anders heeft). Alleen groen is een kopie; alleen witruimte rankt niet.
+
+### Actualiteit: werk ook je beeldmateriaal bij
+
+Content vervalt vanzelf — nieuwe concurrenten, en Google wil verse input. Upgrade de pagina en
+**verander de publicatiedatum**.
+
+De nuance die de meeste mensen overslaan, uit zijn eigen casus van een artikel dat begon te zakken:
+hij verving **ook alle afbeeldingen** door versies met het nieuwe jaartal. *"Werk niet alleen de
+woorden bij, werk ook alle assets bij."*
+
+Haal jaartallen uit je URL's, zodat de pagina evergreen blijft en je niet elk jaar hoeft te redirecten
+en link equity kwijtraakt.
+
+### AI-content: waar de grens precies ligt
+
+Zijn positie is genuanceerder dan het kamp dat AI verbiedt en het kamp dat alles automatiseert. Zet
+deze drie stukken naast elkaar:
+
+**De regel**: hoe competitiever het zoekwoord, hoe meer mens. Bij lage concurrentie is een AI-eerste
+versie met menselijke revisies prima. Bij hoge concurrentie heb je een vakinhoudelijke expert nodig.
+
+**De uitzondering die de regel verklaart.** Zijn eigen artikel over H1-tags is voor 100% door AI
+geschreven en rankt al ruim een jaar door meerdere updates heen — omdát de onderliggende data een
+eigen studie is die niemand anders heeft. *"Het gaat er niet om of je AI gebruikt, het gaat om de
+originaliteit — en originaliteit zit niet in de woorden maar in het onderwerp."* Hij markeert
+AI-artikelen op zijn site met een aparte auteursnaam.
+
+**Waar het wél misgaat**: massaal geproduceerde AI-content zonder eigen inbreng. Google gaat achter
+*"the worst of the worst"* aan, want dat is het makkelijkst aantoonbaar. Meng je AI met echte redactie
+en eigen materiaal, dan wordt het onderscheid juist heel moeilijk te maken.
+
+**Zijn eigen test**: hij zette bewust pure AI-rommel op een artikel en liet het staan. Het deed
+maandenlang niets. Daarna herschreef hij het met veel moeite op dezelfde URL, en het ging lopen.
+
+**Praktisch**: breng AI-content op je site in kaart, niet om het te verwijderen, maar om te weten
+welke pagina's je moet upgraden zodra ze gaan wegzakken.
 
 ## Het merkverhaal beheersen
 
@@ -594,6 +777,132 @@ Blijf daarnaast **klassieke linkbuilding doen** voor domeinautoriteit. In honder
 presterende sites lag de oorzaak vrijwel altijd eerst buiten de site: geen backlinks, slechte backlinks,
 of een zwak ankerprofiel.
 
+De volgorde blijft daarbij wel staan: *"Begin altijd bij de content. Links zijn brandstof op het
+vuur."* Goede links naar een slechte site helpen niet.
+
+### De reverse silo
+
+Zijn kernconstructie, en het antwoord op "waar bouw ik mijn links naartoe".
+
+Bouw links **niet** naar je commerciële pagina's — dat laat een riskante voetafdruk achter — maar naar
+**linkbare assets**, die intern doorlinken naar je commerciële pagina's.
+
+Twee voordelen: je bouwt site-autoriteit die de hele site optilt, en je verkleint het risico op een
+linkgerelateerde straf, volgens hem **de meest voorkomende vorm van bestraffing door Google**.
+
+### Eerst inventariseren, dan pas bouwen
+
+1. Is er een **boegbeeld of vakinhoudelijk expert** die aan roundups, persverzoeken en podcasts kan
+   meedoen? *"Founder- of expert-gedreven linkbuilding is verreweg de krachtigste techniek."*
+2. Zijn er al gratis tools of software op de site?
+3. Is er eigen data die je voor marketing kunt gebruiken?
+
+**Expert versus autoriteit**: een expert is beter dan de gemiddelde persoon, een autoriteit is een
+expert mét invloed. De gekozen persoon moet zichzelf ook **willen** vermarkten — dat is geen detail
+maar het knelpunt.
+
+Waarschuwing die veel mensen verrast: *"je standaard how-to of listicle is niet effectief voor
+backlinks."* Je hebt content nodig die er bewust voor ontworpen is. Formats die wél werken:
+calculators en gratis tools, geanimeerde infographics, ranglijsten, datagedreven stukken, epic guides,
+diepe technische stukken. De rode draad: *"bij elke pagina die veel links trekt is er veel moeite en
+investering in gestoken."*
+
+### De relevantiepiramide
+
+Relevantie gaat vóór autoriteitsscores. *"De meeste linkbuilders zijn geobsedeerd door DA en DR, maar
+die zijn ondergeschikt aan relevantie."* Voor een installatiebedrijf in één stad, van boven naar
+beneden:
+
+1. Andere installatiebedrijven in diezelfde stad — de beste link, en vrijwel onhaalbaar, want dat zijn
+   je concurrenten
+2. Andere vakmensen in die stad: loodgieters, elektriciens, funderingsherstel
+3. Installatiebedrijven buiten die stad
+4. Lokale entiteiten zonder branchelink: de sportclub, het buurthuis, het plaatselijke theater —
+   *"nog steeds waardevol, want lokale relevantie plus een vertrouwde entiteit in jouw gebied"*
+
+Hoe lager in de piramide, hoe meer kansen. Begin bovenaan en werk elke laag af tot hij op is.
+
+**De dream 100**: de honderd sites waar je een link wilt. *"In de meeste branches is het al moeilijk
+om er honderd te vinden."* Lukt het je bij de top van je niche, dan *"is het letterlijk onmogelijk om
+geen resultaat te zien."*
+
+### De referral-traffic-toets
+
+Bij elke linkkans: *"levert deze site ons relevant doorverwijsverkeer op met een reële kans op
+conversie?"* Geen uitsluitcriterium, wel een prioriteringsinstrument.
+
+### Outreach: what's in it for me
+
+*"Ik krijg tien tot twintig outreach-mails per dag en 99% gaat over wat de ander wil. Heel zelden
+zegt iemand: ik doe dit voor jou, zou jij dat voor mij willen doen?"*
+
+Wat je kunt bieden, op volgorde van effectiviteit: **geld** (*"de rijken worden rijker bij
+linkbuilding"*), gratis of verlengde proefperiodes, content schrijven voor hun site.
+
+Zijn advies bij falende outreach: sleutel niet aan de microtactieken — het opwarmen van je mailbox, de
+verzendsnelheid, de copy. Die tellen mee, maar de doorslaggevende factor is de **waardepropositie**.
+
+### Reviews en publiek als autoriteitssignaal
+
+*"Veel backlinks maar geen reviews en geen publiek ziet er verdacht uit."* Links, reviews en publiek
+moeten gelijk opgroeien. Hij haalt daarbij een Moz-correlatie aan tussen merkautoriteit en het
+overleven van algoritme-updates: weinig merkzoekopdrachten kan een signaal van onbetrouwbaarheid zijn.
+
+### Ankertekst — hij is hier van mening veranderd
+
+Vroeger vond hij agressieve exact-match ankers acceptabel, in elk geval intern. **Nu adviseert hij
+spreiding bij zowel interne als externe links.** Zijn onderbouwing: *"Google begrijpt met NLP inmiddels
+prima waar een pagina over gaat, dus links zijn niet meer het beste instrument om relevantie te
+sturen."*
+
+Waarschuwing specifiek voor lokale bedrijven: de blokken met tientallen omliggende plaatsnamen
+onderaan elke pagina. Voor iemand in het centrum van de stad is die lijst nutteloos — het verwart de
+bezoeker en helpt de conversie niet, en dat is de reden dat de pagina er staat.
+
+## Links kopen — het grijze gebied
+
+> **Lees dit als informatie over wat er in de markt gebeurt, niet als aanbeveling.** Voor een bedrijf
+> met één website waar het van moet leven is een handmatige sanctie iets heel anders dan voor iemand
+> met vijftig wegwerpsites. Hij zegt zelf dat het altijd risico draagt. En zijn positie is niet
+> neutraal: **van 2016 tot 2018 verkocht hij zelf voor $470.000 aan backlinks aan meer dan 500
+> klanten.**
+
+Hij en Chris Dreyer gaven samen meer dan $1 miljoen aan backlinks uit om dit uit te zoeken.
+
+**Waarom Google het haat**: het is tegen de richtlijnen *"en omdat het werkt — ze kunnen het
+algoritmisch niet stoppen, dus is angst hun beste instrument."*
+
+**De schaal**: 11.000+ zoekopdrachten per maand naar varianten van "buy backlinks", 11.000+ threads op
+BlackHatWorld sinds 2008, 7.000+ diensten op Fiverr.
+
+**Drie vormen**, met de derde als goedkoopste per link:
+
+1. Via een tussenpersoon — tijdwinst en schaal, minder marge
+2. Rechtstreeks — winstgevender per link, maar je moet zelf systemen bouwen
+3. **Een domein kopen en redirecten** (de "mergertechniek"). Zijn casus: $5.000 voor een domein met
+   een linkprofiel dat hij op $62.450 waardeert, oftewel $39 per zware link. Twee bekende voorbeelden
+   die hij noemt: Neil Patel kocht Ubersuggest voor $120.000 en erfde 4.000+ verwijzende domeinen;
+   Brian Dean kocht Point Blank SEO en erfde 1.300+ zeer relevante domeinen.
+
+Bij die derde vorm gaat het meestal op één punt mis: **redirect op basis van linkverdeling.** Gaan de
+links vooral naar de homepage, maak dan een pagina die die links erft. Verspreid over veel pagina's?
+Zoek per pagina een relevante bestemming. Wees geduldig en sla hard toe als de kans zich voordoet.
+
+**Zeven linksoorten waar je je geld niet aan uitgeeft**: dofollow blogreacties, generieke
+directorylinks, spammy donatielinks, artikeldirectory's, web 2.0-links, publieke blognetwerken,
+nep-.edu/.gov.
+
+**De linkgap berekenen** — nuttig ongeacht of je koopt. Kijk niet alleen naar het aantal verwijzende
+domeinen op paginaniveau, maar ook naar de gemiddelde autoriteit van de concurrenten én naar **waar
+die autoriteit zit**. In zijn voorbeeld had de koploper één zware link en verder alles in de
+middenmoot: *"dus we hebben helemaal geen zware links nodig; niet overinvesteren."*
+
+**Over parasitaire SEO** heeft hij een genuanceerde positie: hij demoniseert het niet (*"mensen bepalen
+zelf hun risicotolerantie"*) en laat een ethische variant zien. Zijn eigen boek staat op Amazon, die
+listing is geïndexeerd, en hij bouwt daar gewoon relevante links naartoe alsof het zijn eigen pagina
+is. *"Bestaande autoriteit benutten is een legitieme strategie — daarom adverteer je ook op relevante
+niche-sites."*
+
 ## AI als werkwijze
 
 Zijn kennisbasis ("SEO-superintelligentie"):
@@ -659,7 +968,79 @@ AI-antwoorden: je vindt vrijwel geen merk dat het goed doet in AI en slecht in t
 **Parasitaire SEO** — meeliften op de autoriteit van YouTube, Reddit of Quora — werkt wel degelijk, maar
 om de gewone reden: die platforms ranken. Niet omdat AI ze speciaal behandelt.
 
+## Gewoontes die je posities slopen
+
+Het diagnostische spiegelbeeld van de rest van dit document. De vijf die hij het vaakst tegenkomt:
+
+1. **Zoekwoorden kiezen op volume in plaats van op haalbaarheid en intentie.** Zie het
+   zoekwoordhoofdstuk. Zijn ROI-norm om tegen af te zetten: drie tot vijf dollar terug per
+   geïnvesteerde dollar aan de lage kant, mikken op tien op één.
+2. **De zoekresultatenpagina niet bestuderen** voordat je bouwt.
+3. **Kwantiteit boven kwaliteit.** Zijn diagnostiek is concreet: crawl je site met de linktool
+   gekoppeld en kijk **welk percentage van je pagina's überhaupt een backlink heeft.** Bij
+   onderpresteerders is dat vaak 90% of meer zonder. Zijn voorbeeld: een klein lokaal bedrijf met
+   **2.600 geïndexeerde pagina's zonder één backlink.** *"Je vertelt Google daarmee dat je site niet
+   populair is."* Liever minder pagina's mét ondersteuning dan veel pagina's zonder.
+4. **Nieuwe content maken in plaats van bestaande verbeteren.** Heb je al organisch verkeer, kijk dan
+   eerst naar wat er staat. *"Stop met de contenttredmolen."*
+5. **Denken dat ontwerp niets met SEO te maken heeft.** Klikbaar telefoonnummer, formulier, meerdere
+   call-to-actions. *"Benader ontwerp vanuit conversie, niet vanuit mooi."*
+
+En verder: geen ondersteunende content bouwen, de on-page basis overslaan, schema negeren, slechte
+interne links, en links bouwen naar de verkeerde pagina's.
+
+## Als het misgaat
+
+### Deïndexatie is een handmatige actie
+
+*"Heel zelden word je gedeïndexeerd door het algoritme — daar moet je echt iets vies voor doen."* Bij
+een site met veel pagina's, verkeer en soms zelfs autoriteit is het altijd een menselijke beoordelaar
+geweest. *"Gedeïndexeerd worden is het ergste wat er is. Dan is het voorbij."*
+
+Onderscheid dat dus scherp van een algoritmische daling: bij het eerste is er een besluit genomen, bij
+het tweede ben je door een herweging heen gezakt.
+
+### Wat de slachtoffers gemeen hadden
+
+Uit zijn analyse van sites die na een update uit de index verdwenen. Nooit één oorzaak, altijd een
+stapeling:
+
+- **Massaal geproduceerde AI-content** van de laagste kwaliteit
+- **Agressieve advertenties en interstitials** waar je de content niet doorheen ziet. *"Deze site geeft
+  voorrang aan geldverdienen boven de gebruikerservaring; het hoort andersom."*
+- **Onnauwkeurige informatie.** Zijn scherpste voorbeeld is "net worth"-content: *"hoe zou iemand het
+  vermogen van deze persoon kunnen weten? Ze kennen zijn inkomen niet, zijn bezittingen niet, zijn
+  schulden niet. Het is letterlijk verzonnen."* Op één site stond zelfs een AI-gegenereerde foto van
+  iemand die de persoon niet eens was.
+- **Geen aantoonbare auteur.** Eén site had een "doorgewinterde financieel expert"; hij zocht de naam
+  op en kwam binnen seconden uit bij een site die neptbio's verkoopt. *"Ik ben één man en zie dat
+  meteen. En dan denken mensen dat een bedrijf van duizend miljard dat niet doorheeft."*
+- **YMYL zonder kwalificatie.** Geld, gezondheid en beleggen zijn de gevaarlijkste categorieën —
+  daar moet je aantoonbaar bevoegd zijn.
+- **Gemaakt voor zoekmachines in plaats van voor mensen.** *"Ranken is pas de eerste stap."*
+
+### Twee toetsen die geen tools vragen
+
+- **De bookmark-toets**: *"is dit een site die iemand ooit zou willen opslaan en waar je naar terug
+  wilt?"* Je hoeft geen expert te zijn om het antwoord te zien. Zet twee concurrerende pagina's naast
+  elkaar en kijk binnen enkele seconden welke je meer vertrouwt.
+- **De vijfjaarsvraag** bij elke nieuwe pagina: *"als ik deze pagina vijf jaar moest laten ranken, wat
+  zou ik dan anders doen?"* Dat verandert doorgaans wat je maakt.
+
 ## Meten
+
+**Leading versus lagging indicators.** Zijn belangrijkste meetmodel, en het lost het geduldprobleem in
+SEO op.
+
+*Leading — wat je vandaag doet*: aantal geoptimaliseerde pagina's, aantal nieuwe pagina's, aantal
+verstuurde outreach-mails, aantal verworven backlinks.
+
+*Lagging — het resultaat, drie tot twaalf maanden later*: organisch verkeer, impressies en totale
+keywordvoetafdruk, individuele posities.
+
+*"De cijfers waar je vandaag naar kijkt zijn het bijproduct van al het werk dat je al gedaan hebt."*
+Wil je over zes maanden beter presteren, dan stuur je vandaag op de leading indicators — want de
+lagging kun je niet direct beïnvloeden.
 
 - **Momentopname, geen dagelijkse tracking.** Dagelijks posities volgen heeft geen zin als je die week
   niet aan die categorie werkt. Een benchmarkrapport, een logboek van wat je publiceert, en periodiek een
@@ -755,6 +1136,21 @@ er eerlijk bij.
    swipe file, 5-10 concurrenten voor je vergelijkingscluster, 10 kennisartefacten, 9 ondersteunende
    stukken per hoofdonderwerp, 5-10 outreach-mails per dag, 2-4 revisies.
 
+## Spanningen die je moet bewaren, niet gladstrijken
+
+Deze staan zo in het bronmateriaal. Doe niet alsof het één antwoord is.
+
+| Spanning | De twee kanten |
+|---|---|
+| **Keywordrijke domeinen** | Zeer effectief voor het lokale pakket en voor citaties, maar ze werken juist tégen je bij merkvermeldingen in AI, waar merknamen als entiteit worden geëxtraheerd. *"Een domein als stadseoconsultant.com verschijnt niet bij 'beste SEO-bedrijven'."* Hij heeft dit jarenlang aanbevolen en is er nu deels op teruggekomen. |
+| **Overlap tussen Google en AI** | In het ene stuk: *"rank goed in Google en je staat ook in de AI-antwoorden — dat is simpelweg niet waar"*, met een analyse die weinig overlap tussen platforms laat zien. In het andere: *"50 tot 60% van de bronnen in een AI-overzicht komt van de eerste pagina, dus je móét klassiek ranken."* Behandel als bandbreedte, niet als regel. |
+| **AI-content** | *"Hoe competitiever, hoe meer mens"* naast zijn eigen 100% door AI geschreven artikel dat al ruim een jaar rankt. De verzoening zit in originaliteit van het ónderwerp, niet van de woorden — maar de grens blijft onscherp. Zie ook het tegenbewijs van Sterling Sky bij *AI als werkwijze*. |
+| **Backlinks als factor** | Studies die correlatie laten zien tussen linkaantallen en posities, naast John Mueller die zegt dat het totale aantal backlinks niets uitmaakt voor het algoritme. Hij haalt beide aan zonder te kiezen. |
+| **Ankertekst** | Vroeger vond hij agressieve exact-match ankers acceptabel, nu adviseert hij spreiding. Een expliciete koerswijziging. |
+| **Links kopen** | Hij legt uit hoe het werkt en dát het werkt, en zegt tegelijk dat het altijd risico draagt. Hij verkocht zelf jarenlang backlinks. |
+| **Kwantiteit** | *"Minder pagina's, maar wel ondersteund"* naast clusters van 75 tot 100 assets rond één pijler. Het verschil zit in ondersteunde diepte binnen één onderwerp versus ongefundeerde breedte. |
+| **Zelf tools verkopen** | Hij is oprichter van Rankability en van een opleidingsprogramma. Zijn adviezen over NLP-optimalisatie en contentscores wijzen regelmatig naar zijn eigen producten. Het principe is hier losgeknipt van de tool, maar houd de belangenverstrengeling in het achterhoofd. |
+
 ## Let op
 
 - **Zijn invalshoek is uitgesproken AI-eerst.** Dat is een standpunt, geen consensus. Benoem dat het zijn
@@ -764,3 +1160,18 @@ er eerlijk bij.
   beveelt hij expliciet zonder commissie aan.
 - **Platformdetails verouderen snel** — welke bots wat crawlen, hoe AI-overzichten eruitzien, welke
   directories worden geciteerd. Controleer dat voor je het als vaststaand presenteert.
+- **Het hoofdstuk over links kopen is beschrijvend, niet aanbevelend.** Dat geldt ook voor de
+  mergertechniek en parasitaire SEO. De risico's staan erbij omdat ze in het bronmateriaal staan.
+- **Casussen zijn zijn casussen.** De cijfers zijn wat hij in zijn video's laat zien; ze zijn niet
+  onafhankelijk geverifieerd en de resultaten zijn niet zonder meer overdraagbaar.
+- **Zijn schatting dat 1% of minder van het organische verkeer uit taalmodellen komt** — gemeten over
+  honderden van zijn eigen accounts — is een momentopname waar hij zelf bij zegt dat die
+  ondergerapporteerd is en gaat schuiven. Meet het opnieuw in je eigen analytics in plaats van het
+  cijfer over te nemen. Hetzelfde geldt voor zijn 80/20-verdeling tussen Google en de taalmodellen,
+  en voor zijn schatting van hoe Google search er straks uitziet (ongeveer de helft AI-modus, 10% of
+  minder klassieke blauwe links) — dat zijn zijn eigen woorden bewust verzonnen percentages die de
+  richting aangeven.
+- **Waar het materiaal dun is, staat dat er.** Er is weinig over de Europese of Nederlandstalige
+  markt, weinig over meertalige sites en hreflang, en niets over de juridische kant van vergelijkende
+  content in Europa — dat ligt hier anders dan in de Verenigde Staten.
+- **Voor betaald zoekverkeer** is er `/google-ads`. Dit document gaat over organisch.
